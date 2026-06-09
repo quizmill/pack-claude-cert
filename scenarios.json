@@ -1,0 +1,184 @@
+[
+  {
+    "id": "cca-customer-support",
+    "title": "Customer Support Resolution Agent",
+    "stem": "Your team is building a customer support resolution agent using the Claude Agent SDK. It handles high-ambiguity requests — returns, billing disputes, account issues — and has access to backend systems through four custom MCP tools: `get_customer`, `lookup_order`, `process_refund`, and `escalate_to_human`. The product target is 80%+ first-contact resolution while reliably knowing when to escalate to a human agent. The agent runs in production with Claude Sonnet 4.6 as the primary model. You have access to per-turn logs that record which tools were called, with what inputs, and the resulting outcome.",
+    "tags": [
+      "cca-f",
+      "agent-sdk",
+      "mcp",
+      "customer-support"
+    ]
+  },
+  {
+    "id": "cca-multi-agent-research",
+    "title": "Multi-Agent Research Coordinator",
+    "stem": "You are building a research workflow on the Claude Agent SDK that synthesizes a written briefing on a technical topic from primary sources. A main coordinator agent kicks off three parallel research subagents — each one investigates the topic from a different angle (academic literature, industry reports, recent news) — and a final synthesis subagent stitches their findings into a single briefing document. Subagents are defined in `.claude/agents/` and invoked via the Agent tool. The workflow has been running for two weeks; you have transcripts of ~50 sessions to inspect.",
+    "tags": [
+      "cca-f",
+      "agent-sdk",
+      "subagents",
+      "research"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-customer-support-resolution-agent",
+    "title": "Customer support resolution agent",
+    "stem": "You are building a customer support resolution agent using the Claude Agent SDK. The agent handles high-ambiguity requests like returns, billing disputes, and account issues. It has access to your backend systems through custom MCP tools (`get_customer`, `lookup_order`, `process_refund`, `escalate_to_human`). Your target is 80%+ first-contact resolution while knowing when to escalate.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-multi-agent-research-system",
+    "title": "Multi-agent research system",
+    "stem": "You are building a multi-agent research system using the Claude Agent SDK. A coordinator agent delegates to specialized subagents: one searches the web, one analyzes documents, one synthesizes findings, and one generates reports. The system researches topics and produces comprehensive, cited reports.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-using-claude-code-to-accelerate-software",
+    "title": "You are using Claude Code to accelerate software development.",
+    "stem": "You are using Claude Code to accelerate software development. Your team uses it for code generation, refactoring, debugging, and documentation. You need to integrate it into your development workflow with custom commands, CLAUDE.md configurations, and understand when to use plan mode vs direct execution.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-structured-data-extraction-system",
+    "title": "Structured data extraction system",
+    "stem": "You are building a structured data extraction system using Claude. The system extracts information from unstructured documents (invoices, contracts, reports), validates output using JSON schemas, and maintains high accuracy. It must handle edge cases gracefully and integrate with downstream systems.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-developer-productivity-tools-using-the",
+    "title": "You are building developer productivity tools using the Claude Agent SDK.",
+    "stem": "You are building developer productivity tools using the Claude Agent SDK. The agent helps engineers explore unfamiliar codebases, understand legacy systems, generate boilerplate code, and automate repetitive tasks. It uses the built-in tools (Read, Write, Edit, Bash, Grep, Glob) and integrates with Model Context Protocol (MCP) servers.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-integrating-claude-code-into-your-ci",
+    "title": "You are integrating Claude Code into your CI/CD pipeline.",
+    "stem": "You are integrating Claude Code into your CI/CD pipeline. The system runs automated code reviews, generates test cases, and provides feedback on pull requests. You need to design prompts that provide actionable feedback and minimize false positives.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-customer-support-resolution-agent-2",
+    "title": "Customer support resolution agent",
+    "stem": "You are building a customer support resolution agent using the Claude Agent SDK. The agent handles returns, billing disputes, and account issues. It has MCP tools (`get_customer`, `lookup_order`, `process_refund`, `update_account`, `escalate_to_human`). Your target is 80%+ first-contact resolution.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-structured-data-extraction-system-2",
+    "title": "Structured data extraction system",
+    "stem": "You are building a structured data extraction system using Claude. The system extracts information from contracts, medical records, and financial statements. It validates output using JSON schemas and routes low-confidence extractions to human reviewers.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-an-enterprise-knowledge-management-agent",
+    "title": "Enterprise knowledge management agent",
+    "stem": "You are building an enterprise knowledge management agent using the Claude Agent SDK. The agent helps employees find internal documentation, answer policy questions, locate subject matter experts, and summarize meeting notes. It uses built-in tools (Read, Write, Edit, Bash, Grep, Glob) and integrates with Model Context Protocol (MCP) servers for Confluence, SharePoint, and internal directory services.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-an-ai-powered-shopping-assistant",
+    "title": "AI-powered shopping assistant",
+    "stem": "You are building an AI-powered shopping assistant using the Claude Agent SDK. The agent helps customers find products, compare features, check inventory, apply discounts, and process orders. It has MCP tools (`search_products`, `check_inventory`, `apply_discount`, `create_order`, `get_recommendations`). Your target is 75%+ conversion rate on assisted sessions.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-patient-intake-assistant-using",
+    "title": "Patient intake assistant",
+    "stem": "You are building a patient intake assistant using the Claude Agent SDK. The agent handles appointment scheduling, symptom triage, insurance verification, and pre-visit questionnaires. It has MCP tools (`check_availability`, `book_appointment`, `verify_insurance`, `collect_symptoms`, `escalate_to_clinician`). Your target is 90%+ patient satisfaction with intake experience.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-compliance-monitoring-system-using",
+    "title": "Compliance monitoring system",
+    "stem": "You are building a compliance monitoring system using Claude. The system extracts information from regulatory filings, transaction records, and audit reports. It validates output using JSON schemas, flags potential violations, and routes high-risk findings to human compliance officers.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-legal-document-review-agent",
+    "title": "Legal document review agent",
+    "stem": "You are building a legal document review agent using the Claude Agent SDK. The agent helps law firms analyze contracts, identify risky clauses, extract key terms, and compare documents against standard templates. It uses built-in tools (Read, Write, Edit, Bash, Grep, Glob) and integrates with Model Context Protocol (MCP) servers for legal databases, case law repositories, and document management systems.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-supply-chain-management-agent",
+    "title": "Supply chain management agent",
+    "stem": "You are building a supply chain management agent using the Claude Agent SDK. The agent helps operations teams track inventory levels, predict stockouts, manage supplier relationships, and optimize reorder points. It has MCP tools (`check_inventory`, `predict_demand`, `contact_supplier`, `create_purchase_order`, `track_shipment`). Your target is 95%+ inventory accuracy and 90%+ on-time fulfillment.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-an-educational-content-creation-agent",
+    "title": "Educational content creation agent",
+    "stem": "You are building an educational content creation agent using the Claude Agent SDK. The agent helps educators generate lesson plans, create assessments, adapt content for different learning levels, and align materials with curriculum standards. It has MCP tools (`search_standards`, `generate_lesson`, `create_assessment`, `adapt_content`, `validate_alignment`). Your target is 85%+ educator satisfaction and 90%+ standards alignment accuracy.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  },
+  {
+    "id": "cca-ha-you-are-building-a-real-estate-analysis-system",
+    "title": "Real estate analysis system",
+    "stem": "You are building a real estate analysis system using Claude. The system extracts information from property listings, appraisal reports, and market analyses. It validates output using JSON schemas, flags potential valuation issues, and routes high-risk findings to human appraisers.",
+    "tags": [
+      "cca-f",
+      "curated",
+      "haytamaroui"
+    ]
+  }
+]

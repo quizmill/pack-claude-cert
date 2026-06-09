@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "claude-cert",
+  "title": "Claude Cert Practice",
+  "description": "Unofficial Claude Certified Architect (Foundations) practice — community-curated multiple-choice bank with per-question attribution.",
+  "homeSubtitle": "Architect Foundations — keep building.",
+  "themeColor": "#1e3a5f",
+  "categories": [
+    {
+      "key": "agentic-architecture",
+      "label": "Agentic Architecture & Orchestration",
+      "shortLabel": "Agentic",
+      "weight": 0.27
+    },
+    {
+      "key": "claude-code-workflows",
+      "label": "Claude Code Configuration & Workflows",
+      "shortLabel": "Claude Code",
+      "weight": 0.2
+    },
+    {
+      "key": "prompt-engineering",
+      "label": "Prompt Engineering & Structured Output",
+      "shortLabel": "Prompt Eng",
+      "weight": 0.2
+    },
+    {
+      "key": "tool-design-mcp",
+      "label": "Tool Design & MCP Integration",
+      "shortLabel": "Tools & MCP",
+      "weight": 0.18
+    },
+    {
+      "key": "context-reliability",
+      "label": "Context Management & Reliability",
+      "shortLabel": "Context",
+      "weight": 0.15
+    }
+  ]
+}
