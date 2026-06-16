@@ -1,0 +1,41 @@
+name: Deploy
+
+# Build this learning pack into a static app on the quizmill engine and
+# publish it to Cloudflare Pages (project `quizmill-claude-cert` →
+# claude-cert.quizmill.dev). The build+deploy recipe is shared across all
+# quizmill pack apps and lives in the engine repo
+# (quizmill/quizmill/.github/workflows/deploy-pack.yml) — this file just
+# wires up the triggers and secrets.
+#
+# Triggers:
+#   push to main          — content changed, redeploy now
+#   repository_dispatch   — the engine shipped a new version (fanned out by
+#     (engine-update)       the engine's Release workflow); rebuild on that
+#                           exact version
+#   schedule (daily)      — safety net: picks up engine releases even if a
+#                           dispatch was missed
+#   workflow_dispatch     — manual
+#
+# Required repo secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN                   token with "Cloudflare Pages — Edit"
+#   CLOUDFLARE_ACCOUNT_ID                  70b494550992cda97e893fab035f7e9a
+#   NEXT_PUBLIC_SUPABASE_URL               https://hddqsimdhulexdkbibfx.supabase.co
+#   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY   sb_publishable_… (public-safe; RLS guards)
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [engine-update]
+  schedule:
+    - cron: '17 6 * * *' # 06:17 UTC daily
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: quizmill/quizmill/.github/workflows/deploy-pack.yml@main
+    with:
+      project: quizmill-claude-cert
+      app: claude-cert-app
+      engine: ${{ github.event.client_payload.version || 'latest' }}
+    secrets: inherit
