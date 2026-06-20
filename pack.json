@@ -36,5 +36,10 @@
       "shortLabel": "Context",
       "weight": 0.15
     }
-  ]
+  ],
+  "exam": {
+    "label": "CCA-F exam",
+    "passPct": 72,
+    "scaled": true
+  }
 }
