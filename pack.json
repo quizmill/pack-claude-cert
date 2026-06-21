@@ -10,30 +10,35 @@
       "key": "agentic-architecture",
       "label": "Agentic Architecture & Orchestration",
       "shortLabel": "Agentic",
+      "icon": "🤖",
       "weight": 0.27
     },
     {
       "key": "claude-code-workflows",
       "label": "Claude Code Configuration & Workflows",
       "shortLabel": "Claude Code",
+      "icon": "💻",
       "weight": 0.2
     },
     {
       "key": "prompt-engineering",
       "label": "Prompt Engineering & Structured Output",
       "shortLabel": "Prompt Eng",
+      "icon": "✍️",
       "weight": 0.2
     },
     {
       "key": "tool-design-mcp",
       "label": "Tool Design & MCP Integration",
       "shortLabel": "Tools & MCP",
+      "icon": "🧰",
       "weight": 0.18
     },
     {
       "key": "context-reliability",
       "label": "Context Management & Reliability",
       "shortLabel": "Context",
+      "icon": "🧠",
       "weight": 0.15
     }
   ],
