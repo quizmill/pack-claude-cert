@@ -5010,7 +5010,7 @@
       }
     ],
     "correctKey": "A",
-    "explanation": "Claude Code uses a `.mcp.json` file at the project root for project-scoped MCP server configuration. This file is loaded only when Claude Code is launched from within that project directory, ensuring the servers defined there are not exposed in other projects.\n\n**Why the other options are wrong:**\n- B: ~/.claude/settings.json stores user-level Claude Code settings, not MCP server definitions. Placing MCP config here would not scope it to a single project.\n- C: ~/.claude/mcp-servers.json (or equivalent user-scope config under ~/.claude/) applies to all projects for the current user — the opposite of project-scoped behavior.\n- D: /etc/claude/ is not a recognized Claude Code configuration path and would not be loaded by Claude Code under any normal operating conditions.\n\nReferences:\n- https://docs.anthropic.com/en/docs/claude-code/mcp\n- https://docs.anthropic.com/en/docs/claude-code/settings",
+    "explanation": "Claude Code uses a `.mcp.json` file at the project root for project-scoped MCP server configuration. This file is loaded only when Claude Code is launched from within that project directory, ensuring the servers defined there are not exposed in other projects.\n\n**Why the other options are wrong:**\n- B: ~/.claude/settings.json stores user-level Claude Code settings, not MCP server definitions. Placing MCP config here would not scope it to a single project.\n- C: ~/.claude/mcp-servers.json is not a real Claude Code configuration path — user-scoped MCP servers live in ~/.claude.json — and user-scoped config applies to all projects for the current user, the opposite of project-scoped behavior.\n- D: /etc/claude/ is not a recognized Claude Code configuration path and would not be loaded by Claude Code under any normal operating conditions.\n\nReferences:\n- https://docs.anthropic.com/en/docs/claude-code/mcp\n- https://docs.anthropic.com/en/docs/claude-code/settings",
     "source": "curated",
     "sourceRef": "https://github.com/Connectry-io/connectrylab-architect-cert-mcp/blob/master/src/data/questions/domain-2.json",
     "reviewStatus": "draft",
@@ -5043,11 +5043,11 @@
       },
       {
         "key": "D",
-        "text": "User-scoped: the MCP configuration stored under ~/.claude/"
+        "text": "User-scoped: the MCP configuration stored in ~/.claude.json"
       }
     ],
     "correctKey": "D",
-    "explanation": "User-scoped MCP server configuration is stored under ~/.claude/ and applies to all Claude Code sessions for that user, regardless of which project directory is active. This is the correct scope for servers that should always be available.\n\n**Why the other options are wrong:**\n- A: Project-scoped .mcp.json only activates when Claude Code runs in that specific project directory. Duplicating the config in every repository is error-prone and violates the DRY principle.\n- B: Claude Code does not define a system-scoped /usr/local/etc/claude/mcp.json configuration path. This path would be silently ignored.\n- C: Claude Code does not support an MCP_SERVERS environment variable for defining server configurations. Environment variables are used for expanding secrets inside .mcp.json, not for defining server lists.\n\nReferences:\n- https://docs.anthropic.com/en/docs/claude-code/mcp\n- https://docs.anthropic.com/en/docs/claude-code/settings",
+    "explanation": "User-scoped MCP server configuration is stored in ~/.claude.json and applies to all Claude Code sessions for that user, regardless of which project directory is active. This is the correct scope for servers that should always be available.\n\n**Why the other options are wrong:**\n- A: Project-scoped .mcp.json only activates when Claude Code runs in that specific project directory. Duplicating the config in every repository is error-prone and violates the DRY principle.\n- B: Claude Code does not define a system-scoped /usr/local/etc/claude/mcp.json configuration path. This path would be silently ignored.\n- C: Claude Code does not support an MCP_SERVERS environment variable for defining server configurations. Environment variables are used for expanding secrets inside .mcp.json, not for defining server lists.\n\nReferences:\n- https://docs.anthropic.com/en/docs/claude-code/mcp\n- https://docs.anthropic.com/en/docs/claude-code/settings",
     "source": "curated",
     "sourceRef": "https://github.com/Connectry-io/connectrylab-architect-cert-mcp/blob/master/src/data/questions/domain-2.json",
     "reviewStatus": "draft",
@@ -5323,7 +5323,7 @@
     "id": "cca-q-cn-2-4-hard-1",
     "categoryKey": "tool-design-mcp",
     "difficulty": 4,
-    "prompt": "**Situation:** An enterprise team has both a project-scoped .mcp.json at the repository root and a user-scoped MCP server configuration under ~/.claude/. Both configurations define an MCP server with the same name \"docs-search\" but pointing to different endpoints. A developer opens Claude Code in the project directory and invokes the docs-search server.\n\nWhich server will Claude Code use, and what principle governs the resolution of this naming conflict?",
+    "prompt": "**Situation:** An enterprise team has both a project-scoped .mcp.json at the repository root and a user-scoped MCP server configuration in ~/.claude.json. Both configurations define an MCP server with the same name \"docs-search\" but pointing to different endpoints. A developer opens Claude Code in the project directory and invokes the docs-search server.\n\nWhich server will Claude Code use, and what principle governs the resolution of this naming conflict?",
     "options": [
       {
         "key": "A",
@@ -5343,7 +5343,7 @@
       }
     ],
     "correctKey": "C",
-    "explanation": "Claude Code applies a precedence hierarchy where project-scoped configuration (.mcp.json) overrides user-scoped configuration (~/.claude/) for servers with the same name when the project is active. This allows project maintainers to pin specific server versions or endpoints without being overridden by a developer's personal defaults.\n\n**Why the other options are wrong:**\n- A: User-scoped configuration does not have higher precedence than project-scoped configuration. The precedence order is designed so that the most specific (project) scope wins over the more general (user) scope.\n- B: Claude Code does not halt on naming conflicts between scopes. It resolves them deterministically using its precedence rules rather than requiring manual intervention.\n- D: Claude Code does not expose namespaced identifiers for same-named servers from different scopes. The conflict is resolved by scope precedence, not by presenting both to the model simultaneously.\n\nReferences:\n- https://docs.anthropic.com/en/docs/claude-code/mcp\n- https://docs.anthropic.com/en/docs/claude-code/settings",
+    "explanation": "Claude Code applies a precedence hierarchy where project-scoped configuration (.mcp.json) overrides user-scoped configuration (~/.claude.json) for servers with the same name when the project is active. This allows project maintainers to pin specific server versions or endpoints without being overridden by a developer's personal defaults.\n\n**Why the other options are wrong:**\n- A: User-scoped configuration does not have higher precedence than project-scoped configuration. The precedence order is designed so that the most specific (project) scope wins over the more general (user) scope.\n- B: Claude Code does not halt on naming conflicts between scopes. It resolves them deterministically using its precedence rules rather than requiring manual intervention.\n- D: Claude Code does not expose namespaced identifiers for same-named servers from different scopes. The conflict is resolved by scope precedence, not by presenting both to the model simultaneously.\n\nReferences:\n- https://docs.anthropic.com/en/docs/claude-code/mcp\n- https://docs.anthropic.com/en/docs/claude-code/settings",
     "source": "curated",
     "sourceRef": "https://github.com/Connectry-io/connectrylab-architect-cert-mcp/blob/master/src/data/questions/domain-2.json",
     "reviewStatus": "draft",

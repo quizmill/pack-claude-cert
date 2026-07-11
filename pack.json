@@ -43,7 +43,7 @@
     }
   ],
   "exam": {
-    "label": "CCA-F exam",
+    "label": "CCAR-F exam",
     "passPct": 72,
     "scaled": true
   }
