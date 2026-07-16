@@ -1,0 +1,3 @@
+# Build output — the deploy workflow builds the static app into this
+# directory inside the repo checkout (npx quizmill build .).
+claude-cert-app/
