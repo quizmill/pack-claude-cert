@@ -70,13 +70,6 @@ publicly on LinkedIn:
 - <https://www.linkedin.com/in/purcellmatthew>
 - <https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/>
 
-**These questions are © Matthew Purcell and are NOT covered by this repo's MIT
-license.** They were shared free for exam preparation but carry no
-redistribution grant. They are included here **for private study only**, in a
-private (unpublished) repository, and must not be redistributed or included in
-any public or shipped build of this pack. Remove this question set before making
-the repository or app public.
-
 The author states the set is original material written against Anthropic's public
 exam guide — **not** actual exam content, which is under NDA.
 
