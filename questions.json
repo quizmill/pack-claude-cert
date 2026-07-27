@@ -32,7 +32,8 @@
       "tool-descriptions",
       "root-cause",
       "tool-routing"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-escalation-triggers",
@@ -68,7 +69,8 @@
       "escalation",
       "decision-rules",
       "root-cause"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-strict-tool-use",
@@ -103,7 +105,8 @@
       "strict-tool-use",
       "structured-output",
       "schema"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-subagent-summary-shape",
@@ -138,7 +141,8 @@
       "subagents",
       "context-window",
       "architecture"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-subagent-tool-restriction",
@@ -174,7 +178,8 @@
       "permissions",
       "tool-allowlist",
       "declarative"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-easy-1",
@@ -211,7 +216,8 @@
       "domain-1",
       "easy",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-easy-2",
@@ -248,7 +254,8 @@
       "domain-1",
       "easy",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-easy-3",
@@ -285,7 +292,8 @@
       "domain-1",
       "easy",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-easy-4",
@@ -322,7 +330,8 @@
       "domain-1",
       "easy",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-medium-1",
@@ -359,7 +368,8 @@
       "domain-1",
       "medium",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-medium-2",
@@ -396,7 +406,8 @@
       "domain-1",
       "medium",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-medium-3",
@@ -433,7 +444,8 @@
       "domain-1",
       "medium",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-medium-4",
@@ -470,7 +482,8 @@
       "domain-1",
       "medium",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-medium-5",
@@ -507,7 +520,8 @@
       "domain-1",
       "medium",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-hard-1",
@@ -544,7 +558,8 @@
       "domain-1",
       "hard",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-hard-2",
@@ -581,7 +596,8 @@
       "domain-1",
       "hard",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-hard-3",
@@ -618,7 +634,8 @@
       "domain-1",
       "hard",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-1-hard-4",
@@ -655,7 +672,8 @@
       "domain-1",
       "hard",
       "task-1.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-easy-1",
@@ -692,7 +710,8 @@
       "domain-1",
       "easy",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-easy-2",
@@ -729,7 +748,8 @@
       "domain-1",
       "easy",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-easy-3",
@@ -766,7 +786,8 @@
       "domain-1",
       "easy",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-easy-4",
@@ -803,7 +824,8 @@
       "domain-1",
       "easy",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-medium-2",
@@ -840,7 +862,8 @@
       "domain-1",
       "medium",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-medium-3",
@@ -877,7 +900,8 @@
       "domain-1",
       "medium",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-medium-4",
@@ -914,7 +938,8 @@
       "domain-1",
       "medium",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-medium-5",
@@ -951,7 +976,8 @@
       "domain-1",
       "medium",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-medium-6",
@@ -988,7 +1014,8 @@
       "domain-1",
       "medium",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-hard-2",
@@ -1025,7 +1052,8 @@
       "domain-1",
       "hard",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-hard-3",
@@ -1062,7 +1090,8 @@
       "domain-1",
       "hard",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-hard-4",
@@ -1099,7 +1128,8 @@
       "domain-1",
       "hard",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-2-hard-5",
@@ -1136,7 +1166,8 @@
       "domain-1",
       "hard",
       "task-1.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-easy-1",
@@ -1173,7 +1204,8 @@
       "domain-1",
       "easy",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-easy-2",
@@ -1210,7 +1242,8 @@
       "domain-1",
       "easy",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-easy-3",
@@ -1247,7 +1280,8 @@
       "domain-1",
       "easy",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-easy-4",
@@ -1284,7 +1318,8 @@
       "domain-1",
       "easy",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-medium-1",
@@ -1321,7 +1356,8 @@
       "domain-1",
       "medium",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-medium-2",
@@ -1358,7 +1394,8 @@
       "domain-1",
       "medium",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-medium-3",
@@ -1395,7 +1432,8 @@
       "domain-1",
       "medium",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-medium-4",
@@ -1432,7 +1470,8 @@
       "domain-1",
       "medium",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-medium-5",
@@ -1469,7 +1508,8 @@
       "domain-1",
       "medium",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-hard-1",
@@ -1506,7 +1546,8 @@
       "domain-1",
       "hard",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-hard-2",
@@ -1543,7 +1584,8 @@
       "domain-1",
       "hard",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-hard-3",
@@ -1580,7 +1622,8 @@
       "domain-1",
       "hard",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-3-hard-4",
@@ -1617,7 +1660,8 @@
       "domain-1",
       "hard",
       "task-1.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-easy-1",
@@ -1654,7 +1698,8 @@
       "domain-1",
       "easy",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-easy-2",
@@ -1691,7 +1736,8 @@
       "domain-1",
       "easy",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-easy-3",
@@ -1728,7 +1774,8 @@
       "domain-1",
       "easy",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-easy-4",
@@ -1765,7 +1812,8 @@
       "domain-1",
       "easy",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-medium-1",
@@ -1802,7 +1850,8 @@
       "domain-1",
       "medium",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-medium-2",
@@ -1839,7 +1888,8 @@
       "domain-1",
       "medium",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-medium-3",
@@ -1876,7 +1926,8 @@
       "domain-1",
       "medium",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-medium-4",
@@ -1913,7 +1964,8 @@
       "domain-1",
       "medium",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-medium-5",
@@ -1950,7 +2002,8 @@
       "domain-1",
       "medium",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-hard-1",
@@ -1987,7 +2040,8 @@
       "domain-1",
       "hard",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-hard-2",
@@ -2024,7 +2078,8 @@
       "domain-1",
       "hard",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-hard-3",
@@ -2061,7 +2116,8 @@
       "domain-1",
       "hard",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-4-hard-4",
@@ -2098,7 +2154,8 @@
       "domain-1",
       "hard",
       "task-1.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-easy-1",
@@ -2135,7 +2192,8 @@
       "domain-1",
       "easy",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-easy-2",
@@ -2172,7 +2230,8 @@
       "domain-1",
       "easy",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-easy-3",
@@ -2209,7 +2268,8 @@
       "domain-1",
       "easy",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-easy-4",
@@ -2246,7 +2306,8 @@
       "domain-1",
       "easy",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-medium-1",
@@ -2283,7 +2344,8 @@
       "domain-1",
       "medium",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-medium-2",
@@ -2320,7 +2382,8 @@
       "domain-1",
       "medium",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-medium-3",
@@ -2357,7 +2420,8 @@
       "domain-1",
       "medium",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-medium-4",
@@ -2394,7 +2458,8 @@
       "domain-1",
       "medium",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-medium-5",
@@ -2431,7 +2496,8 @@
       "domain-1",
       "medium",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-hard-1",
@@ -2468,7 +2534,8 @@
       "domain-1",
       "hard",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-hard-2",
@@ -2505,7 +2572,8 @@
       "domain-1",
       "hard",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-hard-3",
@@ -2542,7 +2610,8 @@
       "domain-1",
       "hard",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-5-hard-4",
@@ -2579,7 +2648,8 @@
       "domain-1",
       "hard",
       "task-1.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-easy-1",
@@ -2616,7 +2686,8 @@
       "domain-1",
       "easy",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-easy-2",
@@ -2653,7 +2724,8 @@
       "domain-1",
       "easy",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-easy-3",
@@ -2690,7 +2762,8 @@
       "domain-1",
       "easy",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-easy-4",
@@ -2727,7 +2800,8 @@
       "domain-1",
       "easy",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-medium-1",
@@ -2764,7 +2838,8 @@
       "domain-1",
       "medium",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-medium-2",
@@ -2801,7 +2876,8 @@
       "domain-1",
       "medium",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-medium-3",
@@ -2838,7 +2914,8 @@
       "domain-1",
       "medium",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-medium-4",
@@ -2875,7 +2952,8 @@
       "domain-1",
       "medium",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-medium-5",
@@ -2912,7 +2990,8 @@
       "domain-1",
       "medium",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-hard-1",
@@ -2949,7 +3028,8 @@
       "domain-1",
       "hard",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-hard-2",
@@ -2986,7 +3066,8 @@
       "domain-1",
       "hard",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-hard-3",
@@ -3023,7 +3104,8 @@
       "domain-1",
       "hard",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-6-hard-4",
@@ -3060,7 +3142,8 @@
       "domain-1",
       "hard",
       "task-1.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-easy-1",
@@ -3097,7 +3180,8 @@
       "domain-1",
       "easy",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-easy-2",
@@ -3134,7 +3218,8 @@
       "domain-1",
       "easy",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-easy-3",
@@ -3171,7 +3256,8 @@
       "domain-1",
       "easy",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-easy-4",
@@ -3208,7 +3294,8 @@
       "domain-1",
       "easy",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-medium-1",
@@ -3245,7 +3332,8 @@
       "domain-1",
       "medium",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-medium-2",
@@ -3282,7 +3370,8 @@
       "domain-1",
       "medium",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-medium-3",
@@ -3319,7 +3408,8 @@
       "domain-1",
       "medium",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-medium-4",
@@ -3356,7 +3446,8 @@
       "domain-1",
       "medium",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-medium-5",
@@ -3393,7 +3484,8 @@
       "domain-1",
       "medium",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-hard-1",
@@ -3430,7 +3522,8 @@
       "domain-1",
       "hard",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-hard-2",
@@ -3467,7 +3560,8 @@
       "domain-1",
       "hard",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-hard-3",
@@ -3504,7 +3598,8 @@
       "domain-1",
       "hard",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-1-7-hard-4",
@@ -3541,7 +3636,8 @@
       "domain-1",
       "hard",
       "task-1.7"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-easy-1",
@@ -3578,7 +3674,8 @@
       "domain-2",
       "easy",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-easy-2",
@@ -3615,7 +3712,8 @@
       "domain-2",
       "easy",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-easy-3",
@@ -3652,7 +3750,8 @@
       "domain-2",
       "easy",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-easy-4",
@@ -3689,7 +3788,8 @@
       "domain-2",
       "easy",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-medium-1",
@@ -3726,7 +3826,8 @@
       "domain-2",
       "medium",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-medium-2",
@@ -3763,7 +3864,8 @@
       "domain-2",
       "medium",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-medium-3",
@@ -3800,7 +3902,8 @@
       "domain-2",
       "medium",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-medium-4",
@@ -3837,7 +3940,8 @@
       "domain-2",
       "medium",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-medium-5",
@@ -3874,7 +3978,8 @@
       "domain-2",
       "medium",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-hard-1",
@@ -3911,7 +4016,8 @@
       "domain-2",
       "hard",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-hard-2",
@@ -3948,7 +4054,8 @@
       "domain-2",
       "hard",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-hard-3",
@@ -3985,7 +4092,8 @@
       "domain-2",
       "hard",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-1-hard-4",
@@ -4022,7 +4130,8 @@
       "domain-2",
       "hard",
       "task-2.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-easy-1",
@@ -4059,7 +4168,8 @@
       "domain-2",
       "easy",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-easy-2",
@@ -4096,7 +4206,8 @@
       "domain-2",
       "easy",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-easy-3",
@@ -4133,7 +4244,8 @@
       "domain-2",
       "easy",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-easy-4",
@@ -4170,7 +4282,8 @@
       "domain-2",
       "easy",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-medium-1",
@@ -4207,7 +4320,8 @@
       "domain-2",
       "medium",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-medium-2",
@@ -4244,7 +4358,8 @@
       "domain-2",
       "medium",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-medium-3",
@@ -4281,7 +4396,8 @@
       "domain-2",
       "medium",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-medium-4",
@@ -4318,7 +4434,8 @@
       "domain-2",
       "medium",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-medium-5",
@@ -4355,7 +4472,8 @@
       "domain-2",
       "medium",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-hard-1",
@@ -4392,7 +4510,8 @@
       "domain-2",
       "hard",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-hard-2",
@@ -4429,7 +4548,8 @@
       "domain-2",
       "hard",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-hard-3",
@@ -4466,7 +4586,8 @@
       "domain-2",
       "hard",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-2-hard-4",
@@ -4503,7 +4624,8 @@
       "domain-2",
       "hard",
       "task-2.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-easy-1",
@@ -4540,7 +4662,8 @@
       "domain-2",
       "easy",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-easy-2",
@@ -4577,7 +4700,8 @@
       "domain-2",
       "easy",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-easy-3",
@@ -4614,7 +4738,8 @@
       "domain-2",
       "easy",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-easy-4",
@@ -4651,7 +4776,8 @@
       "domain-2",
       "easy",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-medium-1",
@@ -4688,7 +4814,8 @@
       "domain-2",
       "medium",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-medium-2",
@@ -4725,7 +4852,8 @@
       "domain-2",
       "medium",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-medium-3",
@@ -4762,7 +4890,8 @@
       "domain-2",
       "medium",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-medium-4",
@@ -4799,7 +4928,8 @@
       "domain-2",
       "medium",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-medium-5",
@@ -4836,7 +4966,8 @@
       "domain-2",
       "medium",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-hard-1",
@@ -4873,7 +5004,8 @@
       "domain-2",
       "hard",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-hard-2",
@@ -4910,7 +5042,8 @@
       "domain-2",
       "hard",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-hard-3",
@@ -4947,7 +5080,8 @@
       "domain-2",
       "hard",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-3-hard-4",
@@ -4984,7 +5118,8 @@
       "domain-2",
       "hard",
       "task-2.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-easy-1",
@@ -5021,7 +5156,8 @@
       "domain-2",
       "easy",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-easy-2",
@@ -5058,7 +5194,8 @@
       "domain-2",
       "easy",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-easy-3",
@@ -5095,7 +5232,8 @@
       "domain-2",
       "easy",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-easy-4",
@@ -5132,7 +5270,8 @@
       "domain-2",
       "easy",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-medium-1",
@@ -5169,7 +5308,8 @@
       "domain-2",
       "medium",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-medium-2",
@@ -5206,7 +5346,8 @@
       "domain-2",
       "medium",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-medium-3",
@@ -5243,7 +5384,8 @@
       "domain-2",
       "medium",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-medium-4",
@@ -5280,7 +5422,8 @@
       "domain-2",
       "medium",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-medium-5",
@@ -5317,7 +5460,8 @@
       "domain-2",
       "medium",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-hard-1",
@@ -5354,7 +5498,8 @@
       "domain-2",
       "hard",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-hard-2",
@@ -5391,7 +5536,8 @@
       "domain-2",
       "hard",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-hard-3",
@@ -5428,7 +5574,8 @@
       "domain-2",
       "hard",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-4-hard-4",
@@ -5465,7 +5612,8 @@
       "domain-2",
       "hard",
       "task-2.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-easy-1",
@@ -5502,7 +5650,8 @@
       "domain-2",
       "easy",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-easy-2",
@@ -5539,7 +5688,8 @@
       "domain-2",
       "easy",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-easy-3",
@@ -5576,7 +5726,8 @@
       "domain-2",
       "easy",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-easy-4",
@@ -5613,7 +5764,8 @@
       "domain-2",
       "easy",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-medium-1",
@@ -5650,7 +5802,8 @@
       "domain-2",
       "medium",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-medium-2",
@@ -5687,7 +5840,8 @@
       "domain-2",
       "medium",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-medium-3",
@@ -5724,7 +5878,8 @@
       "domain-2",
       "medium",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-medium-4",
@@ -5761,7 +5916,8 @@
       "domain-2",
       "medium",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-medium-5",
@@ -5798,7 +5954,8 @@
       "domain-2",
       "medium",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-hard-1",
@@ -5835,7 +5992,8 @@
       "domain-2",
       "hard",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-hard-2",
@@ -5872,7 +6030,8 @@
       "domain-2",
       "hard",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-hard-3",
@@ -5909,7 +6068,8 @@
       "domain-2",
       "hard",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-2-5-hard-4",
@@ -5946,7 +6106,8 @@
       "domain-2",
       "hard",
       "task-2.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-easy-1",
@@ -5983,7 +6144,8 @@
       "domain-3",
       "easy",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-easy-2",
@@ -6020,7 +6182,8 @@
       "domain-3",
       "easy",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-easy-3",
@@ -6057,7 +6220,8 @@
       "domain-3",
       "easy",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-easy-4",
@@ -6094,7 +6258,8 @@
       "domain-3",
       "easy",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-medium-1",
@@ -6131,7 +6296,8 @@
       "domain-3",
       "medium",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-medium-2",
@@ -6168,7 +6334,8 @@
       "domain-3",
       "medium",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-medium-3",
@@ -6205,7 +6372,8 @@
       "domain-3",
       "medium",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-medium-4",
@@ -6242,7 +6410,8 @@
       "domain-3",
       "medium",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-medium-5",
@@ -6279,7 +6448,8 @@
       "domain-3",
       "medium",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-hard-1",
@@ -6316,7 +6486,8 @@
       "domain-3",
       "hard",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-hard-2",
@@ -6353,7 +6524,8 @@
       "domain-3",
       "hard",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-hard-3",
@@ -6390,7 +6562,8 @@
       "domain-3",
       "hard",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-1-hard-4",
@@ -6427,7 +6600,8 @@
       "domain-3",
       "hard",
       "task-3.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-easy-1",
@@ -6464,7 +6638,8 @@
       "domain-3",
       "easy",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-easy-2",
@@ -6501,7 +6676,8 @@
       "domain-3",
       "easy",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-easy-3",
@@ -6538,7 +6714,8 @@
       "domain-3",
       "easy",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-easy-4",
@@ -6575,7 +6752,8 @@
       "domain-3",
       "easy",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-medium-1",
@@ -6612,7 +6790,8 @@
       "domain-3",
       "medium",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-medium-2",
@@ -6649,7 +6828,8 @@
       "domain-3",
       "medium",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-medium-3",
@@ -6686,7 +6866,8 @@
       "domain-3",
       "medium",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-medium-4",
@@ -6723,7 +6904,8 @@
       "domain-3",
       "medium",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-medium-5",
@@ -6760,7 +6942,8 @@
       "domain-3",
       "medium",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-hard-1",
@@ -6797,7 +6980,8 @@
       "domain-3",
       "hard",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-hard-2",
@@ -6834,7 +7018,8 @@
       "domain-3",
       "hard",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-hard-3",
@@ -6871,7 +7056,8 @@
       "domain-3",
       "hard",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-2-hard-4",
@@ -6908,7 +7094,8 @@
       "domain-3",
       "hard",
       "task-3.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-easy-1",
@@ -6945,7 +7132,8 @@
       "domain-3",
       "easy",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-easy-2",
@@ -6982,7 +7170,8 @@
       "domain-3",
       "easy",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-easy-3",
@@ -7019,7 +7208,8 @@
       "domain-3",
       "easy",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-easy-4",
@@ -7056,7 +7246,8 @@
       "domain-3",
       "easy",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-medium-1",
@@ -7093,7 +7284,8 @@
       "domain-3",
       "medium",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-medium-2",
@@ -7130,7 +7322,8 @@
       "domain-3",
       "medium",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-medium-3",
@@ -7167,7 +7360,8 @@
       "domain-3",
       "medium",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-medium-4",
@@ -7204,7 +7398,8 @@
       "domain-3",
       "medium",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-medium-5",
@@ -7241,7 +7436,8 @@
       "domain-3",
       "medium",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-hard-1",
@@ -7278,7 +7474,8 @@
       "domain-3",
       "hard",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-hard-2",
@@ -7315,7 +7512,8 @@
       "domain-3",
       "hard",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-hard-3",
@@ -7352,7 +7550,8 @@
       "domain-3",
       "hard",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-3-hard-4",
@@ -7389,7 +7588,8 @@
       "domain-3",
       "hard",
       "task-3.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-easy-1",
@@ -7426,7 +7626,8 @@
       "domain-3",
       "easy",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-easy-2",
@@ -7463,7 +7664,8 @@
       "domain-3",
       "easy",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-easy-3",
@@ -7500,7 +7702,8 @@
       "domain-3",
       "easy",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-easy-4",
@@ -7537,7 +7740,8 @@
       "domain-3",
       "easy",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-medium-1",
@@ -7574,7 +7778,8 @@
       "domain-3",
       "medium",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-medium-2",
@@ -7611,7 +7816,8 @@
       "domain-3",
       "medium",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-medium-3",
@@ -7648,7 +7854,8 @@
       "domain-3",
       "medium",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-medium-4",
@@ -7685,7 +7892,8 @@
       "domain-3",
       "medium",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-medium-5",
@@ -7722,7 +7930,8 @@
       "domain-3",
       "medium",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-hard-1",
@@ -7759,7 +7968,8 @@
       "domain-3",
       "hard",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-hard-2",
@@ -7796,7 +8006,8 @@
       "domain-3",
       "hard",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-hard-3",
@@ -7833,7 +8044,8 @@
       "domain-3",
       "hard",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-4-hard-4",
@@ -7870,7 +8082,8 @@
       "domain-3",
       "hard",
       "task-3.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-easy-1",
@@ -7907,7 +8120,8 @@
       "domain-3",
       "easy",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-easy-2",
@@ -7944,7 +8158,8 @@
       "domain-3",
       "easy",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-easy-3",
@@ -7981,7 +8196,8 @@
       "domain-3",
       "easy",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-easy-4",
@@ -8018,7 +8234,8 @@
       "domain-3",
       "easy",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-medium-1",
@@ -8055,7 +8272,8 @@
       "domain-3",
       "medium",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-medium-2",
@@ -8092,7 +8310,8 @@
       "domain-3",
       "medium",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-medium-3",
@@ -8129,7 +8348,8 @@
       "domain-3",
       "medium",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-medium-4",
@@ -8166,7 +8386,8 @@
       "domain-3",
       "medium",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-medium-5",
@@ -8203,7 +8424,8 @@
       "domain-3",
       "medium",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-hard-1",
@@ -8240,7 +8462,8 @@
       "domain-3",
       "hard",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-hard-2",
@@ -8277,7 +8500,8 @@
       "domain-3",
       "hard",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-hard-3",
@@ -8314,7 +8538,8 @@
       "domain-3",
       "hard",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-5-hard-4",
@@ -8351,7 +8576,8 @@
       "domain-3",
       "hard",
       "task-3.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-easy-1",
@@ -8388,7 +8614,8 @@
       "domain-3",
       "easy",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-easy-2",
@@ -8425,7 +8652,8 @@
       "domain-3",
       "easy",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-easy-3",
@@ -8462,7 +8690,8 @@
       "domain-3",
       "easy",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-easy-4",
@@ -8499,7 +8728,8 @@
       "domain-3",
       "easy",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-medium-1",
@@ -8536,7 +8766,8 @@
       "domain-3",
       "medium",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-medium-2",
@@ -8573,7 +8804,8 @@
       "domain-3",
       "medium",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-medium-3",
@@ -8610,7 +8842,8 @@
       "domain-3",
       "medium",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-medium-4",
@@ -8647,7 +8880,8 @@
       "domain-3",
       "medium",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-medium-5",
@@ -8684,7 +8918,8 @@
       "domain-3",
       "medium",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-hard-1",
@@ -8721,7 +8956,8 @@
       "domain-3",
       "hard",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-hard-2",
@@ -8758,7 +8994,8 @@
       "domain-3",
       "hard",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-hard-3",
@@ -8795,7 +9032,8 @@
       "domain-3",
       "hard",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-3-6-hard-4",
@@ -8832,7 +9070,8 @@
       "domain-3",
       "hard",
       "task-3.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-easy-1",
@@ -8869,7 +9108,8 @@
       "domain-4",
       "easy",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-easy-2",
@@ -8906,7 +9146,8 @@
       "domain-4",
       "easy",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-easy-3",
@@ -8943,7 +9184,8 @@
       "domain-4",
       "easy",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-easy-4",
@@ -8980,7 +9222,8 @@
       "domain-4",
       "easy",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-medium-1",
@@ -9017,7 +9260,8 @@
       "domain-4",
       "medium",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-medium-2",
@@ -9054,7 +9298,8 @@
       "domain-4",
       "medium",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-medium-3",
@@ -9091,7 +9336,8 @@
       "domain-4",
       "medium",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-medium-4",
@@ -9128,7 +9374,8 @@
       "domain-4",
       "medium",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-medium-5",
@@ -9165,7 +9412,8 @@
       "domain-4",
       "medium",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-hard-1",
@@ -9202,7 +9450,8 @@
       "domain-4",
       "hard",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-hard-2",
@@ -9239,7 +9488,8 @@
       "domain-4",
       "hard",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-hard-3",
@@ -9276,7 +9526,8 @@
       "domain-4",
       "hard",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-1-hard-4",
@@ -9313,7 +9564,8 @@
       "domain-4",
       "hard",
       "task-4.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-easy-1",
@@ -9350,7 +9602,8 @@
       "domain-4",
       "easy",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-easy-2",
@@ -9387,7 +9640,8 @@
       "domain-4",
       "easy",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-easy-3",
@@ -9424,7 +9678,8 @@
       "domain-4",
       "easy",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-easy-4",
@@ -9461,7 +9716,8 @@
       "domain-4",
       "easy",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-medium-1",
@@ -9498,7 +9754,8 @@
       "domain-4",
       "medium",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-medium-2",
@@ -9535,7 +9792,8 @@
       "domain-4",
       "medium",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-medium-3",
@@ -9572,7 +9830,8 @@
       "domain-4",
       "medium",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-medium-4",
@@ -9609,7 +9868,8 @@
       "domain-4",
       "medium",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-medium-5",
@@ -9646,7 +9906,8 @@
       "domain-4",
       "medium",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-hard-1",
@@ -9683,7 +9944,8 @@
       "domain-4",
       "hard",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-hard-2",
@@ -9720,7 +9982,8 @@
       "domain-4",
       "hard",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-hard-3",
@@ -9757,7 +10020,8 @@
       "domain-4",
       "hard",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-2-hard-4",
@@ -9794,7 +10058,8 @@
       "domain-4",
       "hard",
       "task-4.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-easy-1",
@@ -9831,7 +10096,8 @@
       "domain-4",
       "easy",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-easy-2",
@@ -9868,7 +10134,8 @@
       "domain-4",
       "easy",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-easy-3",
@@ -9905,7 +10172,8 @@
       "domain-4",
       "easy",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-easy-4",
@@ -9942,7 +10210,8 @@
       "domain-4",
       "easy",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-medium-1",
@@ -9979,7 +10248,8 @@
       "domain-4",
       "medium",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-medium-2",
@@ -10016,7 +10286,8 @@
       "domain-4",
       "medium",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-medium-3",
@@ -10053,7 +10324,8 @@
       "domain-4",
       "medium",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-medium-4",
@@ -10090,7 +10362,8 @@
       "domain-4",
       "medium",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-medium-5",
@@ -10127,7 +10400,8 @@
       "domain-4",
       "medium",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-hard-1",
@@ -10164,7 +10438,8 @@
       "domain-4",
       "hard",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-hard-2",
@@ -10201,7 +10476,8 @@
       "domain-4",
       "hard",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-hard-3",
@@ -10238,7 +10514,8 @@
       "domain-4",
       "hard",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-3-hard-4",
@@ -10275,7 +10552,8 @@
       "domain-4",
       "hard",
       "task-4.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-easy-1",
@@ -10312,7 +10590,8 @@
       "domain-4",
       "easy",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-easy-2",
@@ -10349,7 +10628,8 @@
       "domain-4",
       "easy",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-easy-3",
@@ -10386,7 +10666,8 @@
       "domain-4",
       "easy",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-easy-4",
@@ -10423,7 +10704,8 @@
       "domain-4",
       "easy",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-medium-1",
@@ -10460,7 +10742,8 @@
       "domain-4",
       "medium",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-medium-2",
@@ -10497,7 +10780,8 @@
       "domain-4",
       "medium",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-medium-3",
@@ -10534,7 +10818,8 @@
       "domain-4",
       "medium",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-medium-4",
@@ -10571,7 +10856,8 @@
       "domain-4",
       "medium",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-medium-5",
@@ -10608,7 +10894,8 @@
       "domain-4",
       "medium",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-hard-1",
@@ -10645,7 +10932,8 @@
       "domain-4",
       "hard",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-hard-2",
@@ -10682,7 +10970,8 @@
       "domain-4",
       "hard",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-hard-3",
@@ -10719,7 +11008,8 @@
       "domain-4",
       "hard",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-4-hard-4",
@@ -10756,7 +11046,8 @@
       "domain-4",
       "hard",
       "task-4.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-easy-1",
@@ -10793,7 +11084,8 @@
       "domain-4",
       "easy",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-easy-2",
@@ -10830,7 +11122,8 @@
       "domain-4",
       "easy",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-easy-3",
@@ -10867,7 +11160,8 @@
       "domain-4",
       "easy",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-easy-4",
@@ -10904,7 +11198,8 @@
       "domain-4",
       "easy",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-medium-1",
@@ -10941,7 +11236,8 @@
       "domain-4",
       "medium",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-medium-2",
@@ -10978,7 +11274,8 @@
       "domain-4",
       "medium",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-medium-3",
@@ -11015,7 +11312,8 @@
       "domain-4",
       "medium",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-medium-4",
@@ -11052,7 +11350,8 @@
       "domain-4",
       "medium",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-medium-5",
@@ -11089,7 +11388,8 @@
       "domain-4",
       "medium",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-hard-1",
@@ -11126,7 +11426,8 @@
       "domain-4",
       "hard",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-hard-2",
@@ -11163,7 +11464,8 @@
       "domain-4",
       "hard",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-hard-3",
@@ -11200,7 +11502,8 @@
       "domain-4",
       "hard",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-5-hard-4",
@@ -11237,7 +11540,8 @@
       "domain-4",
       "hard",
       "task-4.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-easy-1",
@@ -11274,7 +11578,8 @@
       "domain-4",
       "easy",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-easy-2",
@@ -11311,7 +11616,8 @@
       "domain-4",
       "easy",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-easy-3",
@@ -11348,7 +11654,8 @@
       "domain-4",
       "easy",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-easy-4",
@@ -11385,7 +11692,8 @@
       "domain-4",
       "easy",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-medium-1",
@@ -11422,7 +11730,8 @@
       "domain-4",
       "medium",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-medium-2",
@@ -11459,7 +11768,8 @@
       "domain-4",
       "medium",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-medium-3",
@@ -11496,7 +11806,8 @@
       "domain-4",
       "medium",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-medium-4",
@@ -11533,7 +11844,8 @@
       "domain-4",
       "medium",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-medium-5",
@@ -11570,7 +11882,8 @@
       "domain-4",
       "medium",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-hard-1",
@@ -11607,7 +11920,8 @@
       "domain-4",
       "hard",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-hard-2",
@@ -11644,7 +11958,8 @@
       "domain-4",
       "hard",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-hard-3",
@@ -11681,7 +11996,8 @@
       "domain-4",
       "hard",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-4-6-hard-4",
@@ -11718,7 +12034,8 @@
       "domain-4",
       "hard",
       "task-4.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-easy-1",
@@ -11755,7 +12072,8 @@
       "domain-5",
       "easy",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-easy-2",
@@ -11792,7 +12110,8 @@
       "domain-5",
       "easy",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-easy-3",
@@ -11829,7 +12148,8 @@
       "domain-5",
       "easy",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-easy-4",
@@ -11866,7 +12186,8 @@
       "domain-5",
       "easy",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-medium-1",
@@ -11903,7 +12224,8 @@
       "domain-5",
       "medium",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-medium-2",
@@ -11940,7 +12262,8 @@
       "domain-5",
       "medium",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-medium-3",
@@ -11977,7 +12300,8 @@
       "domain-5",
       "medium",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-medium-4",
@@ -12014,7 +12338,8 @@
       "domain-5",
       "medium",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-medium-5",
@@ -12051,7 +12376,8 @@
       "domain-5",
       "medium",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-hard-1",
@@ -12088,7 +12414,8 @@
       "domain-5",
       "hard",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-hard-2",
@@ -12125,7 +12452,8 @@
       "domain-5",
       "hard",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-hard-3",
@@ -12162,7 +12490,8 @@
       "domain-5",
       "hard",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-1-hard-4",
@@ -12199,7 +12528,8 @@
       "domain-5",
       "hard",
       "task-5.1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-easy-1",
@@ -12236,7 +12566,8 @@
       "domain-5",
       "easy",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-easy-2",
@@ -12273,7 +12604,8 @@
       "domain-5",
       "easy",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-easy-3",
@@ -12310,7 +12642,8 @@
       "domain-5",
       "easy",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-easy-4",
@@ -12347,7 +12680,8 @@
       "domain-5",
       "easy",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-medium-1",
@@ -12384,7 +12718,8 @@
       "domain-5",
       "medium",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-medium-2",
@@ -12421,7 +12756,8 @@
       "domain-5",
       "medium",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-medium-3",
@@ -12458,7 +12794,8 @@
       "domain-5",
       "medium",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-medium-4",
@@ -12495,7 +12832,8 @@
       "domain-5",
       "medium",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-medium-5",
@@ -12532,7 +12870,8 @@
       "domain-5",
       "medium",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-hard-1",
@@ -12569,7 +12908,8 @@
       "domain-5",
       "hard",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-hard-2",
@@ -12606,7 +12946,8 @@
       "domain-5",
       "hard",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-hard-3",
@@ -12643,7 +12984,8 @@
       "domain-5",
       "hard",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-2-hard-4",
@@ -12680,7 +13022,8 @@
       "domain-5",
       "hard",
       "task-5.2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-easy-1",
@@ -12717,7 +13060,8 @@
       "domain-5",
       "easy",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-easy-2",
@@ -12754,7 +13098,8 @@
       "domain-5",
       "easy",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-easy-3",
@@ -12791,7 +13136,8 @@
       "domain-5",
       "easy",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-easy-4",
@@ -12828,7 +13174,8 @@
       "domain-5",
       "easy",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-medium-1",
@@ -12865,7 +13212,8 @@
       "domain-5",
       "medium",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-medium-2",
@@ -12902,7 +13250,8 @@
       "domain-5",
       "medium",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-medium-3",
@@ -12939,7 +13288,8 @@
       "domain-5",
       "medium",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-medium-4",
@@ -12976,7 +13326,8 @@
       "domain-5",
       "medium",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-medium-5",
@@ -13013,7 +13364,8 @@
       "domain-5",
       "medium",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-hard-1",
@@ -13050,7 +13402,8 @@
       "domain-5",
       "hard",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-hard-2",
@@ -13087,7 +13440,8 @@
       "domain-5",
       "hard",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-hard-3",
@@ -13124,7 +13478,8 @@
       "domain-5",
       "hard",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-3-hard-4",
@@ -13161,7 +13516,8 @@
       "domain-5",
       "hard",
       "task-5.3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-easy-1",
@@ -13198,7 +13554,8 @@
       "domain-5",
       "easy",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-easy-2",
@@ -13235,7 +13592,8 @@
       "domain-5",
       "easy",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-easy-3",
@@ -13272,7 +13630,8 @@
       "domain-5",
       "easy",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-easy-4",
@@ -13309,7 +13668,8 @@
       "domain-5",
       "easy",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-medium-1",
@@ -13346,7 +13706,8 @@
       "domain-5",
       "medium",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-medium-2",
@@ -13383,7 +13744,8 @@
       "domain-5",
       "medium",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-medium-3",
@@ -13420,7 +13782,8 @@
       "domain-5",
       "medium",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-medium-4",
@@ -13457,7 +13820,8 @@
       "domain-5",
       "medium",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-medium-5",
@@ -13494,7 +13858,8 @@
       "domain-5",
       "medium",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-hard-1",
@@ -13531,7 +13896,8 @@
       "domain-5",
       "hard",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-hard-2",
@@ -13568,7 +13934,8 @@
       "domain-5",
       "hard",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-hard-3",
@@ -13605,7 +13972,8 @@
       "domain-5",
       "hard",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-4-hard-4",
@@ -13642,7 +14010,8 @@
       "domain-5",
       "hard",
       "task-5.4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-easy-1",
@@ -13679,7 +14048,8 @@
       "domain-5",
       "easy",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-easy-2",
@@ -13716,7 +14086,8 @@
       "domain-5",
       "easy",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-easy-3",
@@ -13753,7 +14124,8 @@
       "domain-5",
       "easy",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-easy-4",
@@ -13790,7 +14162,8 @@
       "domain-5",
       "easy",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-medium-1",
@@ -13827,7 +14200,8 @@
       "domain-5",
       "medium",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-medium-2",
@@ -13864,7 +14238,8 @@
       "domain-5",
       "medium",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-medium-3",
@@ -13901,7 +14276,8 @@
       "domain-5",
       "medium",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-medium-4",
@@ -13938,7 +14314,8 @@
       "domain-5",
       "medium",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-medium-5",
@@ -13975,7 +14352,8 @@
       "domain-5",
       "medium",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-hard-1",
@@ -14012,7 +14390,8 @@
       "domain-5",
       "hard",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-hard-2",
@@ -14049,7 +14428,8 @@
       "domain-5",
       "hard",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-hard-3",
@@ -14086,7 +14466,8 @@
       "domain-5",
       "hard",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-5-hard-4",
@@ -14123,7 +14504,8 @@
       "domain-5",
       "hard",
       "task-5.5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-easy-1",
@@ -14160,7 +14542,8 @@
       "domain-5",
       "easy",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-easy-2",
@@ -14197,7 +14580,8 @@
       "domain-5",
       "easy",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-easy-3",
@@ -14234,7 +14618,8 @@
       "domain-5",
       "easy",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-easy-4",
@@ -14271,7 +14656,8 @@
       "domain-5",
       "easy",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-medium-1",
@@ -14308,7 +14694,8 @@
       "domain-5",
       "medium",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-medium-2",
@@ -14345,7 +14732,8 @@
       "domain-5",
       "medium",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-medium-3",
@@ -14382,7 +14770,8 @@
       "domain-5",
       "medium",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-medium-4",
@@ -14419,7 +14808,8 @@
       "domain-5",
       "medium",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-medium-5",
@@ -14456,7 +14846,8 @@
       "domain-5",
       "medium",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-hard-1",
@@ -14493,7 +14884,8 @@
       "domain-5",
       "hard",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-hard-2",
@@ -14530,7 +14922,8 @@
       "domain-5",
       "hard",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-hard-3",
@@ -14567,7 +14960,8 @@
       "domain-5",
       "hard",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-cn-5-6-hard-4",
@@ -14604,7 +14998,8 @@
       "domain-5",
       "hard",
       "task-5.6"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-01",
@@ -14641,7 +15036,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-02",
@@ -14678,7 +15074,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-03",
@@ -14715,7 +15112,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-04",
@@ -14752,7 +15150,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-05",
@@ -14789,7 +15188,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-06",
@@ -14826,7 +15226,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-07",
@@ -14863,7 +15264,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-08",
@@ -14900,7 +15302,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-09",
@@ -14937,7 +15340,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-10",
@@ -14974,7 +15378,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-11",
@@ -15011,7 +15416,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-12",
@@ -15048,7 +15454,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-13",
@@ -15085,7 +15492,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-14",
@@ -15122,7 +15530,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-15",
@@ -15159,7 +15568,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-16",
@@ -15196,7 +15606,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-17",
@@ -15233,7 +15644,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-18",
@@ -15270,7 +15682,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-19",
@@ -15307,7 +15720,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-20",
@@ -15344,7 +15758,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-21",
@@ -15381,7 +15796,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-22",
@@ -15418,7 +15834,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-23",
@@ -15455,7 +15872,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-24",
@@ -15492,7 +15910,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-25",
@@ -15529,7 +15948,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-26",
@@ -15566,7 +15986,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-27",
@@ -15603,7 +16024,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-28",
@@ -15640,7 +16062,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-29",
@@ -15677,7 +16100,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-30",
@@ -15714,7 +16138,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-31",
@@ -15751,7 +16176,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-32",
@@ -15788,7 +16214,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-33",
@@ -15825,7 +16252,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-34",
@@ -15862,7 +16290,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-35",
@@ -15899,7 +16328,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-36",
@@ -15936,7 +16366,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-37",
@@ -15973,7 +16404,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-38",
@@ -16010,7 +16442,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-39",
@@ -16047,7 +16480,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-40",
@@ -16084,7 +16518,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-41",
@@ -16121,7 +16556,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-42",
@@ -16158,7 +16594,8 @@
       "haytamaroui",
       "exam-1",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-43",
@@ -16195,7 +16632,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-44",
@@ -16232,7 +16670,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-45",
@@ -16269,7 +16708,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-46",
@@ -16306,7 +16746,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-47",
@@ -16343,7 +16784,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-48",
@@ -16380,7 +16822,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-49",
@@ -16417,7 +16860,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-50",
@@ -16454,7 +16898,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-51",
@@ -16491,7 +16936,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-52",
@@ -16528,7 +16974,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-53",
@@ -16565,7 +17012,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-54",
@@ -16602,7 +17050,8 @@
       "haytamaroui",
       "exam-1",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-55",
@@ -16639,7 +17088,8 @@
       "haytamaroui",
       "exam-1",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-56",
@@ -16676,7 +17126,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-57",
@@ -16713,7 +17164,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-58",
@@ -16750,7 +17202,8 @@
       "haytamaroui",
       "exam-1",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-59",
@@ -16787,7 +17240,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e1-60",
@@ -16824,7 +17278,8 @@
       "haytamaroui",
       "exam-1",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-01",
@@ -16861,7 +17316,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-02",
@@ -16898,7 +17354,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-03",
@@ -16935,7 +17392,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-04",
@@ -16972,7 +17430,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-05",
@@ -17009,7 +17468,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-06",
@@ -17046,7 +17506,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-07",
@@ -17083,7 +17544,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-08",
@@ -17120,7 +17582,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-09",
@@ -17157,7 +17620,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-10",
@@ -17194,7 +17658,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-11",
@@ -17231,7 +17696,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-12",
@@ -17268,7 +17734,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-13",
@@ -17305,7 +17772,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-14",
@@ -17342,7 +17810,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-15",
@@ -17379,7 +17848,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-16",
@@ -17416,7 +17886,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-17",
@@ -17453,7 +17924,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-18",
@@ -17490,7 +17962,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-19",
@@ -17527,7 +18000,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-20",
@@ -17564,7 +18038,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-21",
@@ -17601,7 +18076,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-22",
@@ -17638,7 +18114,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-23",
@@ -17675,7 +18152,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-24",
@@ -17712,7 +18190,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-25",
@@ -17749,7 +18228,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-26",
@@ -17786,7 +18266,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-27",
@@ -17823,7 +18304,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-28",
@@ -17860,7 +18342,8 @@
       "haytamaroui",
       "exam-2",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-29",
@@ -17897,7 +18380,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-30",
@@ -17934,7 +18418,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-31",
@@ -17971,7 +18456,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-32",
@@ -18008,7 +18494,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-33",
@@ -18045,7 +18532,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-34",
@@ -18082,7 +18570,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-35",
@@ -18119,7 +18608,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-36",
@@ -18156,7 +18646,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-37",
@@ -18193,7 +18684,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-38",
@@ -18230,7 +18722,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-39",
@@ -18267,7 +18760,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-40",
@@ -18304,7 +18798,8 @@
       "haytamaroui",
       "exam-2",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-41",
@@ -18341,7 +18836,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-42",
@@ -18378,7 +18874,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-43",
@@ -18415,7 +18912,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-44",
@@ -18452,7 +18950,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-45",
@@ -18489,7 +18988,8 @@
       "haytamaroui",
       "exam-2",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-46",
@@ -18526,7 +19026,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-47",
@@ -18563,7 +19064,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-48",
@@ -18600,7 +19102,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-49",
@@ -18637,7 +19140,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-50",
@@ -18674,7 +19178,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-51",
@@ -18711,7 +19216,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-52",
@@ -18748,7 +19254,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-53",
@@ -18785,7 +19292,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-54",
@@ -18822,7 +19330,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-55",
@@ -18859,7 +19368,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-56",
@@ -18896,7 +19406,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-57",
@@ -18933,7 +19444,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-58",
@@ -18970,7 +19482,8 @@
       "haytamaroui",
       "exam-2",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-59",
@@ -19007,7 +19520,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e2-60",
@@ -19044,7 +19558,8 @@
       "haytamaroui",
       "exam-2",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-01",
@@ -19081,7 +19596,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-02",
@@ -19118,7 +19634,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-03",
@@ -19155,7 +19672,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-04",
@@ -19192,7 +19710,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-05",
@@ -19229,7 +19748,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-06",
@@ -19266,7 +19786,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-07",
@@ -19303,7 +19824,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-08",
@@ -19340,7 +19862,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-09",
@@ -19377,7 +19900,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-10",
@@ -19414,7 +19938,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-11",
@@ -19451,7 +19976,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-12",
@@ -19488,7 +20014,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-13",
@@ -19525,7 +20052,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-14",
@@ -19562,7 +20090,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-15",
@@ -19599,7 +20128,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-16",
@@ -19636,7 +20166,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-17",
@@ -19673,7 +20204,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-18",
@@ -19710,7 +20242,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-19",
@@ -19747,7 +20280,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-20",
@@ -19784,7 +20318,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-21",
@@ -19821,7 +20356,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-22",
@@ -19858,7 +20394,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-23",
@@ -19895,7 +20432,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-24",
@@ -19932,7 +20470,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-25",
@@ -19969,7 +20508,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-26",
@@ -20006,7 +20546,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-27",
@@ -20043,7 +20584,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-28",
@@ -20080,7 +20622,8 @@
       "haytamaroui",
       "exam-3",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-29",
@@ -20117,7 +20660,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-30",
@@ -20154,7 +20698,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-31",
@@ -20191,7 +20736,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-32",
@@ -20228,7 +20774,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-33",
@@ -20265,7 +20812,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-34",
@@ -20302,7 +20850,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-35",
@@ -20339,7 +20888,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-36",
@@ -20376,7 +20926,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-37",
@@ -20413,7 +20964,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-38",
@@ -20450,7 +21002,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-39",
@@ -20487,7 +21040,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-40",
@@ -20524,7 +21078,8 @@
       "haytamaroui",
       "exam-3",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-41",
@@ -20561,7 +21116,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-42",
@@ -20598,7 +21154,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-43",
@@ -20635,7 +21192,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-44",
@@ -20672,7 +21230,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-45",
@@ -20709,7 +21268,8 @@
       "haytamaroui",
       "exam-3",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-46",
@@ -20746,7 +21306,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-47",
@@ -20783,7 +21344,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-48",
@@ -20820,7 +21382,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-49",
@@ -20857,7 +21420,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-50",
@@ -20894,7 +21458,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-51",
@@ -20931,7 +21496,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-52",
@@ -20968,7 +21534,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-53",
@@ -21005,7 +21572,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-54",
@@ -21042,7 +21610,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-55",
@@ -21079,7 +21648,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-56",
@@ -21116,7 +21686,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-57",
@@ -21153,7 +21724,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-58",
@@ -21190,7 +21762,8 @@
       "haytamaroui",
       "exam-3",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-59",
@@ -21227,7 +21800,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e3-60",
@@ -21264,7 +21838,8 @@
       "haytamaroui",
       "exam-3",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-01",
@@ -21301,7 +21876,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-02",
@@ -21338,7 +21914,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-03",
@@ -21375,7 +21952,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-04",
@@ -21412,7 +21990,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-05",
@@ -21449,7 +22028,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-06",
@@ -21486,7 +22066,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-07",
@@ -21523,7 +22104,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-08",
@@ -21560,7 +22142,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-09",
@@ -21597,7 +22180,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-10",
@@ -21634,7 +22218,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-11",
@@ -21671,7 +22256,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-12",
@@ -21708,7 +22294,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-13",
@@ -21745,7 +22332,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-14",
@@ -21782,7 +22370,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-15",
@@ -21819,7 +22408,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-16",
@@ -21856,7 +22446,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-17",
@@ -21893,7 +22484,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-18",
@@ -21930,7 +22522,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-19",
@@ -21967,7 +22560,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-20",
@@ -22004,7 +22598,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-21",
@@ -22041,7 +22636,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-22",
@@ -22078,7 +22674,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-23",
@@ -22115,7 +22712,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-24",
@@ -22152,7 +22750,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-25",
@@ -22189,7 +22788,8 @@
       "haytamaroui",
       "exam-4",
       "d3"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-26",
@@ -22226,7 +22826,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-27",
@@ -22263,7 +22864,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-28",
@@ -22300,7 +22902,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-29",
@@ -22337,7 +22940,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-30",
@@ -22374,7 +22978,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-31",
@@ -22411,7 +23016,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-32",
@@ -22448,7 +23054,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-33",
@@ -22485,7 +23092,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-34",
@@ -22522,7 +23130,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-35",
@@ -22559,7 +23168,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-36",
@@ -22596,7 +23206,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-37",
@@ -22633,7 +23244,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-38",
@@ -22670,7 +23282,8 @@
       "haytamaroui",
       "exam-4",
       "d2"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-39",
@@ -22707,7 +23320,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-40",
@@ -22744,7 +23358,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-41",
@@ -22781,7 +23396,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-42",
@@ -22818,7 +23434,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-43",
@@ -22855,7 +23472,8 @@
       "haytamaroui",
       "exam-4",
       "d1"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-44",
@@ -22892,7 +23510,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-45",
@@ -22929,7 +23548,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-46",
@@ -22966,7 +23586,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-47",
@@ -23003,7 +23624,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-48",
@@ -23040,7 +23662,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-49",
@@ -23077,7 +23700,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-50",
@@ -23114,7 +23738,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-51",
@@ -23151,7 +23776,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-52",
@@ -23188,7 +23814,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-53",
@@ -23225,7 +23852,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-54",
@@ -23262,7 +23890,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-55",
@@ -23299,7 +23928,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-56",
@@ -23336,7 +23966,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-57",
@@ -23373,7 +24004,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-58",
@@ -23410,7 +24042,8 @@
       "haytamaroui",
       "exam-4",
       "d4"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-59",
@@ -23447,7 +24080,8 @@
       "haytamaroui",
       "exam-4",
       "d5"
-    ]
+    ],
+    "level": "core"
   },
   {
     "id": "cca-q-ha-e4-60",
@@ -23484,6 +24118,1899 @@
       "haytamaroui",
       "exam-4",
       "d5"
+    ],
+    "level": "core"
+  },
+  {
+    "id": "cca-purcell-1-1",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You are implementing the agent's core loop. Which control flow correctly determines when to keep executing tools and when to present the final response?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Continue looping until the assistant's text contains a phrase like “I have resolved the issue”, then stop"
+      },
+      {
+        "key": "B",
+        "text": "Inspect `stop_reason` on each response: while it is `\"tool_use\"`, execute the requested tools and return results for the next iteration; when it is `\"end_turn\"`, present the final response"
+      },
+      {
+        "key": "C",
+        "text": "Run exactly five iterations, since support cases rarely need more tool calls than that"
+      },
+      {
+        "key": "D",
+        "text": "Stop as soon as any response contains text content, since text indicates completion"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. The agentic loop keys off `stop_reason`: `\"tool_use\"` means the model requested tools and expects their results back; `\"end_turn\"` means it finished reasoning and produced its answer. That signal is the designed termination mechanism. Why not the others: A parses natural language for a completion signal (a documented anti-pattern); C makes an arbitrary iteration cap the primary stopping mechanism; D fails because responses can contain both text and `tool_use` blocks mid-task.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "agent-loop",
+      "stop-reason"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-2",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The agent calls `lookup_order` and your code executes it successfully. How does the model actually receive the order data so it can reason about the next action?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The MCP server pushes the result directly into the model's memory"
+      },
+      {
+        "key": "B",
+        "text": "The model re-reads the tool's description, which now includes the result"
+      },
+      {
+        "key": "C",
+        "text": "Nothing is required — the API executes tools and incorporates results automatically"
+      },
+      {
+        "key": "D",
+        "text": "Your code appends a tool result block (referencing the tool call's ID) to the conversation history and sends the updated messages back to Claude in the next request"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Tool execution is the harness's job: the loop appends the tool result to the conversation and re-invokes the model. That growing history is the only channel through which the model sees what tools returned. Why not the others: A and C describe automatic mechanisms that do not exist — the API does not execute your tools; B confuses static tool definitions with runtime results.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "agent-loop",
+      "tool-results"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-3",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Company policy caps autonomous refunds at $500; larger refunds must go to a human. In testing, prompt instructions alone still let an occasional $650 refund through. What is the correct enforcement design?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Implement a hook that intercepts outgoing `process_refund` calls, blocks any amount above $500, and redirects the agent to the `escalate_to_human` workflow"
+      },
+      {
+        "key": "B",
+        "text": "Move the $500 limit to the top of the system prompt and repeat it in every user turn"
+      },
+      {
+        "key": "C",
+        "text": "Lower the model temperature so it follows the policy more consistently"
+      },
+      {
+        "key": "D",
+        "text": "Add the limit to the `process_refund` tool description so the model reads it during selection"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Business rules with financial consequences need deterministic guarantees. A tool-call interception hook enforces the threshold in code — the violating call can never execute — while prompt-based approaches remain probabilistic. Why not the others: B and D improve the odds but retain a non-zero failure rate, which the scenario shows is unacceptable; C misapplies a sampling parameter to a compliance problem.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "hooks",
+      "policy-enforcement",
+      "guardrails"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-4",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "A customer writes one message containing three concerns: a refund for a damaged item, a shipping address change, and a missing loyalty credit. How should the agent handle this?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Resolve only the refund, since it was mentioned first, and wait for the customer to raise the others again"
+      },
+      {
+        "key": "B",
+        "text": "Escalate immediately — multi-issue messages always exceed agent capability"
+      },
+      {
+        "key": "C",
+        "text": "Decompose the message into three distinct items, investigate each (in parallel where possible) using the shared customer context, then synthesize one unified resolution covering all three"
+      },
+      {
+        "key": "D",
+        "text": "Ask the customer to resend each issue as a separate message"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Multi-concern decomposition is the designed pattern: split the request into distinct items, investigate each against shared context, and respond once with a complete resolution — protecting first-contact resolution. Why not the others: A and D silently drop or bounce concerns the customer already stated, directly harming FCR; B escalates work that is well within capability.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "task-decomposition",
+      "orchestration"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-5",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "The agent must escalate a complex billing dispute mid-process. The human agents receiving escalations do not have access to the conversation transcript. What should the escalation include?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only the customer's name, so the human can start fresh without bias"
+      },
+      {
+        "key": "B",
+        "text": "A structured handoff summary: customer ID, the root cause analysis so far, relevant amounts and order numbers, and the agent's recommended action"
+      },
+      {
+        "key": "C",
+        "text": "A sentiment score describing how upset the customer is"
+      },
+      {
+        "key": "D",
+        "text": "The raw JSON of every tool result gathered during the session"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. Structured handoff protocols exist precisely because the receiving human lacks the transcript: the summary transfers case state — identity, findings, figures, and a recommendation — so the customer never has to start over. Why not the others: A discards completed investigation and forces repetition; C conveys mood, not case state; D transfers unprocessed noise and leaves the analysis to be redone.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "escalation",
+      "handoff"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-6",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "When `process_refund` fails for any reason, it currently returns the string “Operation failed.” The agent responds by retrying policy-blocked refunds and giving up on temporary outages — the opposite of correct. What is the fix?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Instruct the agent in the system prompt to always retry exactly twice"
+      },
+      {
+        "key": "B",
+        "text": "Remove failure responses entirely so the agent never sees errors"
+      },
+      {
+        "key": "C",
+        "text": "Have the agent apologize to the customer whenever any error occurs"
+      },
+      {
+        "key": "D",
+        "text": "Return structured error metadata: an `errorCategory` (transient / validation / business / permission), an `isRetryable` boolean, and a human-readable description the agent can act on"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Uniform error strings deny the agent the information recovery decisions require. Structured metadata — category, retryability, description — lets it retry transient failures, explain business refusals, and stop wasting attempts on non-retryable errors. Why not the others: A hard-codes one recovery strategy for error types that need different ones; B removes the signal instead of enriching it; C treats communication as a substitute for correct recovery logic.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "error-handling",
+      "tool-design"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-7",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "A refund request violates the returns window policy. The tool rejects it. Which error response enables the agent to handle this correctly with the customer?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`errorCategory`: “business”, `retriable`: false, plus a customer-friendly explanation of the policy — so the agent explains the refusal rather than retrying it"
+      },
+      {
+        "key": "B",
+        "text": "`errorCategory`: “transient” so the agent retries later, when the policy might differ"
+      },
+      {
+        "key": "C",
+        "text": "An empty result marked as success, to keep the conversation positive"
+      },
+      {
+        "key": "D",
+        "text": "A stack trace, so the agent has maximum detail"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Policy violations are business errors: non-retryable by definition, and best paired with an explanation the agent can relay. The `retriable: false` flag prevents wasted attempts; the friendly description powers the customer conversation. Why not the others: B mislabels a deterministic refusal as temporary, guaranteeing futile retries; C is silent error suppression that turns failure into misinformation; D exposes internals the agent cannot use and should not repeat.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "error-handling",
+      "tool-design"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-9",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "A customer's first message is: “I want to speak to a human. Do not try to fix this yourself.” The issue looks like a routine replacement the agent could resolve. What should the agent do?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Attempt resolution first, escalating only if the attempt fails"
+      },
+      {
+        "key": "B",
+        "text": "Run sentiment analysis and escalate only if frustration exceeds a threshold"
+      },
+      {
+        "key": "C",
+        "text": "Escalate immediately — an explicit customer request for a human is honored without first attempting investigation"
+      },
+      {
+        "key": "D",
+        "text": "Ask the customer three clarifying questions before deciding"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. An explicit customer demand for a human is a first-class escalation trigger, honored immediately. Overriding a stated preference to demonstrate capability damages trust regardless of how resolvable the issue looks. Why not the others: A and D do exactly what the customer forbade; B substitutes an unreliable proxy (sentiment) for a signal that could not be clearer — the customer already said the words.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-choice",
+      "escalation",
+      "reliability"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-1",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "You have a personal `/scratch-notes` slash command you use constantly, but it reflects your own workflow and should not appear for teammates when they pull the repository. Where does the command file belong?",
+    "options": [
+      {
+        "key": "A",
+        "text": "In `.claude/commands/` in the repository, like all slash commands"
+      },
+      {
+        "key": "B",
+        "text": "In the root `CLAUDE.md` under a # Commands heading"
+      },
+      {
+        "key": "C",
+        "text": "In `~/.claude/commands/` in your home directory, where user-scoped commands live outside version control"
+      },
+      {
+        "key": "D",
+        "text": "In `.claude/rules/` with a paths glob matching your username"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Command scoping mirrors intent: `~/.claude/commands/` holds personal commands visible only to you, while `.claude/commands/` in the repo is shared with everyone via version control. A personal workflow tool belongs in the former. Why not the others: A publishes a personal tool to the whole team; B is project context, not a command definition mechanism; D misuses path-scoped rules, which condition on edited file paths, not identity.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "slash-commands",
+      "config-scoping"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-2",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your `/analyze-architecture` skill produces thousands of lines of exploration output that pollute the main conversation, crowding out the task you actually wanted help with. Which `SKILL.md` frontmatter option fixes this?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`argument-hint`, so the skill asks what to analyze"
+      },
+      {
+        "key": "B",
+        "text": "`context: fork`, which runs the skill in an isolated sub-agent context and returns results without flooding the main conversation"
+      },
+      {
+        "key": "C",
+        "text": "`allowed-tools`, restricting the skill to read-only operations"
+      },
+      {
+        "key": "D",
+        "text": "`paths`, restricting the skill to architecture files"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. `context: fork` exists for exactly this: verbose or exploratory skills run in their own isolated context, and the main session receives the distilled result rather than the full exploration transcript. Why not the others: A governs parameter prompting; C governs which tools the skill may use — neither controls where output accumulates; D is rules-file syntax, not skill frontmatter for isolation.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "skills",
+      "context-management",
+      "frontmatter"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-3",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You are writing a `/scaffold-component` skill that generates boilerplate files. You want a guarantee it can create files but can never run shell commands, no matter what its instructions are asked to do. How do you enforce this?",
+    "options": [
+      {
+        "key": "A",
+        "text": "State “never run `Bash`” prominently in the `SKILL.md` instructions"
+      },
+      {
+        "key": "B",
+        "text": "Trust the skill's narrow purpose to keep it away from `Bash`"
+      },
+      {
+        "key": "C",
+        "text": "Run the skill only in plan mode"
+      },
+      {
+        "key": "D",
+        "text": "Set `allowed-tools` in the `SKILL.md` frontmatter to permit only the file-write operations the skill needs, excluding `Bash`"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. `allowed-tools` is the enforcement mechanism: frontmatter-declared tool restrictions bound what the skill can invoke during execution — a configuration guarantee rather than an instruction the model might not follow. Why not the others: A is prompt-level guidance with a non-zero failure rate; B is hope; C changes the execution workflow but is not a per-skill tool restriction.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "skills",
+      "allowed-tools",
+      "guardrails"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-4",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "A new teammate's Claude Code sessions ignore the team's coding standards. You discover the standards live in your own `~/.claude/CLAUDE.md`. What is the correct fix, and how do you verify it?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Move the standards into the project-level `CLAUDE.md` (checked into the repository) so every clone receives them, and use the `/memory` command to verify which memory files a session has loaded"
+      },
+      {
+        "key": "B",
+        "text": "Email the teammate your `~/.claude/CLAUDE.md` to copy into their home directory"
+      },
+      {
+        "key": "C",
+        "text": "Have the teammate re-install Claude Code to refresh configuration"
+      },
+      {
+        "key": "D",
+        "text": "Paste the standards at the start of each session until they stick"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. User-level configuration applies only to that user — it never travels via version control. Team standards belong at project level, and `/memory` is the diagnostic that shows exactly which memory files a session loaded. Why not the others: B distributes configuration by hand and drifts immediately; C reinstalls software to fix a file-location problem; D mistakes a persistent configuration issue for a per-session prompting task — nothing “sticks” between sessions.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "claude-md",
+      "config-scoping",
+      "memory"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-5",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The project's `CLAUDE.md` has grown to 2,000 lines covering testing, API conventions, deployment, and styling; sessions load it all regardless of task. What is the recommended reorganization?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Delete the file and rely on the model's general knowledge of good practice"
+      },
+      {
+        "key": "B",
+        "text": "Move everything to each developer's user-level `CLAUDE.md`"
+      },
+      {
+        "key": "C",
+        "text": "Split it into focused, topic-specific files in `.claude/rules/` (e.g., `testing.md`, `api-conventions.md`, `deployment.md`), adding path-scoped frontmatter where conventions apply only to matching files"
+      },
+      {
+        "key": "D",
+        "text": "Convert the entire file into a single slash command developers run manually"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. The `.claude/rules/` directory is the modular alternative to a monolithic `CLAUDE.md`: focused topic files with YAML path scoping so rules load only for matching files — less irrelevant context, easier maintenance. Why not the others: A abandons hard-won project conventions; B unshares team configuration and guarantees divergence; D makes always-relevant standards opt-in and forgettable.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "claude-md",
+      "rules",
+      "context-management"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-6",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "Yesterday you ran a long investigation into a memory leak in a session you named `leak-hunt`. Today you want to continue exactly where that investigation left off. What do you run?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`claude --continue-all`, which reopens every recent session"
+      },
+      {
+        "key": "B",
+        "text": "`claude --resume leak-hunt`, resuming the named session with its context"
+      },
+      {
+        "key": "C",
+        "text": "`claude -p “continue the leak investigation”`"
+      },
+      {
+        "key": "D",
+        "text": "A new session, pasting yesterday's terminal scrollback as the first message"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. Named session resumption is the mechanism for continuing specific prior work: `--resume <session-name>` restores that conversation's context so the investigation picks up where it stopped. Why not the others: A is not a real flag; C starts a fresh non-interactive run with no memory of yesterday; D approximates resumption badly — unstructured scrollback is a poor substitute for the session's actual context.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "sessions",
+      "resume",
+      "cli"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-7",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "You have completed a thorough analysis of a module and now want to compare two competing refactoring strategies — developing each independently from that same analysis baseline without the explorations contaminating each other. Which capability fits?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Run both strategies sequentially in the same session, asking Claude to forget the first before starting the second"
+      },
+      {
+        "key": "B",
+        "text": "Open two brand-new sessions and redo the module analysis in each"
+      },
+      {
+        "key": "C",
+        "text": "Use `/compact` between the two strategies"
+      },
+      {
+        "key": "D",
+        "text": "Use `fork_session` to create independent branches from the shared analysis baseline, exploring one strategy per branch"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. `fork_session` exists for divergent exploration: both branches inherit the completed analysis, then evolve independently — a clean comparison without re-paying the analysis cost or cross-contaminating approaches. Why not the others: A is impossible — context cannot be selectively forgotten on request; B pays for the expensive baseline twice; C compacts context within one session, it does not branch it.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "fork-session",
+      "sessions",
+      "context-management"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-8",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "You want to resume last week's refactoring session, but since then the team has merged substantial changes across the files it analyzed, so most of its tool results now describe code that no longer exists. What is the reliable approach?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Start a new session seeded with a structured summary of the prior conclusions — stale tool results make resumption unreliable, since the model will reason from outdated file contents"
+      },
+      {
+        "key": "B",
+        "text": "Resume the session as-is; Claude automatically detects file changes"
+      },
+      {
+        "key": "C",
+        "text": "Resume the session and increase `max_tokens` to accommodate the confusion"
+      },
+      {
+        "key": "D",
+        "text": "Never resume any session; always start from zero exploration"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. The resumption tradeoff: resume when prior context is mostly valid; start fresh with an injected summary when tool results have gone stale. Heavily changed files put this squarely in the second case — keep the conclusions, discard the outdated evidence. Why not the others: B assumes an automatic re-verification that does not happen — stale results sit in context as if true; C spends tokens on a correctness problem; D throws away a valid technique — for minor changes, resuming and informing the session which files changed works well.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "sessions",
+      "resume",
+      "context-staleness"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-9",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "Mid-way through an extended exploration session, context is filling with verbose discovery output and responses are noticeably degrading, but you are not ready to end the session. Which built-in command helps immediately?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`/memory`, which clears the conversation"
+      },
+      {
+        "key": "B",
+        "text": "`/fork`, which splits the session in half"
+      },
+      {
+        "key": "C",
+        "text": "`/compact`, which reduces context usage by compacting the conversation so the session can continue productively"
+      },
+      {
+        "key": "D",
+        "text": "`/rules`, which reloads the rule files"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. `/compact` is the in-session relief valve for exactly this situation: it compacts accumulated context — typically bloated with verbose discovery output — so an extended session can continue without degradation. Why not the others: A shows which memory files are loaded (a diagnostic, not cleanup); B forking is for divergent branches, not compression; D does not address conversation bloat.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-choice",
+      "compact",
+      "context-management",
+      "commands"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-1",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your coordinator's system prompt tells it to delegate research to subagents, but at runtime it never spawns any — it attempts all the research itself. Its configuration restricts it to research-planning tools. What is the most likely cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The coordinator model tier is too small to understand delegation"
+      },
+      {
+        "key": "B",
+        "text": "Subagents must be started manually before the coordinator runs"
+      },
+      {
+        "key": "C",
+        "text": "The system prompt needs the word “delegate” in capital letters"
+      },
+      {
+        "key": "D",
+        "text": "The coordinator's `allowedTools` does not include “Task” — the `Task` tool is the mechanism for spawning subagents, so without it no delegation can occur"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Subagent spawning happens through the `Task` tool. A coordinator whose `allowedTools` omits “Task” has no mechanism to delegate, no matter how clearly its prompt describes the intention — capability configuration trumps instruction. Why not the others: A and C look for a failure in comprehension or emphasis when the tool inventory makes delegation impossible; B describes a startup model that does not exist — subagents are spawned on demand.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "subagents",
+      "task-tool",
+      "allowed-tools"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-2",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The web search subagent gathers excellent findings, but the synthesis subagent's reports are generic and reference none of them. The coordinator invokes synthesis with the prompt “Synthesize the research findings.” What is wrong?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The synthesis agent's model needs extended thinking enabled"
+      },
+      {
+        "key": "B",
+        "text": "Subagents do not inherit the coordinator's conversation history — the coordinator must include the actual findings (search results, analysis outputs) directly in the synthesis subagent's prompt"
+      },
+      {
+        "key": "C",
+        "text": "The synthesis agent needs web search tools to gather its own findings"
+      },
+      {
+        "key": "D",
+        "text": "The prompt needs the word “please”"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. Subagent context isolation is the rule: each subagent sees only what its prompt contains. “The research findings” refers to material the synthesis agent has never seen — the coordinator must pass the findings explicitly. Why not the others: A adds reasoning capacity over an empty input; C duplicates the search agent's role instead of fixing the handoff; D is not the missing ingredient — data is.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "subagents",
+      "context-passing"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-3",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The coordinator currently invokes the web search subagent, waits for completion, then invokes the document analysis subagent — doubling research latency even though the two tasks are independent. How do you run them in parallel?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Have the coordinator emit both `Task` tool calls in a single response, which spawns the subagents in parallel"
+      },
+      {
+        "key": "B",
+        "text": "Ask each subagent to work faster in its system prompt"
+      },
+      {
+        "key": "C",
+        "text": "Run two copies of the entire system and merge the databases"
+      },
+      {
+        "key": "D",
+        "text": "Parallelism is impossible — subagents must always run sequentially"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Parallel spawning is achieved by emitting multiple `Task` tool calls in one coordinator response rather than across separate turns — independent workstreams then execute concurrently. Why not the others: B changes nothing about scheduling; C is massive infrastructure duplication for a one-line orchestration fix; D is false — parallel `Task` calls are a documented pattern.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "subagents",
+      "parallelism",
+      "task-tool"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-4",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your coordinator gives subagents rigid step-by-step procedures (“run these exact five queries in this order”). Subagents fail whenever a topic doesn't fit the script. How should coordinator prompts be designed instead?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Make the procedures longer, covering more contingencies explicitly"
+      },
+      {
+        "key": "B",
+        "text": "Remove all instructions and let subagents infer their tasks"
+      },
+      {
+        "key": "C",
+        "text": "Specify research goals and quality criteria — what a complete answer looks like — and let the subagent adapt its approach to what it discovers"
+      },
+      {
+        "key": "D",
+        "text": "Have subagents ask the human operator whenever the script fails"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Goal-and-criteria prompts preserve subagent adaptability: the coordinator defines success, the subagent chooses the path — which is why the agent (not a fixed script) is there at all. Why not the others: A is an arms race against topic variety that scripts always lose; B removes the goal along with the script; D reintroduces a human into a loop designed to run autonomously.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "subagents",
+      "prompt-design",
+      "orchestration"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-5",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "Completed reports are coherent but shallow on some subtopics. You want the system to notice and repair its own coverage gaps before finalizing. Which orchestration pattern achieves this?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Lower the bar: accept the first synthesis as final to control costs"
+      },
+      {
+        "key": "B",
+        "text": "An iterative refinement loop: the coordinator evaluates synthesis output for gaps, re-delegates to search and analysis subagents with targeted queries, and re-invokes synthesis until coverage is sufficient"
+      },
+      {
+        "key": "C",
+        "text": "Ask the report generation agent to pad thin sections with general knowledge"
+      },
+      {
+        "key": "D",
+        "text": "Always run every subagent exactly twice regardless of output quality"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. An iterative refinement loop closes the quality loop: evaluate coverage, dispatch targeted follow-up research where gaps exist, re-synthesize — repeating until the report meets criteria rather than hoping the first pass suffices. Why not the others: A ships the known defect; C fills gaps with uncited generalities — the opposite of a cited research product; D doubles cost blindly with no gap-detection to aim the second pass.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "orchestration",
+      "iterative-refinement"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-6",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Every subagent currently receives the full 18-tool catalog. Logs show the synthesis agent attempting web searches and the search agent trying document parsing — with frequent wrong-tool selections everywhere. What is the correct redesign?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Add a nineteenth tool that tells the agents which tool to use"
+      },
+      {
+        "key": "B",
+        "text": "Alphabetize the tool list so selection is easier"
+      },
+      {
+        "key": "C",
+        "text": "Write longer system prompts warning each agent about the tools it should ignore"
+      },
+      {
+        "key": "D",
+        "text": "Scope each subagent's tool set to its role — a handful of relevant tools each — since large tool inventories degrade selection reliability and out-of-role tools invite misuse"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Tool distribution is an architectural control: agents choose more reliably among 4–5 role-relevant tools than among 18, and tools outside an agent's specialization are misused precisely because they are available. Why not the others: A adds selection complexity to solve selection complexity; B changes ordering, not decision difficulty; C asks prompts to fight an inventory problem configuration should fix.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "tool-scoping",
+      "subagents"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-7",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "Subagents burn many tool calls just discovering what data exists — listing available document collections, probing for issue summaries, checking what schemas are present — before real work begins. Which MCP capability reduces this?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Expose content catalogs (document hierarchies, issue summaries, schema listings) as MCP resources, giving agents visibility into available data without exploratory tool calls"
+      },
+      {
+        "key": "B",
+        "text": "Increase the tool-call budget so exploration is affordable"
+      },
+      {
+        "key": "C",
+        "text": "Hard-code the current data inventory into every system prompt"
+      },
+      {
+        "key": "D",
+        "text": "Remove discovery capability so agents work blind"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. MCP resources exist for exactly this: exposing catalogs of available content so agents start informed. Discovery becomes a lookup instead of a spelunking expedition of exploratory calls. Why not the others: B pays for the inefficiency rather than removing it; C goes stale the moment the data changes; D trades wasted calls for ignorance.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "mcp-resources",
+      "tool-design"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-8",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "Final reports state findings but cite nothing. Investigation shows each summarization step compresses source attribution away, so by synthesis time nobody knows which claim came from where. What is the structural fix?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Have the report generator add plausible citations at the end"
+      },
+      {
+        "key": "B",
+        "text": "Instruct the synthesis agent to write “sources available on request”"
+      },
+      {
+        "key": "C",
+        "text": "Require subagents to output structured claim-source mappings (claim, evidence excerpt, source URL or document name) that every downstream agent preserves and merges through synthesis"
+      },
+      {
+        "key": "D",
+        "text": "Reduce the number of summarization steps to one"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Provenance survives only if it is structural: claim-source mappings travel as data through every hop, so synthesis merges attributed claims instead of anonymous assertions. Attribution is preserved, never reconstructed. Why not the others: A invents citations — worse than none in a research product; B advertises attribution the system no longer possesses; D reduces compression events but the remaining one still strips attribution.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-choice",
+      "provenance",
+      "structured-output",
+      "reliability"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-2",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The agent attempts an `Edit` on a legacy file and fails: the anchor text it targeted appears in six places, so the unique-match requirement cannot be satisfied. What is the standard fallback?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Delete five of the six occurrences so the match becomes unique"
+      },
+      {
+        "key": "B",
+        "text": "Retry the same `Edit` repeatedly until it succeeds"
+      },
+      {
+        "key": "C",
+        "text": "Switch to `Bash` and modify the file with `sed`"
+      },
+      {
+        "key": "D",
+        "text": "Use `Read` to load the full file, then `Write` the complete modified content — the reliable path when `Edit` cannot find unique anchor text"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. `Edit` depends on unique text matching; when a file's repetitive structure defeats that, `Read` + `Write` performs the modification reliably on the whole file. It is the documented fallback for exactly this failure. Why not the others: A mutilates code to satisfy the tool; B retries a deterministic failure — the sixfold match will not resolve itself; C swaps a controlled file operation for fragile stream editing.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "built-in-tools",
+      "edit-write"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-3",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Asked how the billing module works, the agent Reads dozens of files upfront and exhausts its context before answering. What is the correct exploration strategy for building codebase understanding?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`Read` files in alphabetical order and stop at the context limit"
+      },
+      {
+        "key": "B",
+        "text": "Work incrementally: `Grep` to find entry points (key functions, imports, error strings), then `Read` selectively to follow imports and trace code flows from those anchors"
+      },
+      {
+        "key": "C",
+        "text": "Ask the developer to explain the module instead"
+      },
+      {
+        "key": "D",
+        "text": "`Read` only the README and reason from documentation"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. Incremental exploration is the pattern: search first to find where the relevant code lives, then read narrowly along the traced paths. Context is spent on the files that matter rather than on everything alphabetically prior to them. Why not the others: A spends the budget by filename accident; C outsources the agent's job to its user; D trusts documentation to describe code accurately — in a legacy system, a famous last assumption.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "built-in-tools",
+      "exploration",
+      "grep"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-4",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The team shares a GitHub MCP server that needs an auth token, and you also run a personal, experimental MCP server you don't want to impose on anyone. How should these be configured?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The shared server in project-scoped `.mcp.json` using environment variable expansion (e.g., `${GITHUB_TOKEN}`) so no secret is committed; the personal server in user-scoped `~/.claude.json`"
+      },
+      {
+        "key": "B",
+        "text": "Both servers in `.mcp.json`, with the token pasted in so teammates don't have to set variables"
+      },
+      {
+        "key": "C",
+        "text": "Both servers in `~/.claude.json`, with setup instructions in the wiki"
+      },
+      {
+        "key": "D",
+        "text": "The shared server in `CLAUDE.md` and the personal one in `.claude/commands/`"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Scoping follows audience: project `.mcp.json` distributes team tooling via version control, with `${VAR}` expansion keeping credentials out of the repo; `~/.claude.json` holds personal and experimental servers that stay yours. Why not the others: B commits a live secret to version control; C makes shared infrastructure a manual wiki chore that drifts; D puts server configuration in files that don't configure servers.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "mcp-config",
+      "config-scoping",
+      "secrets"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-5",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Two tasks arrive: fixing an off-by-one bug in one function with a clear stack trace, and migrating the codebase's HTTP library — touching 45+ files with several viable approaches. How should plan mode and direct execution be assigned?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Plan mode for both — planning never hurts"
+      },
+      {
+        "key": "B",
+        "text": "Direct execution for both — plan mode is only for greenfield projects"
+      },
+      {
+        "key": "C",
+        "text": "Direct execution for the well-scoped single-file bug fix; plan mode for the migration, whose scale and multiple valid approaches demand exploration and design before changes are committed"
+      },
+      {
+        "key": "D",
+        "text": "Plan mode for the bug fix and direct execution for the migration"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. The assignment rule: direct execution for simple, well-scoped changes; plan mode where scale, architectural implications, or competing approaches make design-before-commitment valuable — like a 45-file migration. Why not the others: A taxes a trivial fix with ceremony; B invites costly rework by executing a large migration unplanned; D inverts the rule on both tasks.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "plan-mode",
+      "workflow"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-6",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "Developers keep invoking your `/generate-fixture` skill bare, without the entity type and record count it needs, then get confused by the results. Which frontmatter option addresses this?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`context: fork`, isolating the confusion in a subagent"
+      },
+      {
+        "key": "B",
+        "text": "`allowed-tools`, restricting what the skill can touch"
+      },
+      {
+        "key": "C",
+        "text": "A longer skill description explaining the parameters"
+      },
+      {
+        "key": "D",
+        "text": "`argument-hint`, which prompts developers for the required parameters when the skill is invoked without arguments"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. `argument-hint` is the frontmatter mechanism for exactly this: skills that need parameters can prompt for them on bare invocation instead of running underspecified. Why not the others: A isolates output, not input requirements; B constrains tools, not arguments; C documents the parameters for whoever reads docs — the invocation still runs bare.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "skills",
+      "argument-hint",
+      "frontmatter"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-7",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You must decide where two things live: (1) the team's universal coding standards that should shape every session, and (2) a multi-step release-notes workflow used a few times per month. What is the correct placement?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Both as skills, invoked when developers remember"
+      },
+      {
+        "key": "B",
+        "text": "Standards in `CLAUDE.md`, which is always loaded; the occasional release-notes workflow as a skill in `.claude/skills/`, invoked on demand"
+      },
+      {
+        "key": "C",
+        "text": "Both in `CLAUDE.md` so nothing is ever missed"
+      },
+      {
+        "key": "D",
+        "text": "Standards as a skill; the release workflow in `CLAUDE.md`"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. The dividing line: `CLAUDE.md` for universal, always-relevant standards; skills for on-demand, task-specific workflows. Each mechanism carries the load it was designed for. Why not the others: A makes universal standards opt-in — they will be skipped; C loads a monthly workflow into every session's context forever; D inverts both placements.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "claude-md",
+      "skills",
+      "config-scoping"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-8",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The task is open-ended: “add comprehensive tests to this legacy codebase.” Nobody knows yet where the risk concentrates or what depends on what. Which decomposition approach fits?",
+    "options": [
+      {
+        "key": "A",
+        "text": "First map the codebase structure, identify high-impact areas, then create a prioritized plan that adapts as dependencies and surprises are discovered"
+      },
+      {
+        "key": "B",
+        "text": "`Write` tests file-by-file in directory order until done"
+      },
+      {
+        "key": "C",
+        "text": "Generate all tests in a single maximal request"
+      },
+      {
+        "key": "D",
+        "text": "Test only the code modified in the last month"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Open-ended tasks call for adaptive decomposition: understand the terrain, prioritize by impact, and let the plan evolve with what each step reveals — the opposite of a fixed pipeline chosen before anything is known. Why not the others: B spends effort by directory-listing order rather than risk; C asks one pass to do what requires discovery; D uses recency as a proxy for importance — legacy risk often lives in old, untouched code.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "task-decomposition",
+      "planning"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-9",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "You are choosing decomposition strategies for two workflows: a code review that always checks the same five aspects, and a production-incident investigation whose next step depends on what each finding reveals. Which pairing is right?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dynamic decomposition for both, since flexibility is always better"
+      },
+      {
+        "key": "B",
+        "text": "Prompt chaining for both, since fixed steps are easier to test"
+      },
+      {
+        "key": "C",
+        "text": "Prompt chaining (a fixed sequence of focused passes) for the predictable five-aspect review; dynamic adaptive decomposition for the investigation, where intermediate findings determine the next subtask"
+      },
+      {
+        "key": "D",
+        "text": "Dynamic decomposition for the review; prompt chaining for the investigation"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. The selection rule: fixed sequential pipelines (prompt chaining) for predictable multi-aspect work; adaptive decomposition where the path emerges from intermediate findings. Each workflow gets the structure its uncertainty profile demands. Why not the others: A pays adaptivity overhead on a task with no uncertainty; B forces an investigation to follow steps written before the evidence existed; D assigns each strategy to the workflow that defeats it.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-choice",
+      "task-decomposition",
+      "prompt-chaining"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-1",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your CI job must run Claude Code non-interactively and produce review findings your pipeline can parse and post as inline PR comments. Which invocation is correct?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`claude “review this PR”` piped through `grep` to extract findings from prose"
+      },
+      {
+        "key": "B",
+        "text": "`claude -p “review this PR”` with `--output-format json` and `--json-schema`, producing machine-parseable findings without waiting for interactive input"
+      },
+      {
+        "key": "C",
+        "text": "`claude --batch “review this PR” --format=structured`"
+      },
+      {
+        "key": "D",
+        "text": "`claude -p “review this PR”` alone, then regex-parsing the prose output"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. The CI trio: `-p` (`--print`) for non-interactive execution, `--output-format json` for machine-readable output, and `--json-schema` to enforce the findings structure your pipeline consumes — no prose parsing, no input hang. Why not the others: A hangs waiting for interactive input and then scrapes prose; C invents flags that do not exist; D solves the hang but leaves the pipeline regex-parsing unstructured text.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "claude-code-cli",
+      "ci-cd",
+      "structured-output"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-2",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "CI-generated tests ignore your team's fixture library, duplicate helper setup, and test trivialities. Developers reject most of them. What is the configuration-level fix?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Generate three times as many tests so some survive review"
+      },
+      {
+        "key": "B",
+        "text": "Have developers rewrite the generated tests as a standing chore"
+      },
+      {
+        "key": "C",
+        "text": "Lower the temperature of the generation call"
+      },
+      {
+        "key": "D",
+        "text": "Document testing standards, what makes a test valuable, and the available fixtures in `CLAUDE.md` — the mechanism that supplies project context to CI-invoked Claude Code"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. CI invocations get their project context from `CLAUDE.md`. Standards, value criteria, and fixture documentation there directly raise generation quality — the model can only follow conventions it has been shown. Why not the others: A scales the reject pile; B institutionalizes rework instead of fixing its cause; C reduces variability of output that is uninformed either way.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "claude-md",
+      "ci-cd",
+      "test-generation"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-3",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Reviews re-run after each new commit to a PR, and the bot re-posts the same findings every time — developers now mute it. How should re-reviews be designed?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Include the prior review's findings in context and instruct Claude to report only new issues or previously reported ones that remain unaddressed"
+      },
+      {
+        "key": "B",
+        "text": "Review only the newest commit's diff in isolation"
+      },
+      {
+        "key": "C",
+        "text": "Limit reviews to one per PR regardless of subsequent commits"
+      },
+      {
+        "key": "D",
+        "text": "Post all findings again but formatted differently to seem new"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Duplicate suppression is a context design problem: give the reviewer its own prior findings and the explicit instruction to report deltas — new issues plus unresolved carryovers — and the noise stops while coverage remains complete. Why not the others: B misses issues that emerge from interaction with earlier commits; C leaves everything after the first push unreviewed; D disguises the spam developers already muted.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "ci-cd",
+      "code-review",
+      "context-design"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-4",
+    "categoryKey": "claude-code-workflows",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "You notice that when the same Claude Code session that generated a change also reviews it, the review is conspicuously gentle — missing issues an independent reviewer catches. Why, and what is the design implication?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The model is being polite; instruct it to be harsher"
+      },
+      {
+        "key": "B",
+        "text": "Reviews should always be performed by a larger model tier"
+      },
+      {
+        "key": "C",
+        "text": "A session retains the reasoning context from generation, making it less likely to question its own decisions — so CI reviews should run in an independent instance without the generator's context"
+      },
+      {
+        "key": "D",
+        "text": "Generation and review must run on different days to avoid contamination"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Session context isolation matters for review integrity: the generating session carries the rationale that produced the code, biasing it toward its own choices. An independent instance evaluates the code on its own terms. Why not the others: A misreads a context effect as a personality setting; B changes capability when the problem is contaminated context — the same model reviews well when independent; D adds superstition to a mechanism that is about context, not calendars.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-3",
+      "multiple-choice",
+      "ci-cd",
+      "code-review",
+      "context-isolation"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-5",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your review prompt says “be conservative and only report high-confidence findings,” yet false positives remain high. What does effective precision engineering look like instead?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Add “be very, very conservative” for stronger emphasis"
+      },
+      {
+        "key": "B",
+        "text": "Report all findings but sort them by the model's stated confidence"
+      },
+      {
+        "key": "C",
+        "text": "Reduce the number of files reviewed per run"
+      },
+      {
+        "key": "D",
+        "text": "Replace confidence language with explicit categorical criteria: define which issue types to report (bugs, security) and which to skip (minor style, local patterns), with concrete boundaries"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Vague conservatism doesn't transfer — specific criteria do. Defining reportable versus skippable categories with concrete boundaries gives the model an operable decision rule, which is what actually moves precision. Why not the others: A intensifies an instruction that has no operational content; B reorders noise — self-stated confidence is poorly calibrated; C reviews less code with the same faulty judgment.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "prompt-engineering",
+      "precision",
+      "code-review"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-6",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Findings in the “code style” category are 70% false positives, and developers have begun dismissing security findings too — trust in the whole reviewer is collapsing. What is the right operational move?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ship more style findings to demonstrate the category's importance"
+      },
+      {
+        "key": "B",
+        "text": "Temporarily disable the style category to restore trust in the accurate categories, while improving the style prompts before re-enabling it"
+      },
+      {
+        "key": "C",
+        "text": "Rename “code style” to “code quality”"
+      },
+      {
+        "key": "D",
+        "text": "Ask developers to be more tolerant of noise during the tuning period"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. High false-positive categories are contagious: they teach developers to dismiss everything. Disabling the offender protects the credibility of the accurate categories while its prompts are fixed offline — trust is the system's real asset. Why not the others: A doubles down on the noise destroying trust; C relabels the same false positives; D asks humans to absorb a cost the configuration should eliminate.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "prompt-engineering",
+      "precision",
+      "trust"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-7",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The reviewer labels near-identical issues “critical” one day and “minor” the next. Severity-based merge gates are therefore unreliable. How do you get consistent severity classification?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Define explicit severity criteria with concrete code examples for each level, so every severity has an operational definition the model can match against"
+      },
+      {
+        "key": "B",
+        "text": "Remove severity levels and treat all findings equally"
+      },
+      {
+        "key": "C",
+        "text": "Let the model choose severity freely but average it over five runs"
+      },
+      {
+        "key": "D",
+        "text": "Map severity to line count of the affected code"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. Consistency comes from operational definitions: severity levels anchored by concrete examples give the classifier something to match against, turning a vibe into a rubric. That is what makes severity gates dependable. Why not the others: B discards the signal the merge gate needs; C statistically launders an unanchored judgment; D measures size, not impact — a one-line auth bypass outranks a fifty-line comment tweak.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "prompt-engineering",
+      "severity",
+      "code-review"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-8",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The reviewer keeps flagging your codebase's accepted idiomatic patterns (e.g., intentional fall-throughs with comments) as bugs, while your detailed prose instructions haven't fixed it. What is the most effective addition?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A rule that anything containing a comment is acceptable"
+      },
+      {
+        "key": "B",
+        "text": "An instruction to “use good judgment about idioms”"
+      },
+      {
+        "key": "C",
+        "text": "Few-shot examples distinguishing the accepted patterns from genuine issues — showing the reasoning why each is or isn't reportable — so the model generalizes the judgment to novel cases"
+      },
+      {
+        "key": "D",
+        "text": "A ban on reviewing files containing any idiomatic pattern"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. When prose fails to convey a judgment boundary, examples carry it: contrasted acceptable-versus-genuine cases with reasoning teach a distinction the model can generalize — the documented strength of few-shot prompting for false-positive reduction. Why not the others: A creates a trivially wrong rule any commented bug defeats; B restates the goal without transferring the judgment; D exempts exactly the code that most needs reviewing.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "few-shot",
+      "prompt-engineering",
+      "code-review"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-1",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your current pipeline asks Claude to “respond with JSON” in plain text; downstream parsing breaks on markdown fences, trailing commentary, and occasional malformed syntax. What is the most reliable structural fix?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Strengthen the prompt: “respond ONLY with valid JSON, no exceptions”"
+      },
+      {
+        "key": "B",
+        "text": "Post-process the text with regexes that strip fences and repair syntax"
+      },
+      {
+        "key": "C",
+        "text": "Define the extraction as a tool whose input schema is your JSON schema, and read the structured data from the `tool_use` block — guaranteeing schema-compliant output and eliminating JSON syntax errors"
+      },
+      {
+        "key": "D",
+        "text": "Switch to XML output, which models format more carefully"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Tool use with JSON schemas is the reliability mechanism for structured output: the model's extraction arrives as schema-conformant tool input, not as prose that happens to contain JSON — syntax errors are eliminated by construction. Why not the others: A improves the odds within a fundamentally text-shaped channel; B patches symptoms with fragile repairs; D relocates the same free-text problem to a different syntax.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "structured-output",
+      "tool-use",
+      "json-schema"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-2",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You have several extraction tools — one per document type — and incoming documents of unknown type. The model must always produce a structured extraction, choosing the appropriate schema itself, and never reply with conversational text. Which `tool_choice` setting is correct?",
+    "options": [
+      {
+        "key": "A",
+        "text": "`tool_choice`: “any” — the model must call a tool but may choose which, guaranteeing structured output while leaving schema selection to the model"
+      },
+      {
+        "key": "B",
+        "text": "`tool_choice`: “auto” — the model decides whether to call a tool at all"
+      },
+      {
+        "key": "C",
+        "text": "`tool_choice` forced to one named tool, applied to every document"
+      },
+      {
+        "key": "D",
+        "text": "Omit `tool_choice`, since defaults handle this"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. The three modes map to intent: “any” compels a tool call while preserving the model's choice among schemas — exactly right for unknown document types that must always yield structured output. Why not the others: B (and D, which defaults to it) permits conversational text instead of a tool call; C welds every document to one schema when types vary.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "tool-choice",
+      "structured-output"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-3",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your invoice schema marks `vendor_tax_id` as required. On invoices that genuinely lack a tax ID, the model fabricates plausible-looking values to satisfy the schema. What is the schema-level fix?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Add a prompt instruction: “never fabricate tax IDs”"
+      },
+      {
+        "key": "B",
+        "text": "Post-validate tax IDs against a checksum and discard failures"
+      },
+      {
+        "key": "C",
+        "text": "Lower the temperature to make fabrication less creative"
+      },
+      {
+        "key": "D",
+        "text": "Make the field optional/nullable so the model can legitimately return null when the information is absent from the source document"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Required fields on possibly-absent information force fabrication — the schema leaves no honest answer. Nullable/optional fields give the model a legitimate way to say “not present,” which is the designed prevention for this failure. Why not the others: A pits an instruction against a structural requirement that demands a value; B catches well-formed fabrications only by luck; C makes invented values more conservative-looking, not less invented.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "structured-output",
+      "json-schema",
+      "hallucination"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-4",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "Since adopting tool use, extractions are always syntactically valid — yet invoices arrive where line items don't sum to the stated total, and values occasionally land in the wrong fields. What should you understand and do?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Schema compliance was falsely advertised; file a bug"
+      },
+      {
+        "key": "B",
+        "text": "Strict schemas eliminate syntax errors but not semantic ones — add semantic validation, e.g., extracting `calculated_total` alongside `stated_total` and flagging discrepancies with a `conflict_detected` boolean"
+      },
+      {
+        "key": "C",
+        "text": "Make every field an unconstrained string so nothing can be wrong"
+      },
+      {
+        "key": "D",
+        "text": "Re-run each extraction until the numbers happen to sum"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. Tool use ensures structure, not truth. Semantic errors — sums that don't reconcile, transposed fields — need a semantic validation layer, with self-check fields like `calculated_total` making discrepancies machine-visible. Why not the others: A misunderstands what was promised (shape, not semantics); C destroys the structure downstream systems depend on; D retries until errors align by chance rather than detecting them.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "structured-output",
+      "semantic-validation"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-5",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "An extraction fails Pydantic validation with two specific field errors. You will retry. What should the retry request contain — and when would you skip retrying altogether?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Just the instruction “try again more carefully”; skip retries on Mondays"
+      },
+      {
+        "key": "B",
+        "text": "Only the validation errors, to keep the retry cheap; always retry at least five times"
+      },
+      {
+        "key": "C",
+        "text": "The original document, the failed extraction, and the specific validation errors — enabling targeted self-correction; skip retrying when the required information is simply absent from the source, since no retry can produce it"
+      },
+      {
+        "key": "D",
+        "text": "A different document, to give the model a fresh start"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "Correct: C. Retry-with-error-feedback works because the model sees what it produced, what was wrong, and the source to correct against. And the boundary matters: format and structural errors are retryable; information absent from the document is not. Why not the others: A retries blind — the model can't fix errors it isn't shown; B removes the document the correction must reference; D abandons the failed extraction rather than repairing it.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "structured-output",
+      "retries",
+      "validation"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-6",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "An overnight batch of 10,000 documents completes with 200 failures: most are oversized documents that blew past context limits, plus some transient errors. What is the correct failure-handling workflow?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Identify the failed requests by `custom_id` and resubmit only those, with modifications where needed — e.g., chunking the oversized documents before resubmission"
+      },
+      {
+        "key": "B",
+        "text": "Resubmit the entire 10,000-document batch and keep whichever results arrive first"
+      },
+      {
+        "key": "C",
+        "text": "Discard the 200 failures as an acceptable loss rate"
+      },
+      {
+        "key": "D",
+        "text": "Switch the 200 failures to the synchronous API unchanged, where context limits don't apply"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "Correct: A. `custom_id` exists to correlate failures to their source documents: fix what caused each failure (chunk the oversized ones) and resubmit only the fixed subset — paying again for 200 documents, not 10,000. Why not the others: B reprocesses 9,800 successes to retry 200 failures; C silently drops 2% of the corpus; D misunderstands context limits, which belong to the model, not the API path — unchunked oversized documents fail synchronously too.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-choice",
+      "batch-api",
+      "custom-id",
+      "error-handling"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-7",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "A single `analyze_document` tool handles extraction, summarization, and claim verification, chosen by a mode parameter. The agent regularly picks the wrong mode and results are inconsistent. What is the recommended redesign?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Add a fourth mode that automatically detects the right mode"
+      },
+      {
+        "key": "B",
+        "text": "Document the modes more thoroughly inside the one description"
+      },
+      {
+        "key": "C",
+        "text": "Reduce to two modes by merging extraction into summarization"
+      },
+      {
+        "key": "D",
+        "text": "Split the generic tool into purpose-specific tools — `extract_data_points`, `summarize_content`, `verify_claim_against_source` — each with a defined input/output contract"
+      }
+    ],
+    "correctKey": "D",
+    "explanation": "Correct: D. Purpose-specific tools turn a hidden mode decision into a visible selection decision — the thing tool descriptions are good at guiding. Each tool's contract is explicit, and misrouting drops accordingly. Why not the others: A buries the selection problem one layer deeper; B improves documentation of a structure that remains ambiguous; C reduces options while keeping the overloaded design.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "tool-design",
+      "single-purpose-tools"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-8",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "When your MCP extraction tool hits a parsing failure, it returns the message “Error: could not parse document” as an ordinary successful text result. The agent then treats that sentence as document content. What is the correct MCP pattern?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Prefix error text with “SYSTEM ERROR:” so the agent notices"
+      },
+      {
+        "key": "B",
+        "text": "Return the failure with the MCP `isError` flag set, so the agent programmatically recognizes a tool failure instead of interpreting error prose as data"
+      },
+      {
+        "key": "C",
+        "text": "Return an empty string on failure"
+      },
+      {
+        "key": "D",
+        "text": "Throw an unhandled exception and let the connection drop"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "Correct: B. `isError` is MCP's channel for communicating tool failure: it makes the error a machine-recognizable condition the agent can reason about, rather than text masquerading as a successful result. Why not the others: A still relies on the model inferring failure from prose conventions; C replaces a mislabeled failure with a silent one; D turns a recoverable tool error into a transport-level breakdown.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-choice",
+      "mcp",
+      "is-error",
+      "error-handling"
     ]
   }
 ]
