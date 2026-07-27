@@ -26012,5 +26012,501 @@
       "is-error",
       "error-handling"
     ]
+  },
+  {
+    "id": "cca-purcell-1-8",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "The agent frequently confuses `get_customer` and `lookup_order`; both currently carry one-line descriptions. Which TWO description changes most directly fix the misrouting? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Make both descriptions shorter so there is less to confuse"
+      },
+      {
+        "key": "B",
+        "text": "Document each tool's expected input formats and add example queries it should handle"
+      },
+      {
+        "key": "C",
+        "text": "Prefix both descriptions with “IMPORTANT:” for emphasis"
+      },
+      {
+        "key": "D",
+        "text": "Add boundary language differentiating the two — e.g., “use `lookup_order` when an order number is present; use `get_customer` to verify identity before account operations”"
+      },
+      {
+        "key": "E",
+        "text": "Rely on the tool names alone, since names are what models read"
+      }
+    ],
+    "correctKeys": [
+      "B",
+      "D"
+    ],
+    "explanation": "Correct: B and D. Descriptions are the primary selection mechanism. Input formats plus example queries show each tool's territory; explicit boundary language resolves the overlap causing the misrouting. Why not the others: A removes information from tools that already have too little; C adds emphasis without discrimination; E is false — names help, but descriptions carry the selection signal.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-response",
+      "tool-descriptions",
+      "tool-routing"
+    ]
+  },
+  {
+    "id": "cca-purcell-1-10",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-customer-support",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "In long multi-issue sessions, the agent's later responses misquote refund amounts and order numbers because earlier details were condensed into vague summaries, while each `lookup_order` result dumps 40+ fields into context. Which TWO changes address this? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Extract transactional facts — amounts, dates, order numbers, statuses — into a persistent case-facts block included in each prompt, outside the summarized history"
+      },
+      {
+        "key": "B",
+        "text": "Increase `max_tokens` so responses can be longer"
+      },
+      {
+        "key": "C",
+        "text": "Summarize even more aggressively to save space"
+      },
+      {
+        "key": "D",
+        "text": "Trim each tool result to only the fields relevant to the current issue before it enters context"
+      },
+      {
+        "key": "E",
+        "text": "Ask the customer to repeat key numbers periodically"
+      }
+    ],
+    "correctKeys": [
+      "A",
+      "D"
+    ],
+    "explanation": "Correct: A and D. Protect precise transactional facts from lossy summarization by persisting them in a dedicated block, and stop the bloat at its source by trimming verbose tool outputs to relevant fields before they accumulate. Why not the others: B controls output length, not context quality; C intensifies the exact failure mode — numbers dissolving into vagueness; E outsources the system's memory problem to the customer.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-response",
+      "context-management",
+      "case-facts"
+    ]
+  },
+  {
+    "id": "cca-purcell-2-10",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-code-generation",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "During multi-hour codebase exploration sessions, the agent starts answering from “typical patterns” instead of the specific classes it discovered earlier. Which TWO practices counteract this context degradation? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Switch to a model with a larger context window and continue accumulating"
+      },
+      {
+        "key": "B",
+        "text": "Maintain a scratchpad file recording key findings as they are discovered, and have the agent reference it for subsequent questions"
+      },
+      {
+        "key": "C",
+        "text": "Repeat important questions twice in the same message"
+      },
+      {
+        "key": "D",
+        "text": "Ask the agent to be more specific"
+      },
+      {
+        "key": "E",
+        "text": "Delegate verbose investigation (e.g., “find all test files”, “trace the refund flow”) to subagents that return summaries, keeping the main session's context for high-level coordination"
+      }
+    ],
+    "correctKeys": [
+      "B",
+      "E"
+    ],
+    "explanation": "Correct: B and E. A scratchpad persists key findings outside the degrading conversation, and subagent delegation keeps verbose exploration out of the main window, returning only distilled summaries. Why not the others: A postpones the same degradation at higher cost; C and D add more text to an already saturated context without removing any of the noise causing the problem.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-response",
+      "context-management",
+      "scratchpad",
+      "subagents"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-9",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Two credible sources report different figures for the same market's size, and one subagent's summary simply picked the larger number. Which TWO practices produce correct handling of conflicting source data? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Annotate the conflict explicitly — both values, each with source attribution — and let the coordinator decide how to reconcile before synthesis, rather than silently selecting one"
+      },
+      {
+        "key": "B",
+        "text": "Average the two figures into a single compromise value"
+      },
+      {
+        "key": "C",
+        "text": "Always adopt the more recent source and discard the other"
+      },
+      {
+        "key": "D",
+        "text": "Require publication or data-collection dates in subagents' structured outputs, so temporal differences are not misread as contradictions"
+      },
+      {
+        "key": "E",
+        "text": "Exclude both sources to avoid taking sides"
+      }
+    ],
+    "correctKeys": [
+      "A",
+      "D"
+    ],
+    "explanation": "Correct: A and D. Conflicts are information: preserve both values with attribution and surface the disagreement for deliberate reconciliation — and carry dates in structured output, since “conflicting” figures often just measure different moments. Why not the others: B invents a number no source reported; C automates a reconciliation that needs judgment — recency is context, not an override rule; E deletes two credible sources because they disagree.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-response",
+      "provenance",
+      "conflicting-sources"
+    ]
+  },
+  {
+    "id": "cca-purcell-3-10",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-multi-agent-research",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You are designing how the web search subagent behaves when its searches fail or return nothing. Which TWO behaviors are correct? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "On any failure, immediately terminate the entire research workflow"
+      },
+      {
+        "key": "B",
+        "text": "Attempt local recovery for transient failures (e.g., retrying a timeout), and propagate to the coordinator only errors it cannot resolve — including what was attempted and any partial results"
+      },
+      {
+        "key": "C",
+        "text": "Return empty results marked as success whenever a search fails, keeping the pipeline moving"
+      },
+      {
+        "key": "D",
+        "text": "Report every problem as a generic “search unavailable” status"
+      },
+      {
+        "key": "E",
+        "text": "Distinguish access failures (timeouts, service errors) from valid empty results (successful queries with no matches), since the two require different coordinator decisions"
+      }
+    ],
+    "correctKeys": [
+      "B",
+      "E"
+    ],
+    "explanation": "Correct: B and E. Resilient error propagation is layered and honest: handle locally what is locally fixable, escalate the rest with context the coordinator can act on, and never conflate “the search broke” with “the search found nothing.” Why not the others: A makes any single failure fatal when partial-result strategies exist; C is silent suppression — failure dressed as fact; D hides the very context recovery decisions need.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-response",
+      "error-handling",
+      "reliability"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-1",
+    "categoryKey": "tool-design-mcp",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 2,
+    "prompt": "The agent must (a) locate every file matching the test naming convention anywhere in the repo, and (b) find every place the string “PaymentDeclinedError” appears in code. Which TWO tool selections are correct? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "`Glob` with a pattern like `**/*.test.tsx` for the test files — file-path pattern matching is `Glob`'s job"
+      },
+      {
+        "key": "B",
+        "text": "`Grep` with a filename pattern to find the test files"
+      },
+      {
+        "key": "C",
+        "text": "`Grep` for “PaymentDeclinedError” — searching file contents for a string is `Grep`'s job"
+      },
+      {
+        "key": "D",
+        "text": "`Glob` for “PaymentDeclinedError” across file contents"
+      },
+      {
+        "key": "E",
+        "text": "`Bash` running `cat` on every file, piping through manual inspection"
+      }
+    ],
+    "correctKeys": [
+      "A",
+      "C"
+    ],
+    "explanation": "Correct: A and C. The division of labor is clean: `Glob` matches file paths against patterns (names, extensions, directories); `Grep` searches file contents for patterns (identifiers, error strings). Each task maps to exactly one. Why not the others: B and D swap the tools into each other's territory; E abandons both purpose-built tools for a brute-force pipeline that floods context.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-2",
+      "multiple-response",
+      "built-in-tools",
+      "glob-grep"
+    ]
+  },
+  {
+    "id": "cca-purcell-4-10",
+    "categoryKey": "agentic-architecture",
+    "scenarioId": "cca-purcell-developer-productivity",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You are writing `AgentDefinition` configurations for the productivity system's subagents. Which TWO statements about subagents are accurate? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Subagents automatically inherit the parent agent's full conversation history"
+      },
+      {
+        "key": "B",
+        "text": "Each subagent's `AgentDefinition` carries its own description, system prompt, and tool restrictions for its role"
+      },
+      {
+        "key": "C",
+        "text": "Subagents can be spawned without the `Task` tool if the prompt describes them clearly"
+      },
+      {
+        "key": "D",
+        "text": "Subagents do not share memory between invocations — whatever context a subagent needs must be provided explicitly in its prompt"
+      },
+      {
+        "key": "E",
+        "text": "Subagent tool restrictions are advisory and not enforced at runtime"
+      }
+    ],
+    "correctKeys": [
+      "B",
+      "D"
+    ],
+    "explanation": "Correct: B and D. Two load-bearing facts: subagents are configured individually (description, system prompt, tool restrictions), and they are isolated — no inherited history, no memory across invocations — so context passing is always explicit. Why not the others: A and C invert the isolation and spawning models — context never flows automatically, and `Task` is the spawning mechanism; E is false — tool restrictions are configuration, not suggestion.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-1",
+      "multiple-response",
+      "subagents",
+      "agent-definition"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-9",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "Your team is deciding which CI workloads to move to the Message Batches API for its 50% cost savings. Which TWO statements are accurate? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Batch processing suits latency-tolerant, non-blocking workloads like nightly test generation and weekly audit reports"
+      },
+      {
+        "key": "B",
+        "text": "Batches are guaranteed to complete within one hour"
+      },
+      {
+        "key": "C",
+        "text": "The batch API supports multi-turn tool calling within a single request"
+      },
+      {
+        "key": "D",
+        "text": "Blocking workflows such as pre-merge checks should stay on the synchronous API, since batches can take up to 24 hours with no latency SLA"
+      },
+      {
+        "key": "E",
+        "text": "Batch responses cannot be matched back to their requests"
+      }
+    ],
+    "correctKeys": [
+      "A",
+      "D"
+    ],
+    "explanation": "Correct: A and D. The batch decision rule in both directions: overnight and weekly jobs are the ideal profile for the discount; anything a developer waits on cannot tolerate a 24-hour, no-SLA window and stays synchronous. Why not the others: B and C are false — there is no latency guarantee, and mid-request tool execution is unsupported; E is false — `custom_id` exists precisely to correlate request/response pairs.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-response",
+      "batch-api",
+      "cost"
+    ]
+  },
+  {
+    "id": "cca-purcell-5-10",
+    "categoryKey": "prompt-engineering",
+    "scenarioId": "cca-purcell-ci",
+    "level": "purcell-ccar-f",
+    "difficulty": 3,
+    "prompt": "You are adding few-shot examples to the review prompt. Which TWO practices reflect how few-shot prompting works best? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Include as many examples as possible — twenty or more — to cover every case"
+      },
+      {
+        "key": "B",
+        "text": "Use 2–4 targeted examples aimed at the ambiguous scenarios, showing the reasoning for why one action was chosen over plausible alternatives"
+      },
+      {
+        "key": "C",
+        "text": "Once examples are added, explicit criteria become unnecessary"
+      },
+      {
+        "key": "D",
+        "text": "Rely on examples only for prose tasks; they don't work for code"
+      },
+      {
+        "key": "E",
+        "text": "Include examples demonstrating the exact desired output format — location, issue, severity, suggested fix — to achieve consistent, actionable findings"
+      }
+    ],
+    "correctKeys": [
+      "B",
+      "E"
+    ],
+    "explanation": "Correct: B and E. Effective few-shot work is targeted and demonstrative: a handful of examples aimed at genuine ambiguity, with reasoning shown, plus format demonstrations that lock output structure — quality of targeting over quantity. Why not the others: A bloats context and dilutes the signal of the examples that matter; C and D are false — examples complement explicit criteria, and code review is a prime few-shot use case.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-4",
+      "multiple-response",
+      "few-shot",
+      "prompt-engineering"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-9",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "Your extraction system reports 97% aggregate accuracy, and leadership wants to cut human review of high-confidence extractions. Which TWO practices must precede that decision? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Segment accuracy by document type and field — verifying consistent performance across all segments, since aggregate metrics can mask systematic failures on specific types"
+      },
+      {
+        "key": "B",
+        "text": "Accept the 97% aggregate as sufficient evidence on its own"
+      },
+      {
+        "key": "C",
+        "text": "Implement stratified random sampling of high-confidence extractions for ongoing error-rate measurement and detection of novel error patterns"
+      },
+      {
+        "key": "D",
+        "text": "Stop measuring once review is reduced, to save cost"
+      },
+      {
+        "key": "E",
+        "text": "Review only extractions the model itself flags as uncertain"
+      }
+    ],
+    "correctKeys": [
+      "A",
+      "C"
+    ],
+    "explanation": "Correct: A and C. Two safeguards make automation defensible: segmentation proves the average isn't hiding a failing document type or field, and stratified sampling of the “safe” population keeps measuring after humans step back — catching drift and novel errors. Why not the others: B trusts exactly the number that masks segment failures; D removes the instrumentation precisely when risk increases; E trusts self-flagged uncertainty, which misses the errors the model is confidently wrong about.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-response",
+      "evaluation",
+      "sampling"
+    ]
+  },
+  {
+    "id": "cca-purcell-6-10",
+    "categoryKey": "context-reliability",
+    "scenarioId": "cca-purcell-structured-extraction",
+    "level": "purcell-ccar-f",
+    "difficulty": 4,
+    "prompt": "Reviewer capacity covers only a fraction of extractions, so review attention must be routed where errors are likeliest. Which TWO practices form a sound routing design? (Select TWO.)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Trust the model's raw self-reported confidence scores without validation"
+      },
+      {
+        "key": "B",
+        "text": "Have the model output field-level confidence scores, then calibrate review thresholds against a labeled validation set"
+      },
+      {
+        "key": "C",
+        "text": "Review a fixed 1% of extractions chosen by submission order"
+      },
+      {
+        "key": "D",
+        "text": "Route to human review the extractions with low calibrated confidence or ambiguous/contradictory source documents, prioritizing limited reviewer capacity where errors concentrate"
+      },
+      {
+        "key": "E",
+        "text": "Review only documents longer than ten pages"
+      }
+    ],
+    "correctKeys": [
+      "B",
+      "D"
+    ],
+    "explanation": "Correct: B and D. Calibration then routing: field-level confidence scores become meaningful once thresholds are tuned on labeled data, and review capacity flows to the calibrated-low-confidence and ambiguous-source cases where errors actually cluster. Why not the others: A uses uncalibrated confidence — the known-unreliable version of the right signal; C and E route by arrival order and page count, neither of which correlates with error risk.",
+    "source": "curated",
+    "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/",
+    "reviewStatus": "draft",
+    "tags": [
+      "purcell-ccar-f",
+      "domain-5",
+      "multiple-response",
+      "calibration",
+      "routing"
+    ]
   }
 ]
