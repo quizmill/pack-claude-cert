@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "claude-cert",
   "title": "Claude Cert Practice",
   "description": "Unofficial Claude Certified Architect (Foundations) practice — community-curated multiple-choice bank with per-question attribution.",
@@ -46,5 +46,16 @@
     "label": "CCAR-F exam",
     "passPct": 72,
     "scaled": true
-  }
+  },
+  "levelsLabel": "Question set",
+  "levels": [
+    {
+      "key": "core",
+      "label": "Core bank"
+    },
+    {
+      "key": "purcell-ccar-f",
+      "label": "Purcell PDF"
+    }
+  ]
 }

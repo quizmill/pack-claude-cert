@@ -60,5 +60,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## Purcell CCAR-F Practice Set — "Purcell PDF" question set (`level: purcell-ccar-f`)
+
+The 49 questions with ids `cca-purcell-*` (tag `purcell-ccar-f`, and the six
+`cca-purcell-*` scenarios) are adapted from Matthew Purcell's free *"Claude
+Certified Architect – Foundations (CCAR-F) Practice Exam Question Set,"* shared
+publicly on LinkedIn:
+
+- <https://www.linkedin.com/in/purcellmatthew>
+- <https://www.linkedin.com/posts/purcellmatthew_claude-certified-architect-foundations-practice-activity-7483309459155378176-E05v/>
+
+The author states the set is original material written against Anthropic's public
+exam guide — **not** actual exam content, which is under NDA.
+
+> Note: the original set has 60 questions; 11 are "select TWO" multiple-response
+> items. The quizmill engine is currently single-answer only, so those 11 were
+> **deferred** — to be re-added once the engine supports multiple-answer
+> questions. The remaining 49 single-answer questions are integrated here.
+
+## Trademarks
+
 "Claude" and "Claude Certified Architect" are trademarks of Anthropic,
 PBC. This project is not affiliated with or endorsed by Anthropic.
