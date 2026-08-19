@@ -38,4 +38,7 @@ jobs:
       project: quizmill-claude-cert
       app: claude-cert-app
       engine: ${{ github.event.client_payload.version || 'latest' }}
+      # Cloud sync via the shared quizmill-sync Worker/D1 (sync-key auth).
+      # Public by design — this URL ships in the client bundle.
+      sync_url: https://quizmill-sync.peter-vanhee.workers.dev
     secrets: inherit
