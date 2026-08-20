@@ -39,6 +39,8 @@ jobs:
       app: claude-cert-app
       engine: ${{ github.event.client_payload.version || 'latest' }}
       # Cloud sync via the shared quizmill-sync Worker/D1 (sync-key auth).
-      # Public by design — this URL ships in the client bundle.
-      sync_url: https://quizmill-sync.peter-vanhee.workers.dev
+      # Public by design — this URL ships in the client bundle. The worker
+      # also still answers on quizmill-sync.peter-vanhee.workers.dev for
+      # builds that predate the custom domain.
+      sync_url: https://sync.quizmill.dev
     secrets: inherit
