@@ -25681,7 +25681,7 @@
       {
         "key": "A",
         "text": "Continue looping until the assistant's text contains a phrase like “I have resolved the issue”, then stop",
-        "explanation": "A parses natural language for a completion signal (a documented anti-pattern)"
+        "explanation": "A parses natural language for a completion signal (a documented anti-pattern)."
       },
       {
         "key": "B",
@@ -26345,7 +26345,7 @@
       {
         "key": "A",
         "text": "`/memory`, which clears the conversation",
-        "explanation": "A shows which memory files are loaded (a diagnostic, not cleanup)"
+        "explanation": "A shows which memory files are loaded (a diagnostic, not cleanup)."
       },
       {
         "key": "B",
@@ -27511,7 +27511,7 @@
       {
         "key": "A",
         "text": "Schema compliance was falsely advertised; file a bug",
-        "explanation": "A misunderstands what was promised (shape, not semantics)"
+        "explanation": "A misunderstands what was promised (shape, not semantics)."
       },
       {
         "key": "B",
