@@ -9,7 +9,7 @@
       {
         "key": "A",
         "text": "Add a paragraph to the system prompt: \"When the user mentions an order, call `lookup_order`, not `get_customer`.\"",
-        "explanation": "A competes against the tool descriptions instead of fixing them; the system prompt and tool descriptions both shape routing, and the descriptions win at scale."
+        "explanation": "Competes against the tool descriptions instead of fixing them; the system prompt and tool descriptions both shape routing, and the descriptions win at scale."
       },
       {
         "key": "B",
@@ -18,12 +18,12 @@
       {
         "key": "C",
         "text": "Merge the two into a single `get_customer_or_order` tool that branches internally based on whether the supplied identifier looks like a customer_id or an order_id.",
-        "explanation": "C bundles two distinct responsibilities into one tool, which violates the \"one tool, one purpose\" guidance — now every caller of `get_customer_or_order` needs to interpret a polymorphic response."
+        "explanation": "Bundles two distinct responsibilities into one tool, which violates the \"one tool, one purpose\" guidance — now every caller of `get_customer_or_order` needs to interpret a polymorphic response."
       },
       {
         "key": "D",
         "text": "Force `tool_choice: {type: \"tool\", name: \"lookup_order\"}` for any user message that contains the word \"order\".",
-        "explanation": "D is brittle keyword routing — it misses paraphrases (\"where's my purchase?\", \"track my delivery\") and over-fires on customer-profile questions that mention orders in passing."
+        "explanation": "Brittle keyword routing — it misses paraphrases (\"where's my purchase?\", \"track my delivery\") and over-fires on customer-profile questions that mention orders in passing."
       }
     ],
     "correctKey": "B",
@@ -48,7 +48,7 @@
       {
         "key": "A",
         "text": "Add a `confidence_score: number` parameter to `escalate_to_human` and instruct the model: \"Call `escalate_to_human` whenever your confidence in resolving the issue is below 0.7.\"",
-        "explanation": "A asks the model to invent a calibrated confidence score, which language models are notoriously poor at. The threshold (`0.7`) is grounded in nothing."
+        "explanation": "Asks the model to invent a calibrated confidence score, which language models are notoriously poor at. The threshold (`0.7`) is grounded in nothing."
       },
       {
         "key": "B",
@@ -57,12 +57,12 @@
       {
         "key": "C",
         "text": "Add a `PostToolUse` hook that, after every tool call, runs a separate Claude API call asking \"should this be escalated?\" and forces escalation if the answer is yes.",
-        "explanation": "C doubles inference cost and latency on every tool call to do work a well-written rule already does. The judge call has the same vague rule and the same calibration problem."
+        "explanation": "Doubles inference cost and latency on every tool call to do work a well-written rule already does. The judge call has the same vague rule and the same calibration problem."
       },
       {
         "key": "D",
         "text": "Switch the primary model from Claude Sonnet 4.6 to Claude Opus 4.7 — Opus's stronger judgment will handle ambiguous escalation decisions better.",
-        "explanation": "D may marginally improve judgment but doesn't fix the root cause: the rule itself is ambiguous. A model upgrade is the wrong lever when the spec is underdetermined."
+        "explanation": "May marginally improve judgment but doesn't fix the root cause: the rule itself is ambiguous. A model upgrade is the wrong lever when the spec is underdetermined."
       }
     ],
     "correctKey": "B",
@@ -92,17 +92,17 @@
       {
         "key": "B",
         "text": "Add three few-shot examples of correctly-formatted `process_refund` calls to the system prompt.",
-        "explanation": "B helps in expectation but is best-effort; in-context examples don't *guarantee* conformance."
+        "explanation": "Helps in expectation but is best-effort; in-context examples don't *guarantee* conformance."
       },
       {
         "key": "C",
         "text": "Catch the validation error in the tool executor and return a structured error message describing the schema violation, so Claude can correct on the next turn.",
-        "explanation": "C is a useful belt-and-braces fallback, but it pays for a wasted turn (and risks an unbounded correction loop) instead of preventing the error."
+        "explanation": "A useful belt-and-braces fallback, but it pays for a wasted turn (and risks an unbounded correction loop) instead of preventing the error."
       },
       {
         "key": "D",
         "text": "Run every tool call through a separate Claude API call first that cleans the arguments before forwarding to `process_refund`.",
-        "explanation": "D doubles inference cost and latency to do what a single config flag does for free."
+        "explanation": "Doubles inference cost and latency to do what a single config flag does for free."
       }
     ],
     "correctKey": "A",
@@ -127,7 +127,7 @@
       {
         "key": "A",
         "text": "Increase `max_tokens` on the synthesis subagent so its briefing has room to mention every finding.",
-        "explanation": "A treats the symptom from the wrong side. A longer output doesn't help a model that has lost track of the input."
+        "explanation": "Treats the symptom from the wrong side. A longer output doesn't help a model that has lost track of the input."
       },
       {
         "key": "B",
@@ -136,12 +136,12 @@
       {
         "key": "C",
         "text": "Switch the synthesis subagent to Claude Opus 4.7, which handles long contexts better than Sonnet.",
-        "explanation": "C is a model swap, not an architectural fix. Even with a longer context window, you've designed the system to grow context without bound."
+        "explanation": "A model swap, not an architectural fix. Even with a longer context window, you've designed the system to grow context without bound."
       },
       {
         "key": "D",
         "text": "Add a `Stop` hook that automatically compacts the conversation whenever the running token count exceeds 100,000.",
-        "explanation": "D is a lossy band-aid. Compaction loses information; redesigning the data flow does not."
+        "explanation": "A lossy band-aid. Compaction loses information; redesigning the data flow does not."
       }
     ],
     "correctKey": "B",
@@ -166,7 +166,7 @@
       {
         "key": "A",
         "text": "Append a paragraph to the subagent's system prompt body: \"You must never call Write or Edit. Return your notes inline in your reply only.\"",
-        "explanation": "A is best-effort; LLMs sometimes violate prohibitions, especially when the task seems to invite the forbidden action."
+        "explanation": "Best-effort; LLMs sometimes violate prohibitions, especially when the task seems to invite the forbidden action."
       },
       {
         "key": "B",
@@ -175,12 +175,12 @@
       {
         "key": "C",
         "text": "Set `permissionMode: plan` on the subagent so it cannot make filesystem modifications.",
-        "explanation": "C overshoots. `plan` mode is designed for an interactive plan-then-edit workflow where the human approves the plan before any modification; it's not the right primitive for permanently scoping a worker, and it introduces semantics the subagent's role doesn't need."
+        "explanation": "Overshoots. `plan` mode is designed for an interactive plan-then-edit workflow where the human approves the plan before any modification; it's not the right primitive for permanently scoping a worker, and it introduces semantics the subagent's role doesn't need."
       },
       {
         "key": "D",
         "text": "Add a `PreToolUse` hook scoped to this subagent that intercepts and rejects any `Write` or `Edit` call.",
-        "explanation": "D works but is runtime enforcement of something the config can express declaratively. Hooks are right when you need behavior beyond the declarative model (logging, dynamic policy); they're overkill for a static allowlist."
+        "explanation": "Works but is runtime enforcement of something the config can express declaratively. Hooks are right when you need behavior beyond the declarative model (logging, dynamic policy); they're overkill for a static allowlist."
       }
     ],
     "correctKey": "B",
@@ -4725,7 +4725,7 @@
       {
         "key": "C",
         "text": "Non-retryable; message: \"Error code CVD-4042 from Stripe: insufficient_funds for card ending 4242.\"",
-        "explanation": "While non-retryable is correct, option C leaks sensitive financial data (the last four digits of the card and the Stripe error code). This violates the guidance to avoid exposing sensitive information in error messages."
+        "explanation": "Non-retryable is correct, but this message leaks sensitive financial data (the last four digits of the card and the Stripe error code). This violates the guidance to avoid exposing sensitive information in error messages."
       },
       {
         "key": "D",
@@ -8118,7 +8118,7 @@
       {
         "key": "A",
         "text": "Only `frontend-react.md` and `all-typescript.md` — two files.",
-        "explanation": "Option A correctly identifies the two active files but is presented as a distinct answer from D. Option D provides the complete analysis including explicit confirmation that the other four files are not active, making it the more precise and complete answer."
+        "explanation": "Correctly identifies the two active files, but D provides the complete analysis including explicit confirmation that the other four files are not active, making it the more precise and complete answer."
       },
       {
         "key": "B",
@@ -11289,7 +11289,7 @@
       {
         "key": "D",
         "text": "Forced tool use is unreliable for nested objects because Claude cannot parse schemas with more than two levels of nesting",
-        "explanation": "Claude handles deeply nested schemas correctly. There is no documented nesting depth limit for `input_schema`. The objection in option D is a fabricated technical constraint."
+        "explanation": "Claude handles deeply nested schemas correctly. There is no documented nesting depth limit for `input_schema`; this objection is a fabricated technical constraint."
       }
     ],
     "correctKey": "B",
@@ -25681,7 +25681,7 @@
       {
         "key": "A",
         "text": "Continue looping until the assistant's text contains a phrase like “I have resolved the issue”, then stop",
-        "explanation": "A parses natural language for a completion signal (a documented anti-pattern)."
+        "explanation": "Parses natural language for a completion signal (a documented anti-pattern)."
       },
       {
         "key": "B",
@@ -25690,12 +25690,12 @@
       {
         "key": "C",
         "text": "Run exactly five iterations, since support cases rarely need more tool calls than that",
-        "explanation": "C makes an arbitrary iteration cap the primary stopping mechanism."
+        "explanation": "Makes an arbitrary iteration cap the primary stopping mechanism."
       },
       {
         "key": "D",
         "text": "Stop as soon as any response contains text content, since text indicates completion",
-        "explanation": "D fails because responses can contain both text and `tool_use` blocks mid-task."
+        "explanation": "Fails because responses can contain both text and `tool_use` blocks mid-task."
       }
     ],
     "correctKey": "B",
@@ -25722,17 +25722,17 @@
       {
         "key": "A",
         "text": "The MCP server pushes the result directly into the model's memory",
-        "explanation": "A and C describe automatic mechanisms that do not exist — the API does not execute your tools."
+        "explanation": "Describes a push mechanism that does not exist — tool results reach the model only through the conversation history."
       },
       {
         "key": "B",
         "text": "The model re-reads the tool's description, which now includes the result",
-        "explanation": "B confuses static tool definitions with runtime results."
+        "explanation": "Confuses static tool definitions with runtime results."
       },
       {
         "key": "C",
         "text": "Nothing is required — the API executes tools and incorporates results automatically",
-        "explanation": "A and C describe automatic mechanisms that do not exist — the API does not execute your tools."
+        "explanation": "Describes an automatic mechanism that does not exist — the API does not execute your tools."
       },
       {
         "key": "D",
@@ -25767,17 +25767,17 @@
       {
         "key": "B",
         "text": "Move the $500 limit to the top of the system prompt and repeat it in every user turn",
-        "explanation": "B and D improve the odds but retain a non-zero failure rate, which the scenario shows is unacceptable."
+        "explanation": "Improves the odds but retains a non-zero failure rate, which the scenario shows is unacceptable."
       },
       {
         "key": "C",
         "text": "Lower the model temperature so it follows the policy more consistently",
-        "explanation": "C misapplies a sampling parameter to a compliance problem."
+        "explanation": "Misapplies a sampling parameter to a compliance problem."
       },
       {
         "key": "D",
         "text": "Add the limit to the `process_refund` tool description so the model reads it during selection",
-        "explanation": "B and D improve the odds but retain a non-zero failure rate, which the scenario shows is unacceptable."
+        "explanation": "Improves the odds but retains a non-zero failure rate, which the scenario shows is unacceptable."
       }
     ],
     "correctKey": "A",
@@ -25805,12 +25805,12 @@
       {
         "key": "A",
         "text": "Resolve only the refund, since it was mentioned first, and wait for the customer to raise the others again",
-        "explanation": "A and D silently drop or bounce concerns the customer already stated, directly harming FCR."
+        "explanation": "Silently drops concerns the customer already stated, directly harming FCR."
       },
       {
         "key": "B",
         "text": "Escalate immediately — multi-issue messages always exceed agent capability",
-        "explanation": "B escalates work that is well within capability."
+        "explanation": "Escalates work that is well within capability."
       },
       {
         "key": "C",
@@ -25819,7 +25819,7 @@
       {
         "key": "D",
         "text": "Ask the customer to resend each issue as a separate message",
-        "explanation": "A and D silently drop or bounce concerns the customer already stated, directly harming FCR."
+        "explanation": "Bounces concerns the customer already stated back to them, directly harming FCR."
       }
     ],
     "correctKey": "C",
@@ -25846,7 +25846,7 @@
       {
         "key": "A",
         "text": "Only the customer's name, so the human can start fresh without bias",
-        "explanation": "A discards completed investigation and forces repetition."
+        "explanation": "Discards completed investigation and forces repetition."
       },
       {
         "key": "B",
@@ -25855,12 +25855,12 @@
       {
         "key": "C",
         "text": "A sentiment score describing how upset the customer is",
-        "explanation": "C conveys mood, not case state."
+        "explanation": "Conveys mood, not case state."
       },
       {
         "key": "D",
         "text": "The raw JSON of every tool result gathered during the session",
-        "explanation": "D transfers unprocessed noise and leaves the analysis to be redone."
+        "explanation": "Transfers unprocessed noise and leaves the analysis to be redone."
       }
     ],
     "correctKey": "B",
@@ -25887,17 +25887,17 @@
       {
         "key": "A",
         "text": "Instruct the agent in the system prompt to always retry exactly twice",
-        "explanation": "A hard-codes one recovery strategy for error types that need different ones."
+        "explanation": "Hard-codes one recovery strategy for error types that need different ones."
       },
       {
         "key": "B",
         "text": "Remove failure responses entirely so the agent never sees errors",
-        "explanation": "B removes the signal instead of enriching it."
+        "explanation": "Removes the signal instead of enriching it."
       },
       {
         "key": "C",
         "text": "Have the agent apologize to the customer whenever any error occurs",
-        "explanation": "C treats communication as a substitute for correct recovery logic."
+        "explanation": "Treats communication as a substitute for correct recovery logic."
       },
       {
         "key": "D",
@@ -25932,17 +25932,17 @@
       {
         "key": "B",
         "text": "`errorCategory`: “transient” so the agent retries later, when the policy might differ",
-        "explanation": "B mislabels a deterministic refusal as temporary, guaranteeing futile retries."
+        "explanation": "Mislabels a deterministic refusal as temporary, guaranteeing futile retries."
       },
       {
         "key": "C",
         "text": "An empty result marked as success, to keep the conversation positive",
-        "explanation": "C is silent error suppression that turns failure into misinformation."
+        "explanation": "Silent error suppression that turns failure into misinformation."
       },
       {
         "key": "D",
         "text": "A stack trace, so the agent has maximum detail",
-        "explanation": "D exposes internals the agent cannot use and should not repeat."
+        "explanation": "Exposes internals the agent cannot use and should not repeat."
       }
     ],
     "correctKey": "A",
@@ -25969,12 +25969,12 @@
       {
         "key": "A",
         "text": "Attempt resolution first, escalating only if the attempt fails",
-        "explanation": "A and D do exactly what the customer forbade."
+        "explanation": "Does exactly what the customer forbade."
       },
       {
         "key": "B",
         "text": "Run sentiment analysis and escalate only if frustration exceeds a threshold",
-        "explanation": "B substitutes an unreliable proxy (sentiment) for a signal that could not be clearer — the customer already said the words."
+        "explanation": "Substitutes an unreliable proxy (sentiment) for a signal that could not be clearer — the customer already said the words."
       },
       {
         "key": "C",
@@ -25983,7 +25983,7 @@
       {
         "key": "D",
         "text": "Ask the customer three clarifying questions before deciding",
-        "explanation": "A and D do exactly what the customer forbade."
+        "explanation": "Does exactly what the customer forbade."
       }
     ],
     "correctKey": "C",
@@ -26010,12 +26010,12 @@
       {
         "key": "A",
         "text": "In `.claude/commands/` in the repository, like all slash commands",
-        "explanation": "A publishes a personal tool to the whole team."
+        "explanation": "Publishes a personal tool to the whole team."
       },
       {
         "key": "B",
         "text": "In the root `CLAUDE.md` under a # Commands heading",
-        "explanation": "B is project context, not a command definition mechanism."
+        "explanation": "Project context, not a command definition mechanism."
       },
       {
         "key": "C",
@@ -26024,7 +26024,7 @@
       {
         "key": "D",
         "text": "In `.claude/rules/` with a paths glob matching your username",
-        "explanation": "D misuses path-scoped rules, which condition on edited file paths, not identity."
+        "explanation": "Misuses path-scoped rules, which condition on edited file paths, not identity."
       }
     ],
     "correctKey": "C",
@@ -26051,7 +26051,7 @@
       {
         "key": "A",
         "text": "`argument-hint`, so the skill asks what to analyze",
-        "explanation": "A governs parameter prompting."
+        "explanation": "Governs parameter prompting."
       },
       {
         "key": "B",
@@ -26060,12 +26060,12 @@
       {
         "key": "C",
         "text": "`allowed-tools`, restricting the skill to read-only operations",
-        "explanation": "C governs which tools the skill may use — neither controls where output accumulates."
+        "explanation": "Governs which tools the skill may use — neither controls where output accumulates."
       },
       {
         "key": "D",
         "text": "`paths`, restricting the skill to architecture files",
-        "explanation": "D is rules-file syntax, not skill frontmatter for isolation."
+        "explanation": "Rules-file syntax, not skill frontmatter for isolation."
       }
     ],
     "correctKey": "B",
@@ -26093,17 +26093,17 @@
       {
         "key": "A",
         "text": "State “never run `Bash`” prominently in the `SKILL.md` instructions",
-        "explanation": "A is prompt-level guidance with a non-zero failure rate."
+        "explanation": "Prompt-level guidance with a non-zero failure rate."
       },
       {
         "key": "B",
         "text": "Trust the skill's narrow purpose to keep it away from `Bash`",
-        "explanation": "B is hope."
+        "explanation": "Hope, not a guarantee."
       },
       {
         "key": "C",
         "text": "Run the skill only in plan mode",
-        "explanation": "C changes the execution workflow but is not a per-skill tool restriction."
+        "explanation": "Changes the execution workflow but is not a per-skill tool restriction."
       },
       {
         "key": "D",
@@ -26139,17 +26139,17 @@
       {
         "key": "B",
         "text": "Email the teammate your `~/.claude/CLAUDE.md` to copy into their home directory",
-        "explanation": "B distributes configuration by hand and drifts immediately."
+        "explanation": "Distributes configuration by hand and drifts immediately."
       },
       {
         "key": "C",
         "text": "Have the teammate re-install Claude Code to refresh configuration",
-        "explanation": "C reinstalls software to fix a file-location problem."
+        "explanation": "Reinstalls software to fix a file-location problem."
       },
       {
         "key": "D",
         "text": "Paste the standards at the start of each session until they stick",
-        "explanation": "D mistakes a persistent configuration issue for a per-session prompting task — nothing “sticks” between sessions."
+        "explanation": "Mistakes a persistent configuration issue for a per-session prompting task — nothing “sticks” between sessions."
       }
     ],
     "correctKey": "A",
@@ -26177,12 +26177,12 @@
       {
         "key": "A",
         "text": "Delete the file and rely on the model's general knowledge of good practice",
-        "explanation": "A abandons hard-won project conventions."
+        "explanation": "Abandons hard-won project conventions."
       },
       {
         "key": "B",
         "text": "Move everything to each developer's user-level `CLAUDE.md`",
-        "explanation": "B unshares team configuration and guarantees divergence."
+        "explanation": "Unshares team configuration and guarantees divergence."
       },
       {
         "key": "C",
@@ -26191,7 +26191,7 @@
       {
         "key": "D",
         "text": "Convert the entire file into a single slash command developers run manually",
-        "explanation": "D makes always-relevant standards opt-in and forgettable."
+        "explanation": "Makes always-relevant standards opt-in and forgettable."
       }
     ],
     "correctKey": "C",
@@ -26219,7 +26219,7 @@
       {
         "key": "A",
         "text": "`claude --continue-all`, which reopens every recent session",
-        "explanation": "A is not a real flag."
+        "explanation": "Not a real flag."
       },
       {
         "key": "B",
@@ -26228,12 +26228,12 @@
       {
         "key": "C",
         "text": "`claude -p “continue the leak investigation”`",
-        "explanation": "C starts a fresh non-interactive run with no memory of yesterday."
+        "explanation": "Starts a fresh non-interactive run with no memory of yesterday."
       },
       {
         "key": "D",
         "text": "A new session, pasting yesterday's terminal scrollback as the first message",
-        "explanation": "D approximates resumption badly — unstructured scrollback is a poor substitute for the session's actual context."
+        "explanation": "Approximates resumption badly — unstructured scrollback is a poor substitute for the session's actual context."
       }
     ],
     "correctKey": "B",
@@ -26261,17 +26261,17 @@
       {
         "key": "A",
         "text": "Run both strategies sequentially in the same session, asking Claude to forget the first before starting the second",
-        "explanation": "A is impossible — context cannot be selectively forgotten on request."
+        "explanation": "Impossible — context cannot be selectively forgotten on request."
       },
       {
         "key": "B",
         "text": "Open two brand-new sessions and redo the module analysis in each",
-        "explanation": "B pays for the expensive baseline twice."
+        "explanation": "Pays for the expensive baseline twice."
       },
       {
         "key": "C",
         "text": "Use `/compact` between the two strategies",
-        "explanation": "C compacts context within one session, it does not branch it."
+        "explanation": "Compacts context within one session, it does not branch it."
       },
       {
         "key": "D",
@@ -26307,17 +26307,17 @@
       {
         "key": "B",
         "text": "Resume the session as-is; Claude automatically detects file changes",
-        "explanation": "B assumes an automatic re-verification that does not happen — stale results sit in context as if true."
+        "explanation": "Assumes an automatic re-verification that does not happen — stale results sit in context as if true."
       },
       {
         "key": "C",
         "text": "Resume the session and increase `max_tokens` to accommodate the confusion",
-        "explanation": "C spends tokens on a correctness problem."
+        "explanation": "Spends tokens on a correctness problem."
       },
       {
         "key": "D",
         "text": "Never resume any session; always start from zero exploration",
-        "explanation": "D throws away a valid technique — for minor changes, resuming and informing the session which files changed works well."
+        "explanation": "Throws away a valid technique — for minor changes, resuming and informing the session which files changed works well."
       }
     ],
     "correctKey": "A",
@@ -26345,12 +26345,12 @@
       {
         "key": "A",
         "text": "`/memory`, which clears the conversation",
-        "explanation": "A shows which memory files are loaded (a diagnostic, not cleanup)."
+        "explanation": "Shows which memory files are loaded (a diagnostic, not cleanup)."
       },
       {
         "key": "B",
         "text": "`/fork`, which splits the session in half",
-        "explanation": "B forking is for divergent branches, not compression."
+        "explanation": "Forking is for divergent branches, not compression."
       },
       {
         "key": "C",
@@ -26359,7 +26359,7 @@
       {
         "key": "D",
         "text": "`/rules`, which reloads the rule files",
-        "explanation": "D does not address conversation bloat."
+        "explanation": "Does not address conversation bloat."
       }
     ],
     "correctKey": "C",
@@ -26387,17 +26387,17 @@
       {
         "key": "A",
         "text": "The coordinator model tier is too small to understand delegation",
-        "explanation": "A and C look for a failure in comprehension or emphasis when the tool inventory makes delegation impossible."
+        "explanation": "Looks for a failure in comprehension when the tool inventory makes delegation impossible."
       },
       {
         "key": "B",
         "text": "Subagents must be started manually before the coordinator runs",
-        "explanation": "B describes a startup model that does not exist — subagents are spawned on demand."
+        "explanation": "Describes a startup model that does not exist — subagents are spawned on demand."
       },
       {
         "key": "C",
         "text": "The system prompt needs the word “delegate” in capital letters",
-        "explanation": "A and C look for a failure in comprehension or emphasis when the tool inventory makes delegation impossible."
+        "explanation": "Looks for a failure in emphasis when the tool inventory makes delegation impossible."
       },
       {
         "key": "D",
@@ -26429,7 +26429,7 @@
       {
         "key": "A",
         "text": "The synthesis agent's model needs extended thinking enabled",
-        "explanation": "A adds reasoning capacity over an empty input."
+        "explanation": "Adds reasoning capacity over an empty input."
       },
       {
         "key": "B",
@@ -26438,12 +26438,12 @@
       {
         "key": "C",
         "text": "The synthesis agent needs web search tools to gather its own findings",
-        "explanation": "C duplicates the search agent's role instead of fixing the handoff."
+        "explanation": "Duplicates the search agent's role instead of fixing the handoff."
       },
       {
         "key": "D",
         "text": "The prompt needs the word “please”",
-        "explanation": "D is not the missing ingredient — data is."
+        "explanation": "Not the missing ingredient — data is."
       }
     ],
     "correctKey": "B",
@@ -26474,17 +26474,17 @@
       {
         "key": "B",
         "text": "Ask each subagent to work faster in its system prompt",
-        "explanation": "B changes nothing about scheduling."
+        "explanation": "Changes nothing about scheduling."
       },
       {
         "key": "C",
         "text": "Run two copies of the entire system and merge the databases",
-        "explanation": "C is massive infrastructure duplication for a one-line orchestration fix."
+        "explanation": "Massive infrastructure duplication for a one-line orchestration fix."
       },
       {
         "key": "D",
         "text": "Parallelism is impossible — subagents must always run sequentially",
-        "explanation": "D is false — parallel `Task` calls are a documented pattern."
+        "explanation": "False — parallel `Task` calls are a documented pattern."
       }
     ],
     "correctKey": "A",
@@ -26512,12 +26512,12 @@
       {
         "key": "A",
         "text": "Make the procedures longer, covering more contingencies explicitly",
-        "explanation": "A is an arms race against topic variety that scripts always lose."
+        "explanation": "An arms race against topic variety that scripts always lose."
       },
       {
         "key": "B",
         "text": "Remove all instructions and let subagents infer their tasks",
-        "explanation": "B removes the goal along with the script."
+        "explanation": "Removes the goal along with the script."
       },
       {
         "key": "C",
@@ -26526,7 +26526,7 @@
       {
         "key": "D",
         "text": "Have subagents ask the human operator whenever the script fails",
-        "explanation": "D reintroduces a human into a loop designed to run autonomously."
+        "explanation": "Reintroduces a human into a loop designed to run autonomously."
       }
     ],
     "correctKey": "C",
@@ -26554,7 +26554,7 @@
       {
         "key": "A",
         "text": "Lower the bar: accept the first synthesis as final to control costs",
-        "explanation": "A ships the known defect."
+        "explanation": "Ships the known defect."
       },
       {
         "key": "B",
@@ -26563,12 +26563,12 @@
       {
         "key": "C",
         "text": "Ask the report generation agent to pad thin sections with general knowledge",
-        "explanation": "C fills gaps with uncited generalities — the opposite of a cited research product."
+        "explanation": "Fills gaps with uncited generalities — the opposite of a cited research product."
       },
       {
         "key": "D",
         "text": "Always run every subagent exactly twice regardless of output quality",
-        "explanation": "D doubles cost blindly with no gap-detection to aim the second pass."
+        "explanation": "Doubles cost blindly with no gap-detection to aim the second pass."
       }
     ],
     "correctKey": "B",
@@ -26595,17 +26595,17 @@
       {
         "key": "A",
         "text": "Add a nineteenth tool that tells the agents which tool to use",
-        "explanation": "A adds selection complexity to solve selection complexity."
+        "explanation": "Adds selection complexity to solve selection complexity."
       },
       {
         "key": "B",
         "text": "Alphabetize the tool list so selection is easier",
-        "explanation": "B changes ordering, not decision difficulty."
+        "explanation": "Changes ordering, not decision difficulty."
       },
       {
         "key": "C",
         "text": "Write longer system prompts warning each agent about the tools it should ignore",
-        "explanation": "C asks prompts to fight an inventory problem configuration should fix."
+        "explanation": "Asks prompts to fight an inventory problem configuration should fix."
       },
       {
         "key": "D",
@@ -26640,17 +26640,17 @@
       {
         "key": "B",
         "text": "Increase the tool-call budget so exploration is affordable",
-        "explanation": "B pays for the inefficiency rather than removing it."
+        "explanation": "Pays for the inefficiency rather than removing it."
       },
       {
         "key": "C",
         "text": "Hard-code the current data inventory into every system prompt",
-        "explanation": "C goes stale the moment the data changes."
+        "explanation": "Goes stale the moment the data changes."
       },
       {
         "key": "D",
         "text": "Remove discovery capability so agents work blind",
-        "explanation": "D trades wasted calls for ignorance."
+        "explanation": "Trades wasted calls for ignorance."
       }
     ],
     "correctKey": "A",
@@ -26677,12 +26677,12 @@
       {
         "key": "A",
         "text": "Have the report generator add plausible citations at the end",
-        "explanation": "A invents citations — worse than none in a research product."
+        "explanation": "Invents citations — worse than none in a research product."
       },
       {
         "key": "B",
         "text": "Instruct the synthesis agent to write “sources available on request”",
-        "explanation": "B advertises attribution the system no longer possesses."
+        "explanation": "Advertises attribution the system no longer possesses."
       },
       {
         "key": "C",
@@ -26691,7 +26691,7 @@
       {
         "key": "D",
         "text": "Reduce the number of summarization steps to one",
-        "explanation": "D reduces compression events but the remaining one still strips attribution."
+        "explanation": "Reduces compression events but the remaining one still strips attribution."
       }
     ],
     "correctKey": "C",
@@ -26719,17 +26719,17 @@
       {
         "key": "A",
         "text": "Delete five of the six occurrences so the match becomes unique",
-        "explanation": "A mutilates code to satisfy the tool."
+        "explanation": "Mutilates code to satisfy the tool."
       },
       {
         "key": "B",
         "text": "Retry the same `Edit` repeatedly until it succeeds",
-        "explanation": "B retries a deterministic failure — the sixfold match will not resolve itself."
+        "explanation": "Retries a deterministic failure — the sixfold match will not resolve itself."
       },
       {
         "key": "C",
         "text": "Switch to `Bash` and modify the file with `sed`",
-        "explanation": "C swaps a controlled file operation for fragile stream editing."
+        "explanation": "Swaps a controlled file operation for fragile stream editing."
       },
       {
         "key": "D",
@@ -26760,7 +26760,7 @@
       {
         "key": "A",
         "text": "`Read` files in alphabetical order and stop at the context limit",
-        "explanation": "A spends the budget by filename accident."
+        "explanation": "Spends the budget by filename accident."
       },
       {
         "key": "B",
@@ -26769,12 +26769,12 @@
       {
         "key": "C",
         "text": "Ask the developer to explain the module instead",
-        "explanation": "C outsources the agent's job to its user."
+        "explanation": "Outsources the agent's job to its user."
       },
       {
         "key": "D",
         "text": "`Read` only the README and reason from documentation",
-        "explanation": "D trusts documentation to describe code accurately — in a legacy system, a famous last assumption."
+        "explanation": "Trusts documentation to describe code accurately — in a legacy system, a famous last assumption."
       }
     ],
     "correctKey": "B",
@@ -26806,17 +26806,17 @@
       {
         "key": "B",
         "text": "Both servers in `.mcp.json`, with the token pasted in so teammates don't have to set variables",
-        "explanation": "B commits a live secret to version control."
+        "explanation": "Commits a live secret to version control."
       },
       {
         "key": "C",
         "text": "Both servers in `~/.claude.json`, with setup instructions in the wiki",
-        "explanation": "C makes shared infrastructure a manual wiki chore that drifts."
+        "explanation": "Makes shared infrastructure a manual wiki chore that drifts."
       },
       {
         "key": "D",
         "text": "The shared server in `CLAUDE.md` and the personal one in `.claude/commands/`",
-        "explanation": "D puts server configuration in files that don't configure servers."
+        "explanation": "Puts server configuration in files that don't configure servers."
       }
     ],
     "correctKey": "A",
@@ -26844,12 +26844,12 @@
       {
         "key": "A",
         "text": "Plan mode for both — planning never hurts",
-        "explanation": "A taxes a trivial fix with ceremony."
+        "explanation": "Taxes a trivial fix with ceremony."
       },
       {
         "key": "B",
         "text": "Direct execution for both — plan mode is only for greenfield projects",
-        "explanation": "B invites costly rework by executing a large migration unplanned."
+        "explanation": "Invites costly rework by executing a large migration unplanned."
       },
       {
         "key": "C",
@@ -26858,7 +26858,7 @@
       {
         "key": "D",
         "text": "Plan mode for the bug fix and direct execution for the migration",
-        "explanation": "D inverts the rule on both tasks."
+        "explanation": "Inverts the rule on both tasks."
       }
     ],
     "correctKey": "C",
@@ -26885,17 +26885,17 @@
       {
         "key": "A",
         "text": "`context: fork`, isolating the confusion in a subagent",
-        "explanation": "A isolates output, not input requirements."
+        "explanation": "Isolates output, not input requirements."
       },
       {
         "key": "B",
         "text": "`allowed-tools`, restricting what the skill can touch",
-        "explanation": "B constrains tools, not arguments."
+        "explanation": "Constrains tools, not arguments."
       },
       {
         "key": "C",
         "text": "A longer skill description explaining the parameters",
-        "explanation": "C documents the parameters for whoever reads docs — the invocation still runs bare."
+        "explanation": "Documents the parameters for whoever reads docs — the invocation still runs bare."
       },
       {
         "key": "D",
@@ -26927,7 +26927,7 @@
       {
         "key": "A",
         "text": "Both as skills, invoked when developers remember",
-        "explanation": "A makes universal standards opt-in — they will be skipped."
+        "explanation": "Makes universal standards opt-in — they will be skipped."
       },
       {
         "key": "B",
@@ -26936,12 +26936,12 @@
       {
         "key": "C",
         "text": "Both in `CLAUDE.md` so nothing is ever missed",
-        "explanation": "C loads a monthly workflow into every session's context forever."
+        "explanation": "Loads a monthly workflow into every session's context forever."
       },
       {
         "key": "D",
         "text": "Standards as a skill; the release workflow in `CLAUDE.md`",
-        "explanation": "D inverts both placements."
+        "explanation": "Inverts both placements."
       }
     ],
     "correctKey": "B",
@@ -26973,17 +26973,17 @@
       {
         "key": "B",
         "text": "`Write` tests file-by-file in directory order until done",
-        "explanation": "B spends effort by directory-listing order rather than risk."
+        "explanation": "Spends effort by directory-listing order rather than risk."
       },
       {
         "key": "C",
         "text": "Generate all tests in a single maximal request",
-        "explanation": "C asks one pass to do what requires discovery."
+        "explanation": "Asks one pass to do what requires discovery."
       },
       {
         "key": "D",
         "text": "Test only the code modified in the last month",
-        "explanation": "D uses recency as a proxy for importance — legacy risk often lives in old, untouched code."
+        "explanation": "Uses recency as a proxy for importance — legacy risk often lives in old, untouched code."
       }
     ],
     "correctKey": "A",
@@ -27010,12 +27010,12 @@
       {
         "key": "A",
         "text": "Dynamic decomposition for both, since flexibility is always better",
-        "explanation": "A pays adaptivity overhead on a task with no uncertainty."
+        "explanation": "Pays adaptivity overhead on a task with no uncertainty."
       },
       {
         "key": "B",
         "text": "Prompt chaining for both, since fixed steps are easier to test",
-        "explanation": "B forces an investigation to follow steps written before the evidence existed."
+        "explanation": "Forces an investigation to follow steps written before the evidence existed."
       },
       {
         "key": "C",
@@ -27024,7 +27024,7 @@
       {
         "key": "D",
         "text": "Dynamic decomposition for the review; prompt chaining for the investigation",
-        "explanation": "D assigns each strategy to the workflow that defeats it."
+        "explanation": "Assigns each strategy to the workflow that defeats it."
       }
     ],
     "correctKey": "C",
@@ -27051,7 +27051,7 @@
       {
         "key": "A",
         "text": "`claude “review this PR”` piped through `grep` to extract findings from prose",
-        "explanation": "A hangs waiting for interactive input and then scrapes prose."
+        "explanation": "Hangs waiting for interactive input and then scrapes prose."
       },
       {
         "key": "B",
@@ -27060,12 +27060,12 @@
       {
         "key": "C",
         "text": "`claude --batch “review this PR” --format=structured`",
-        "explanation": "C invents flags that do not exist."
+        "explanation": "Invents flags that do not exist."
       },
       {
         "key": "D",
         "text": "`claude -p “review this PR”` alone, then regex-parsing the prose output",
-        "explanation": "D solves the hang but leaves the pipeline regex-parsing unstructured text."
+        "explanation": "Solves the hang but leaves the pipeline regex-parsing unstructured text."
       }
     ],
     "correctKey": "B",
@@ -27093,17 +27093,17 @@
       {
         "key": "A",
         "text": "Generate three times as many tests so some survive review",
-        "explanation": "A scales the reject pile."
+        "explanation": "Scales the reject pile."
       },
       {
         "key": "B",
         "text": "Have developers rewrite the generated tests as a standing chore",
-        "explanation": "B institutionalizes rework instead of fixing its cause."
+        "explanation": "Institutionalizes rework instead of fixing its cause."
       },
       {
         "key": "C",
         "text": "Lower the temperature of the generation call",
-        "explanation": "C reduces variability of output that is uninformed either way."
+        "explanation": "Reduces variability of output that is uninformed either way."
       },
       {
         "key": "D",
@@ -27139,17 +27139,17 @@
       {
         "key": "B",
         "text": "Review only the newest commit's diff in isolation",
-        "explanation": "B misses issues that emerge from interaction with earlier commits."
+        "explanation": "Misses issues that emerge from interaction with earlier commits."
       },
       {
         "key": "C",
         "text": "Limit reviews to one per PR regardless of subsequent commits",
-        "explanation": "C leaves everything after the first push unreviewed."
+        "explanation": "Leaves everything after the first push unreviewed."
       },
       {
         "key": "D",
         "text": "Post all findings again but formatted differently to seem new",
-        "explanation": "D disguises the spam developers already muted."
+        "explanation": "Disguises the spam developers already muted."
       }
     ],
     "correctKey": "A",
@@ -27177,12 +27177,12 @@
       {
         "key": "A",
         "text": "The model is being polite; instruct it to be harsher",
-        "explanation": "A misreads a context effect as a personality setting."
+        "explanation": "Misreads a context effect as a personality setting."
       },
       {
         "key": "B",
         "text": "Reviews should always be performed by a larger model tier",
-        "explanation": "B changes capability when the problem is contaminated context — the same model reviews well when independent."
+        "explanation": "Changes capability when the problem is contaminated context — the same model reviews well when independent."
       },
       {
         "key": "C",
@@ -27191,7 +27191,7 @@
       {
         "key": "D",
         "text": "Generation and review must run on different days to avoid contamination",
-        "explanation": "D adds superstition to a mechanism that is about context, not calendars."
+        "explanation": "Adds superstition to a mechanism that is about context, not calendars."
       }
     ],
     "correctKey": "C",
@@ -27219,17 +27219,17 @@
       {
         "key": "A",
         "text": "Add “be very, very conservative” for stronger emphasis",
-        "explanation": "A intensifies an instruction that has no operational content."
+        "explanation": "Intensifies an instruction that has no operational content."
       },
       {
         "key": "B",
         "text": "Report all findings but sort them by the model's stated confidence",
-        "explanation": "B reorders noise — self-stated confidence is poorly calibrated."
+        "explanation": "Reorders noise — self-stated confidence is poorly calibrated."
       },
       {
         "key": "C",
         "text": "Reduce the number of files reviewed per run",
-        "explanation": "C reviews less code with the same faulty judgment."
+        "explanation": "Reviews less code with the same faulty judgment."
       },
       {
         "key": "D",
@@ -27261,7 +27261,7 @@
       {
         "key": "A",
         "text": "Ship more style findings to demonstrate the category's importance",
-        "explanation": "A doubles down on the noise destroying trust."
+        "explanation": "Doubles down on the noise destroying trust."
       },
       {
         "key": "B",
@@ -27270,12 +27270,12 @@
       {
         "key": "C",
         "text": "Rename “code style” to “code quality”",
-        "explanation": "C relabels the same false positives."
+        "explanation": "Relabels the same false positives."
       },
       {
         "key": "D",
         "text": "Ask developers to be more tolerant of noise during the tuning period",
-        "explanation": "D asks humans to absorb a cost the configuration should eliminate."
+        "explanation": "Asks humans to absorb a cost the configuration should eliminate."
       }
     ],
     "correctKey": "B",
@@ -27307,17 +27307,17 @@
       {
         "key": "B",
         "text": "Remove severity levels and treat all findings equally",
-        "explanation": "B discards the signal the merge gate needs."
+        "explanation": "Discards the signal the merge gate needs."
       },
       {
         "key": "C",
         "text": "Let the model choose severity freely but average it over five runs",
-        "explanation": "C statistically launders an unanchored judgment."
+        "explanation": "Statistically launders an unanchored judgment."
       },
       {
         "key": "D",
         "text": "Map severity to line count of the affected code",
-        "explanation": "D measures size, not impact — a one-line auth bypass outranks a fifty-line comment tweak."
+        "explanation": "Measures size, not impact — a one-line auth bypass outranks a fifty-line comment tweak."
       }
     ],
     "correctKey": "A",
@@ -27345,12 +27345,12 @@
       {
         "key": "A",
         "text": "A rule that anything containing a comment is acceptable",
-        "explanation": "A creates a trivially wrong rule any commented bug defeats."
+        "explanation": "Creates a trivially wrong rule any commented bug defeats."
       },
       {
         "key": "B",
         "text": "An instruction to “use good judgment about idioms”",
-        "explanation": "B restates the goal without transferring the judgment."
+        "explanation": "Restates the goal without transferring the judgment."
       },
       {
         "key": "C",
@@ -27359,7 +27359,7 @@
       {
         "key": "D",
         "text": "A ban on reviewing files containing any idiomatic pattern",
-        "explanation": "D exempts exactly the code that most needs reviewing."
+        "explanation": "Exempts exactly the code that most needs reviewing."
       }
     ],
     "correctKey": "C",
@@ -27387,12 +27387,12 @@
       {
         "key": "A",
         "text": "Strengthen the prompt: “respond ONLY with valid JSON, no exceptions”",
-        "explanation": "A improves the odds within a fundamentally text-shaped channel."
+        "explanation": "Improves the odds within a fundamentally text-shaped channel."
       },
       {
         "key": "B",
         "text": "Post-process the text with regexes that strip fences and repair syntax",
-        "explanation": "B patches symptoms with fragile repairs."
+        "explanation": "Patches symptoms with fragile repairs."
       },
       {
         "key": "C",
@@ -27401,7 +27401,7 @@
       {
         "key": "D",
         "text": "Switch to XML output, which models format more carefully",
-        "explanation": "D relocates the same free-text problem to a different syntax."
+        "explanation": "Relocates the same free-text problem to a different syntax."
       }
     ],
     "correctKey": "C",
@@ -27433,16 +27433,17 @@
       {
         "key": "B",
         "text": "`tool_choice`: “auto” — the model decides whether to call a tool at all",
-        "explanation": "B (and D, which defaults to it) permits conversational text instead of a tool call."
+        "explanation": "Permits conversational text instead of a tool call — and omitting `tool_choice` (D) defaults to this mode."
       },
       {
         "key": "C",
         "text": "`tool_choice` forced to one named tool, applied to every document",
-        "explanation": "C welds every document to one schema when types vary."
+        "explanation": "Welds every document to one schema when types vary."
       },
       {
         "key": "D",
-        "text": "Omit `tool_choice`, since defaults handle this"
+        "text": "Omit `tool_choice`, since defaults handle this",
+        "explanation": "Defaults to “auto”, which permits conversational text instead of a tool call."
       }
     ],
     "correctKey": "A",
@@ -27469,17 +27470,17 @@
       {
         "key": "A",
         "text": "Add a prompt instruction: “never fabricate tax IDs”",
-        "explanation": "A pits an instruction against a structural requirement that demands a value."
+        "explanation": "Pits an instruction against a structural requirement that demands a value."
       },
       {
         "key": "B",
         "text": "Post-validate tax IDs against a checksum and discard failures",
-        "explanation": "B catches well-formed fabrications only by luck."
+        "explanation": "Catches well-formed fabrications only by luck."
       },
       {
         "key": "C",
         "text": "Lower the temperature to make fabrication less creative",
-        "explanation": "C makes invented values more conservative-looking, not less invented."
+        "explanation": "Makes invented values more conservative-looking, not less invented."
       },
       {
         "key": "D",
@@ -27511,7 +27512,7 @@
       {
         "key": "A",
         "text": "Schema compliance was falsely advertised; file a bug",
-        "explanation": "A misunderstands what was promised (shape, not semantics)."
+        "explanation": "Misunderstands what was promised (shape, not semantics)."
       },
       {
         "key": "B",
@@ -27520,12 +27521,12 @@
       {
         "key": "C",
         "text": "Make every field an unconstrained string so nothing can be wrong",
-        "explanation": "C destroys the structure downstream systems depend on."
+        "explanation": "Destroys the structure downstream systems depend on."
       },
       {
         "key": "D",
         "text": "Re-run each extraction until the numbers happen to sum",
-        "explanation": "D retries until errors align by chance rather than detecting them."
+        "explanation": "Retries until errors align by chance rather than detecting them."
       }
     ],
     "correctKey": "B",
@@ -27552,12 +27553,12 @@
       {
         "key": "A",
         "text": "Just the instruction “try again more carefully”; skip retries on Mondays",
-        "explanation": "A retries blind — the model can't fix errors it isn't shown."
+        "explanation": "Retries blind — the model can't fix errors it isn't shown."
       },
       {
         "key": "B",
         "text": "Only the validation errors, to keep the retry cheap; always retry at least five times",
-        "explanation": "B removes the document the correction must reference."
+        "explanation": "Removes the document the correction must reference."
       },
       {
         "key": "C",
@@ -27566,7 +27567,7 @@
       {
         "key": "D",
         "text": "A different document, to give the model a fresh start",
-        "explanation": "D abandons the failed extraction rather than repairing it."
+        "explanation": "Abandons the failed extraction rather than repairing it."
       }
     ],
     "correctKey": "C",
@@ -27598,17 +27599,17 @@
       {
         "key": "B",
         "text": "Resubmit the entire 10,000-document batch and keep whichever results arrive first",
-        "explanation": "B reprocesses 9,800 successes to retry 200 failures."
+        "explanation": "Reprocesses 9,800 successes to retry 200 failures."
       },
       {
         "key": "C",
         "text": "Discard the 200 failures as an acceptable loss rate",
-        "explanation": "C silently drops 2% of the corpus."
+        "explanation": "Silently drops 2% of the corpus."
       },
       {
         "key": "D",
         "text": "Switch the 200 failures to the synchronous API unchanged, where context limits don't apply",
-        "explanation": "D misunderstands context limits, which belong to the model, not the API path — unchunked oversized documents fail synchronously too."
+        "explanation": "Misunderstands context limits, which belong to the model, not the API path — unchunked oversized documents fail synchronously too."
       }
     ],
     "correctKey": "A",
@@ -27636,17 +27637,17 @@
       {
         "key": "A",
         "text": "Add a fourth mode that automatically detects the right mode",
-        "explanation": "A buries the selection problem one layer deeper."
+        "explanation": "Buries the selection problem one layer deeper."
       },
       {
         "key": "B",
         "text": "Document the modes more thoroughly inside the one description",
-        "explanation": "B improves documentation of a structure that remains ambiguous."
+        "explanation": "Improves documentation of a structure that remains ambiguous."
       },
       {
         "key": "C",
         "text": "Reduce to two modes by merging extraction into summarization",
-        "explanation": "C reduces options while keeping the overloaded design."
+        "explanation": "Reduces options while keeping the overloaded design."
       },
       {
         "key": "D",
@@ -27677,7 +27678,7 @@
       {
         "key": "A",
         "text": "Prefix error text with “SYSTEM ERROR:” so the agent notices",
-        "explanation": "A still relies on the model inferring failure from prose conventions."
+        "explanation": "Still relies on the model inferring failure from prose conventions."
       },
       {
         "key": "B",
@@ -27686,12 +27687,12 @@
       {
         "key": "C",
         "text": "Return an empty string on failure",
-        "explanation": "C replaces a mislabeled failure with a silent one."
+        "explanation": "Replaces a mislabeled failure with a silent one."
       },
       {
         "key": "D",
         "text": "Throw an unhandled exception and let the connection drop",
-        "explanation": "D turns a recoverable tool error into a transport-level breakdown."
+        "explanation": "Turns a recoverable tool error into a transport-level breakdown."
       }
     ],
     "correctKey": "B",
@@ -27719,7 +27720,7 @@
       {
         "key": "A",
         "text": "Make both descriptions shorter so there is less to confuse",
-        "explanation": "A removes information from tools that already have too little."
+        "explanation": "Removes information from tools that already have too little."
       },
       {
         "key": "B",
@@ -27728,7 +27729,7 @@
       {
         "key": "C",
         "text": "Prefix both descriptions with “IMPORTANT:” for emphasis",
-        "explanation": "C adds emphasis without discrimination."
+        "explanation": "Adds emphasis without discrimination."
       },
       {
         "key": "D",
@@ -27737,7 +27738,7 @@
       {
         "key": "E",
         "text": "Rely on the tool names alone, since names are what models read",
-        "explanation": "E is false — names help, but descriptions carry the selection signal."
+        "explanation": "False — names help, but descriptions carry the selection signal."
       }
     ],
     "correctKeys": [
@@ -27771,12 +27772,12 @@
       {
         "key": "B",
         "text": "Increase `max_tokens` so responses can be longer",
-        "explanation": "B controls output length, not context quality."
+        "explanation": "Controls output length, not context quality."
       },
       {
         "key": "C",
         "text": "Summarize even more aggressively to save space",
-        "explanation": "C intensifies the exact failure mode — numbers dissolving into vagueness."
+        "explanation": "Intensifies the exact failure mode — numbers dissolving into vagueness."
       },
       {
         "key": "D",
@@ -27785,7 +27786,7 @@
       {
         "key": "E",
         "text": "Ask the customer to repeat key numbers periodically",
-        "explanation": "E outsources the system's memory problem to the customer."
+        "explanation": "Outsources the system's memory problem to the customer."
       }
     ],
     "correctKeys": [
@@ -27815,7 +27816,7 @@
       {
         "key": "A",
         "text": "Switch to a model with a larger context window and continue accumulating",
-        "explanation": "A postpones the same degradation at higher cost."
+        "explanation": "Postpones the same degradation at higher cost."
       },
       {
         "key": "B",
@@ -27824,12 +27825,12 @@
       {
         "key": "C",
         "text": "Repeat important questions twice in the same message",
-        "explanation": "C and D add more text to an already saturated context without removing any of the noise causing the problem."
+        "explanation": "Adds more text to an already saturated context without removing any of the noise causing the problem."
       },
       {
         "key": "D",
         "text": "Ask the agent to be more specific",
-        "explanation": "C and D add more text to an already saturated context without removing any of the noise causing the problem."
+        "explanation": "Adds more text to an already saturated context without removing any of the noise causing the problem."
       },
       {
         "key": "E",
@@ -27868,12 +27869,12 @@
       {
         "key": "B",
         "text": "Average the two figures into a single compromise value",
-        "explanation": "B invents a number no source reported."
+        "explanation": "Invents a number no source reported."
       },
       {
         "key": "C",
         "text": "Always adopt the more recent source and discard the other",
-        "explanation": "C automates a reconciliation that needs judgment — recency is context, not an override rule."
+        "explanation": "Automates a reconciliation that needs judgment — recency is context, not an override rule."
       },
       {
         "key": "D",
@@ -27882,7 +27883,7 @@
       {
         "key": "E",
         "text": "Exclude both sources to avoid taking sides",
-        "explanation": "E deletes two credible sources because they disagree."
+        "explanation": "Deletes two credible sources because they disagree."
       }
     ],
     "correctKeys": [
@@ -27912,7 +27913,7 @@
       {
         "key": "A",
         "text": "On any failure, immediately terminate the entire research workflow",
-        "explanation": "A makes any single failure fatal when partial-result strategies exist."
+        "explanation": "Makes any single failure fatal when partial-result strategies exist."
       },
       {
         "key": "B",
@@ -27921,12 +27922,12 @@
       {
         "key": "C",
         "text": "Return empty results marked as success whenever a search fails, keeping the pipeline moving",
-        "explanation": "C is silent suppression — failure dressed as fact."
+        "explanation": "Silent suppression — failure dressed as fact."
       },
       {
         "key": "D",
         "text": "Report every problem as a generic “search unavailable” status",
-        "explanation": "D hides the very context recovery decisions need."
+        "explanation": "Hides the very context recovery decisions need."
       },
       {
         "key": "E",
@@ -27964,7 +27965,7 @@
       {
         "key": "B",
         "text": "`Grep` with a filename pattern to find the test files",
-        "explanation": "B and D swap the tools into each other's territory."
+        "explanation": "Swaps the tools — `Grep` searches file contents, so finding files by name is `Glob`'s territory."
       },
       {
         "key": "C",
@@ -27973,12 +27974,12 @@
       {
         "key": "D",
         "text": "`Glob` for “PaymentDeclinedError” across file contents",
-        "explanation": "B and D swap the tools into each other's territory."
+        "explanation": "Swaps the tools — `Glob` matches file paths, so searching file contents is `Grep`'s territory."
       },
       {
         "key": "E",
         "text": "`Bash` running `cat` on every file, piping through manual inspection",
-        "explanation": "E abandons both purpose-built tools for a brute-force pipeline that floods context."
+        "explanation": "Abandons both purpose-built tools for a brute-force pipeline that floods context."
       }
     ],
     "correctKeys": [
@@ -28008,7 +28009,7 @@
       {
         "key": "A",
         "text": "Subagents automatically inherit the parent agent's full conversation history",
-        "explanation": "A and C invert the isolation and spawning models — context never flows automatically, and `Task` is the spawning mechanism."
+        "explanation": "Inverts the isolation model — context never flows to a subagent automatically."
       },
       {
         "key": "B",
@@ -28017,7 +28018,7 @@
       {
         "key": "C",
         "text": "Subagents can be spawned without the `Task` tool if the prompt describes them clearly",
-        "explanation": "A and C invert the isolation and spawning models — context never flows automatically, and `Task` is the spawning mechanism."
+        "explanation": "Inverts the spawning model — `Task` is the spawning mechanism."
       },
       {
         "key": "D",
@@ -28026,7 +28027,7 @@
       {
         "key": "E",
         "text": "Subagent tool restrictions are advisory and not enforced at runtime",
-        "explanation": "E is false — tool restrictions are configuration, not suggestion."
+        "explanation": "False — tool restrictions are configuration, not suggestion."
       }
     ],
     "correctKeys": [
@@ -28060,12 +28061,12 @@
       {
         "key": "B",
         "text": "Batches are guaranteed to complete within one hour",
-        "explanation": "B and C are false — there is no latency guarantee, and mid-request tool execution is unsupported."
+        "explanation": "False — there is no latency guarantee."
       },
       {
         "key": "C",
         "text": "The batch API supports multi-turn tool calling within a single request",
-        "explanation": "B and C are false — there is no latency guarantee, and mid-request tool execution is unsupported."
+        "explanation": "False — mid-request tool execution is unsupported."
       },
       {
         "key": "D",
@@ -28074,7 +28075,7 @@
       {
         "key": "E",
         "text": "Batch responses cannot be matched back to their requests",
-        "explanation": "E is false — `custom_id` exists precisely to correlate request/response pairs."
+        "explanation": "False — `custom_id` exists precisely to correlate request/response pairs."
       }
     ],
     "correctKeys": [
@@ -28104,7 +28105,7 @@
       {
         "key": "A",
         "text": "Include as many examples as possible — twenty or more — to cover every case",
-        "explanation": "A bloats context and dilutes the signal of the examples that matter."
+        "explanation": "Bloats context and dilutes the signal of the examples that matter."
       },
       {
         "key": "B",
@@ -28113,12 +28114,12 @@
       {
         "key": "C",
         "text": "Once examples are added, explicit criteria become unnecessary",
-        "explanation": "C and D are false — examples complement explicit criteria, and code review is a prime few-shot use case."
+        "explanation": "False — examples complement explicit criteria."
       },
       {
         "key": "D",
         "text": "Rely on examples only for prose tasks; they don't work for code",
-        "explanation": "C and D are false — examples complement explicit criteria, and code review is a prime few-shot use case."
+        "explanation": "False — code review is a prime few-shot use case."
       },
       {
         "key": "E",
@@ -28156,7 +28157,7 @@
       {
         "key": "B",
         "text": "Accept the 97% aggregate as sufficient evidence on its own",
-        "explanation": "B trusts exactly the number that masks segment failures."
+        "explanation": "Trusts exactly the number that masks segment failures."
       },
       {
         "key": "C",
@@ -28165,12 +28166,12 @@
       {
         "key": "D",
         "text": "Stop measuring once review is reduced, to save cost",
-        "explanation": "D removes the instrumentation precisely when risk increases."
+        "explanation": "Removes the instrumentation precisely when risk increases."
       },
       {
         "key": "E",
         "text": "Review only extractions the model itself flags as uncertain",
-        "explanation": "E trusts self-flagged uncertainty, which misses the errors the model is confidently wrong about."
+        "explanation": "Trusts self-flagged uncertainty, which misses the errors the model is confidently wrong about."
       }
     ],
     "correctKeys": [
@@ -28200,7 +28201,7 @@
       {
         "key": "A",
         "text": "Trust the model's raw self-reported confidence scores without validation",
-        "explanation": "A uses uncalibrated confidence — the known-unreliable version of the right signal."
+        "explanation": "Uses uncalibrated confidence — the known-unreliable version of the right signal."
       },
       {
         "key": "B",
@@ -28209,7 +28210,7 @@
       {
         "key": "C",
         "text": "Review a fixed 1% of extractions chosen by submission order",
-        "explanation": "C and E route by arrival order and page count, neither of which correlates with error risk."
+        "explanation": "Routes by arrival order, which does not correlate with error risk."
       },
       {
         "key": "D",
@@ -28218,7 +28219,7 @@
       {
         "key": "E",
         "text": "Review only documents longer than ten pages",
-        "explanation": "C and E route by arrival order and page count, neither of which correlates with error risk."
+        "explanation": "Routes by page count, which does not correlate with error risk."
       }
     ],
     "correctKeys": [
