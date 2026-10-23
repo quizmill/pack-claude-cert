@@ -57,5 +57,10 @@
       "key": "purcell-ccar-f",
       "label": "Exam"
     }
-  ]
+  ],
+  "upgrade": {
+    "title": "Next up: Claude Architect – Professional",
+    "url": "https://claude-cert-pro.quizmill.dev",
+    "blurb": "Done with Foundations? Practise the seven CCAR-P exam domains — multiple-choice and multi-answer questions, each with a rationale."
+  }
 }
