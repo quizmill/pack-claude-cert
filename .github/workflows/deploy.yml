@@ -43,4 +43,8 @@ jobs:
       # also still answers on quizmill-sync.peter-vanhee.workers.dev for
       # builds that predate the custom domain.
       sync_url: https://sync.quizmill.dev
+      # Anonymous funnel beacon (six events, random device id, off switch in
+      # Settings) -> the sync worker's analytics route. Public by design.
+      analytics_url: https://sync.quizmill.dev/v1/analytics
+      privacy_url: https://quizmill.dev/privacy
     secrets: inherit
