@@ -59,8 +59,8 @@
     }
   ],
   "upgrade": {
-    "title": "Next up: Claude Architect – Professional",
-    "url": "https://claude-cert-pro.quizmill.dev",
-    "blurb": "Done with Foundations? Practise the seven CCAR-P exam domains — multiple-choice and multi-answer questions, each with a rationale."
+    "title": "Next up: AWS Certified Generative AI Developer – Professional",
+    "url": "https://aws-genai.quizmill.dev?ref=claude-app",
+    "blurb": "Done with Foundations? Practise for the AIP-C01 exam — foundation models, RAG, agents, prompt management, security and observability on AWS, across ten topic areas. Multiple-choice and multi-answer questions, each with a rationale."
   }
 }
