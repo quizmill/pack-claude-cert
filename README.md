@@ -19,6 +19,10 @@ mistakes-review loop.
 | Claude Code Configuration & Workflows | 115 | 20% |
 | Tool Design & MCP Integration | 107 | 18% |
 
+Done with Foundations? The
+[Claude Architect – Professional practice app](https://claude-cert-pro.quizmill.dev)
+covers the seven CCAR-P exam domains.
+
 ## Run it
 
 ```
