@@ -52,10 +52,6 @@
     {
       "key": "core",
       "label": "Core bank"
-    },
-    {
-      "key": "purcell-ccar-f",
-      "label": "Exam"
     }
   ],
   "upgrade": {
