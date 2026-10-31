@@ -19,11 +19,11 @@ original bank holds 68 / 45 / 50 / 50 / 37 questions per domain (250),
 about 30 per scenario plus 70 standalone items for objectives the
 scenarios do not reach, and 50 select-two items.
 
-**Practice paper.** `ccar-f-practice-1` ("CCAR-F practice exam 1") is 60
-of the scenario questions: scenarios 1, 2, 3 and 6 × 15, weighted
-16 / 11 / 12 / 12 / 9 across the domains, 12 of them select-two. Its
-questions sit together at the start of `questions.json` and carry
-`level: exam` like every scenario question.
+**No original practice paper.** A fixed 60-question paper drawn from the
+bank (`ccar-f-practice-1`, scenarios 1, 2, 3 and 6 × 15) was built and
+then dropped on 2026-10-31: its questions already appear in practice and
+in the timed sitting, and Purcell's paper already gives learners a fixed
+full-length sitting. The 60 questions stay in the bank.
 
 **How it was written.** Each question was drafted against one task
 statement, with the answer letter fixed in advance by a balanced plan so
@@ -74,8 +74,6 @@ of:
   distractor without its own explanation
 - a domain more than one question from its blueprint share of 250; scenario
   counts more than three apart
-- the practice paper not four scenarios × 15, not contiguous or not all at
-  level `exam`
 - a stem with token Jaccard (lowercased words of four letters or more,
   markdown stripped) of 0.50 or more against any retired stem (read from
   git at `7ac5446`, never re-committed) or any of Purcell's v2 stems, or
@@ -120,6 +118,11 @@ flaw: the judge cannot confirm `disallowed-tools` from its own knowledge
 and, on `ccar-f-s4-02`, picks `allowed-tools` as the restriction. The
 current docs settle both in the bank's favour. Purcell's items are left
 as published.
+
+**Gate decision (2026-10-31).** The pack ships with the judge gate read on
+the original 250. Purcell's 60 are not changed: their findings (9 major,
+30 minor, 1 key not confirmed; among them `cca-purcell-v2-2-3`, whose key
+relies on `allowed-tools` restricting Bash) are noted in `README.md`.
 
 Choices-only: the judge picks the key from the options alone in 100% of
 items (the Professional bank: 99%). An expert reader can tell good

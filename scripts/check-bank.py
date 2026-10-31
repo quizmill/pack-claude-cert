@@ -14,8 +14,6 @@ test-wise candidate exploits, and for drift back towards retired material:
     distractor, and a per-option explanation on each distractor
   * the domain split is within one question of the manifest weights, and
     the six scenarios hold counts within three of each other
-  * the practice paper is 60 questions, four scenarios × 15, together in
-    bank order and all at level `exam`
   * no stem tracks the retired bank or Matthew Purcell's v2 paper (token
     Jaccard < 0.50 against every stem), and no two stems are near-copies
     (Jaccard <= 0.70); the retired bank is read from git history so it is
@@ -52,7 +50,6 @@ KEPT = {
     "cca-q-subagent-summary-shape",
     "cca-q-subagent-tool-restriction",
 }
-PAPER = "ccar-f-practice-1"
 BANK_SIZE = 250
 
 failures: list[str] = []
@@ -184,25 +181,6 @@ if len(by_scen) != 6:
     failures.append(f"{len(by_scen)} scenarios used, want 6")
 elif max(by_scen.values()) - min(by_scen.values()) > 3:
     failures.append("per-scenario counts differ by more than three")
-
-# --- practice paper ----------------------------------------------------------
-positions = [i for i, q in enumerate(bank) if q.get("paperId") == PAPER]
-paper = [bank[i] for i in positions]
-paper_scen = collections.Counter(q.get("scenarioId") for q in paper)
-print(f"paper {PAPER}: {len(paper)} questions;", dict(sorted(paper_scen.items())),
-      f"select-two {sum('correctKeys' in q for q in paper)};",
-      dict(sorted(collections.Counter(q["categoryKey"] for q in paper).items())))
-if len(paper) != 60 or len(paper_scen) != 4 or set(paper_scen.values()) != {15}:
-    failures.append(f"paper {PAPER} must be four scenarios × 15 questions")
-if positions and positions[-1] - positions[0] + 1 != len(positions):
-    failures.append(f"paper {PAPER} questions are not together in bank order")
-if any(q.get("level") != "exam" for q in paper):
-    failures.append(f"paper {PAPER} has questions outside level exam")
-if paper:
-    for key, w in weights.items():
-        have = sum(q["categoryKey"] == key for q in paper)
-        if abs(have - w * 60) > 1.5:
-            failures.append(f"paper {PAPER}: {key} has {have}, blueprint wants {w * 60:.1f}")
 
 # --- stem overlap ------------------------------------------------------------
 def tokens(text: str) -> set[str]:

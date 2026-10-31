@@ -4,7 +4,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "QA reviewers pull 200 transcripts where a customer reports a damaged item but sends no photo. In roughly half, the agent calls `process_refund` straight away; in the rest it asks for a photo first, and the same wording gets different treatment on different days. The system prompt already says: \"Use good judgement on damage claims without evidence.\" What change will make the agent's handling of these borderline claims most consistent?",
     "options": [
@@ -45,7 +44,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "A customer asks for a refund on a blender delivered 47 days ago; the return window is 30 days. Logs show `process_refund` answering `{\"error\": \"Operation failed\"}` and the agent retrying it four times before telling the customer \"our system is having trouble, please try later.\" The customer returns the next day and the same thing happens. What should change in `process_refund`?",
     "options": [
@@ -86,7 +84,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The system prompt says, in bold, \"Verify the customer with `get_customer` before any refund.\" An audit of 12,000 conversations finds 31 where `process_refund` ran with no prior `get_customer` call, mostly when the customer pasted an order number in their first message. Compliance requires zero such cases. What is the right fix?",
     "options": [
@@ -127,7 +124,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "A developer wrote the custom loop around the agent. After each model response it checks whether the text contains \"refund has been processed\" or \"anything else\"; if so, it ends the turn and waits for the customer. In some transcripts the agent writes \"Once the refund has been processed you'll get an email\" alongside a `process_refund` tool call, and the refund never runs. How should the loop decide when to stop?",
     "options": [
@@ -168,7 +164,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "To stay within context, the agent summarises older turns once a conversation passes 30 messages. In a long billing dispute, the customer agreed early on to a partial refund of $38.40 on invoice INV-5521 and a store credit expiring 14 March. Forty messages later the agent offers \"a partial refund of about $40\" and does not mention the credit at all. What design change addresses this?",
     "options": [
@@ -209,7 +204,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "Over six months other teams have attached their tools to the support agent, which now has 19: the original four plus loyalty points, warehouse stock, shipping carriers, a generic `query_backend` that runs arbitrary read queries, and several admin utilities used in under 1% of contacts. Wrong-tool calls have tripled. Which two changes will most improve tool selection? (Select TWO.)",
     "options": [
@@ -257,7 +251,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "Developers test the agent's MCP server locally in Claude Code. The server needs an API key for the order system. A pull request adds this to the repository's `.mcp.json`: `\"env\": {\"ORDERS_API_KEY\": \"sk-live-7f3a...\"}`. Every developer needs the server, and each has their own key. What should the reviewer ask for?",
     "options": [
@@ -298,7 +291,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "`lookup_order` returns `delivered_at: 1729814400` (Unix seconds) while `get_customer` returns `account_since: \"2021-06-02T09:15:00Z\"`. The agent sometimes tells customers they are outside the 30-day return window when they are not, and the error traces back to it misreading the epoch value. Both MCP servers are owned by other teams and cannot change this quarter. What is the most reliable fix?",
     "options": [
@@ -339,7 +331,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "The tool descriptions were rewritten last month and now clearly separate account lookups from order lookups. Yet when customers write things like \"my account shows a charge for order 88213\", the agent still calls `get_customer` first and often never calls `lookup_order`. The system prompt contains: \"If the customer mentions their account, start with get_customer.\" What should the team do next?",
     "options": [
@@ -380,7 +371,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "One message reads: \"I was charged twice for order 4410, the return label for order 4398 never arrived, and I need to change the email on my account.\" The agent investigates the double charge thoroughly, refunds it, and closes with \"Is there anything else?\" The customer has to write twice more to get the other two problems handled. How should the agent handle messages like this?",
     "options": [
@@ -421,7 +411,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Human agents who pick up escalated cases complain that tickets arrive saying only \"Customer needs help with a refund, please assist.\" They spend several minutes per case re-reading account data and often ask customers to repeat themselves. They do not see the AI conversation. Which two changes address this? (Select TWO.)",
     "options": [
@@ -469,7 +458,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "A customer writes: \"Hi, it's Dana Whitfield, I want to cancel my subscription renewal.\" `get_customer(name=\"Dana Whitfield\")` returns three accounts: one in Leeds created 2019, one in Bristol created 2023, and one in Leeds created last week with no orders. What should the agent do next?",
     "options": [
@@ -510,7 +498,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The refund policy covers items bought and shipped by the retailer. A customer bought a lamp through a marketplace seller that listed it on the retailer's site, but the retailer's own warehouse shipped it. The lamp arrived cracked and the customer wants a full refund. Neither the policy text nor the agent's examples mention marketplace items fulfilled by the retailer. What should the agent do?",
     "options": [
@@ -551,7 +538,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "The team is designing how the agent handles customers who come back about an open case. Each conversation is stored as an Agent SDK session. Between visits, things often change: a refund posts, a parcel is delivered, a human adjusts the account. Which two practices are sound? (Select TWO.)",
     "options": [
@@ -599,7 +585,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "In a new staging build, the agent calls `lookup_order(order_id=\"77120\")` five or six times in a row for the same order before giving up. The MCP server log shows each call succeeding with full data. The loop code runs the tool and then sends the next request with the original message list plus a user message saying \"Tool ran successfully.\" What is the bug?",
     "options": [
@@ -640,7 +625,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "A developer has spent most of a day in one Claude Code session mapping how the billing service's invoice generator talks to four other packages. Late in the afternoon Claude starts describing 'a typical repository layer' instead of naming the `InvoiceRepo` and `LedgerClient` classes it found that morning, and two of its answers about the retry path contradict each other. The map is about two-thirds done. What should the developer do?",
     "options": [
@@ -681,7 +665,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The team wants every developer's Claude Code to reach the company's GitHub Enterprise MCP server for issue and pull request lookups. A first attempt committed a `.mcp.json` with a personal access token in plain text, and security revoked the token within the hour. Each developer already exports their own token in a shell variable named `GHE_TOKEN`. How should the server be configured?",
     "options": [
@@ -722,7 +705,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "A developer who joined last week says Claude keeps running `npm install` although the team uses `pnpm`, and keeps writing Jest tests although the repo moved to Vitest in spring. On the team lead's machine Claude gets both right every time. The root CLAUDE.md mentions neither rule. What explains the difference?",
     "options": [
@@ -763,7 +745,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Test files sit next to the code they cover: `apps/web/**/Button.test.tsx`, `packages/billing/src/**/*.test.ts`, `services/api/tests/test_*.py` and dozens of other places. The team has 60 lines of testing conventions (fixture helpers, no snapshot tests, naming) that Claude should apply whenever it writes or edits a test, but loading them during feature work wastes context. Where should the conventions go?",
     "options": [
@@ -804,7 +785,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The team has to replace the deprecated `request` HTTP library with `undici`. A search shows 52 files across six packages import it, some through a shared wrapper and some directly, and two services rely on its cookie-jar behaviour, which `undici` handles differently. A developer opens Claude Code to start. How should the work begin?",
     "options": [
@@ -844,7 +824,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The team wrote a `/dep-audit` skill that runs `pnpm why` and `pip-audit` across the monorepo and reasons over several thousand lines of output before recommending upgrades. Developers like the recommendations but say that afterwards their main session is sluggish and Claude loses track of the feature they were building. What change fixes this?",
     "options": [
@@ -885,7 +864,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The team asked Claude to bring docstrings in the Python packages up to house style: a one-line summary, a blank line, an `Args:` block, and a `Raises:` block only when the function raises. The style is described in prose in CLAUDE.md, yet results vary: some docstrings get empty `Raises:` blocks, others fold the summary into the arguments. What is the most effective next step?",
     "options": [
@@ -926,7 +904,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Each package keeps its own standards file: `packages/payments/STANDARDS.md` covers money handling, `services/ml/STANDARDS.md` covers notebook rules, and so on. Developers paste the relevant file into chat at the start of a session and often forget. The team wants Claude to pick up a package's standards whenever it works in that package, without loading the other packages' files. What should they do?",
     "options": [
@@ -967,7 +944,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "A developer pastes this into Claude Code: `TypeError: Cannot read properties of undefined (reading 'currency') at formatTotal (packages/checkout/src/format.ts:41)`. The function receives an order whose `pricing` field is optional, and the fix is plainly a guard in that one function plus a unit test. How should the developer proceed?",
     "options": [
@@ -1008,7 +984,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "A developer is using Claude Code to split a monolithic `orders` module. In phase one, three subagents inventoried callers, database queries and event emitters, and each returned a long report. Phase two will spawn subagents to draft the new module boundaries. The developer plans to paste all three phase-one reports, unedited, into every phase-two subagent prompt. What is the better approach?",
     "options": [
@@ -1049,7 +1024,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The team lead has written a `/release-notes` workflow that every developer should get as soon as they clone the repo. One developer wants a variant that also drafts a Slack announcement, for personal use only, without changing what the rest of the team runs. Which two placements meet these goals? (Select TWO.)",
     "options": [
@@ -1097,7 +1071,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The team's `/explain-module` skill should read code and reply with an architecture summary. Twice this month, while running it, Claude also 'tidied up' the source files it was explaining, leaving unexpected diffs. The team wants the skill to keep reading and searching freely but be unable to change code while it runs. Which change to its `SKILL.md` achieves that?",
     "options": [
@@ -1138,7 +1111,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "A developer asked Claude to put a Redis cache in front of the product-catalogue service. The first draft looked fine but ignored that prices change mid-day during flash sales; a second draft fell over at 2,000 concurrent requests. For the next attempt, which two techniques address these problems most directly? (Select TWO.)",
     "options": [
@@ -1186,7 +1158,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "A developer finds three problems in Claude's new date-range filter: the API accepts `end < start`; the SQL uses an inclusive upper bound while the UI treats it as exclusive; and the date picker sends local time while the API assumes UTC. The bound and timezone problems both shift which rows appear at the edges of a range. How should the developer hand these to Claude?",
     "options": [
@@ -1227,7 +1198,6 @@
     "categoryKey": "claude-code-workflows",
     "scenarioId": "ccar-f-code-generation",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The root CLAUDE.md has grown to 1,300 lines: coding style, API conventions, a security checklist, Terraform rules, and a 200-line step-by-step procedure for cutting a release that developers use about twice a month. Claude's adherence to style rules has slipped, and edits to the file keep causing merge conflicts. Which two changes should the team make? (Select TWO.)",
     "options": [
@@ -1275,7 +1245,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The document analysis subagent has two tools: `analyze_content`, described as \"Analyzes content and returns key points\", and `analyze_document`, described as \"Analyzes a document\". When the coordinator hands it scraped web results, traces show it calling `analyze_document` about half the time; that tool runs PDF page parsing and returns empty sections. Which change addresses the root cause?",
     "options": [
@@ -1316,7 +1285,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "The coordinator's loop code ends a run as soon as the latest assistant text contains the phrase \"FINAL REPORT\". In one run the coordinator wrote \"I'll draft the FINAL REPORT once the document subagent returns\" in the same response as a Task call, and the loop exited before that subagent ever ran. How should the loop decide when to stop?",
     "options": [
@@ -1357,7 +1325,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Asked \"How are rising insurance costs affecting small farms in the EU?\", the coordinator delegated three subtopics: crop insurance premiums in France, crop insurance premiums in Spain, and French subsidy schemes. Each subagent did its job well and the citations check out, but reviewers say the report ignores livestock, other member states and liability cover. Where is the fault?",
     "options": [
@@ -1398,7 +1365,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The document analysis subagent's `load_document` MCP tool returns `{\"isError\": true, \"content\": \"Operation failed\"}` both when the document store times out and when a file is password-protected. Logs show the subagent retrying protected files five times each, while files that merely timed out are skipped as unreadable. What should the tool return instead?",
     "options": [
@@ -1439,7 +1405,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "For a question with four independent regional subtopics, the coordinator's transcript shows one Task call per turn: it spawns the Europe search, waits for its result, then spawns Asia, and so on. Each subagent takes about 90 seconds, so delegation alone takes six minutes. What change lets the four searches run concurrently?",
     "options": [
@@ -1480,7 +1445,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "After a refactor, the coordinator stopped delegating: its transcripts show it answering research questions from its own knowledge, and no subagent runs appear in the logs. The subagent definitions are unchanged and load without errors. The coordinator's options now read `allowedTools: [\"Read\", \"WebFetch\"]`. What is the fix?",
     "options": [
@@ -1521,7 +1485,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "A finished draft on battery-recycling regulation has strong sections on the US and the EU but a single sentence on China, citing one 2021 news article. The coordinator currently runs search, analysis, synthesis and report exactly once per question. Which two changes would let it close gaps like this before the report is written? (Select TWO.)",
     "options": [
@@ -1569,7 +1532,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The report subagent must call `build_citation_index`, which assigns reference numbers to the synthesis's sources, before drafting, because its drafting tools need those numbers. With `tool_choice: {\"type\": \"auto\"}` it sometimes starts writing prose straight away and invents reference numbers. How should the request be configured?",
     "options": [
@@ -1610,7 +1572,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "A final report on a new antiviral states that \"no peer-reviewed trials have been published.\" Tracing the run shows that the web search subagent's academic-database call hit a 503 error; the subagent caught it and returned `{\"results\": []}` to the coordinator as a normal result. What should the subagent have returned?",
     "options": [
@@ -1651,7 +1612,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "For a report on urban cycling, the document analysis subagent finds that a national transport survey puts cycling's share of commutes at 4.1%, while a city-commissioned study reports 7.8% for the same city and year. Both sources are credible and recent. How should the system handle the two figures?",
     "options": [
@@ -1692,7 +1652,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The coordinator spends several turns with an analyst establishing that a market-sizing question excludes refurbished devices and should use 2025 figures. It then spawns the synthesis subagent with the prompt \"Synthesise the findings into a market estimate.\" The estimate includes refurbished units and mixes years. What explains this, and what fixes it?",
     "options": [
@@ -1733,7 +1692,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Analysts flag two problems in recent output. Many report sentences carry no citation even though traces show the subagents found sources for them, and one report calls two unemployment figures \"contradictory\" when one dates from 2019 and the other from 2024. Which two changes address these? (Select TWO.)",
     "options": [
@@ -1781,7 +1739,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "To get broader coverage on heat-pump adoption, the coordinator spawns three web search subagents with the identical prompt \"Research heat-pump adoption.\" Their results overlap by about 70%, citing the same handful of industry reports, and the run costs three times as much as one search. What should the coordinator do instead?",
     "options": [
@@ -1822,7 +1779,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Usage logs show about 40% of questions are short factual lookups, such as \"When did the EU AI Act enter into force?\", yet each one runs search, document analysis, synthesis and report generation and takes roughly eight minutes. Which two changes are appropriate? (Select TWO.)",
     "options": [
@@ -1870,7 +1826,6 @@
     "categoryKey": "agentic-architecture",
     "scenarioId": "ccar-f-research-system",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "An analyst has spent a long session with the coordinator building up a vetted source base on semiconductor export controls. She now wants to try two framings for the final report, one organised by country and one by technology layer, and compare them without either attempt influencing the other. What should she use?",
     "options": [
@@ -1911,7 +1866,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The purchase-contract extractor uses a tool schema in which `delivery_date` is a required string and `payment_terms` is an enum of `net_15`, `net_30`, `net_60` and `due_on_receipt`. An audit of 300 outputs finds two problems: contracts with no delivery date come back with plausible-looking invented dates, and a contract stating \"2% 10, net 45\" was recorded as `net_30`. Which two changes address these problems at their cause? (Select TWO.)",
     "options": [
@@ -1959,7 +1913,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "A freight invoice from Halden Logistics fails validation with: `line_items[3].amount: expected number, got \"1.240,50\"` and `invoice_date: does not match pattern YYYY-MM-DD`. The current retry step resends the system prompt with the note \"Your previous answer was invalid, please try again.\" About half of retries fail the same way. How should the retry request be built?",
     "options": [
@@ -2000,7 +1953,6 @@
     "categoryKey": "context-reliability",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "After three months in production, a dashboard shows 97.4% field-level accuracy across 60,000 reviewed documents. The finance director proposes ending human review for every document the model marks as high confidence, starting next week. Supplier invoices make up 81% of the volume; scanned bank statements and handwritten delivery notes make up the rest. What should the team do before reducing review?",
     "options": [
@@ -2041,7 +1993,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "The group wants to move its overnight run, about 40,000 archived bank statements that are reconciled the next afternoon, from synchronous API calls to the Message Batches API. An engineer drafts a design note. Which two statements in the note are accurate? (Select TWO.)",
     "options": [
@@ -2089,7 +2040,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Uploads arrive in one shared inbox, so the pipeline does not know in advance whether a file is an invoice, a contract or a statement. It offers three tools, `extract_invoice`, `extract_contract` and `extract_statement`, with `tool_choice` set to `auto`. Logs show that 6% of responses contain only text such as \"This looks like a contract amendment; key terms are…\" and no tool call, which breaks the loader. What is the right fix?",
     "options": [
@@ -2130,7 +2080,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "`vat_number` is required in the invoice schema. For most suppliers it is extracted correctly, but for about 30 suppliers it comes back null. Reviewers find the number is present in those invoices: sometimes in the letterhead footer, sometimes in a sidebar labelled \"Reg. No.\", sometimes in a remittance box on the second page. The prompt currently says \"Extract the supplier's VAT number.\" What change is most likely to fix this?",
     "options": [
@@ -2171,7 +2120,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "Alongside each record, the extractor sets `review_flag` with the instruction \"Flag anything that looks unusual about this invoice. Be conservative.\" Accounts-payable clerks now dismiss 72% of flags, and say they have started skimming past them, including real duplicates. What change should the team make to the flagging prompt?",
     "options": [
@@ -2212,7 +2160,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 2,
     "prompt": "The team switched from asking for JSON in the response text to a tool with a JSON schema. JSON parse failures fell from 4% to zero. A week later, the ledger team reports records where `line_items` add up to 1,180.00 while `total` says 1,280.00, and others where the tax amount sits in `shipping_cost`. The project lead asks why the schema didn't prevent this. Which answer is accurate?",
     "options": [
@@ -2253,7 +2200,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "The pipeline retries failed extractions up to twice, sending the source document, the failed output and the validation errors. To save spend, the team wants to retry only failures that a retry can plausibly fix and send the rest straight to a reviewer. Which two failure types should stay in the automatic retry path? (Select TWO.)",
     "options": [
@@ -2301,7 +2247,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The agent has two MCP tools. `parse_document` is described as \"Parses a document and returns data.\" `read_fields` is described as \"Reads fields from a file.\" The first runs layout-aware OCR on scanned PDFs; the second pulls named fields from already-digital PDFs with a text layer. Traces show the agent calling `read_fields` on scans about 40% of the time and getting empty results. What should the team change first?",
     "options": [
@@ -2342,7 +2287,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The OCR MCP server returns the text \"Operation failed\" for every problem. Over a weekend, the agent spent 11,000 calls retrying 340 password-protected PDFs, while genuine timeouts during a server restart were sent to reviewers as unreadable documents. How should the tool's error responses be redesigned?",
     "options": [
@@ -2383,7 +2327,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The enrichment step looks up exchange rates and GL codes, and it needs the document's currency, issue date and document type first. With `tool_choice: auto`, the model sometimes calls `enrich_record` before `extract_metadata`, guessing the currency and producing wrong conversions. How should the calls be structured?",
     "options": [
@@ -2424,7 +2367,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "Supplier statements trickle in around the clock. Treasury requires each statement's extracted record within 36 hours of arrival. The team plans to use the Message Batches API and assumes the worst case, a full 24-hour processing window for each batch. How often should batches be submitted?",
     "options": [
@@ -2465,7 +2407,6 @@
     "categoryKey": "tool-design-mcp",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 3,
     "prompt": "The extraction agent was connected to every tool the finance platform's MCP server exposes: 17 in total, including `post_journal_entry`, `email_supplier` and `approve_payment`. Twice last month it posted a journal entry straight from an invoice that had not yet passed schema validation, and its choice between the four extraction tools has become less accurate. What should the team do?",
     "options": [
@@ -2506,7 +2447,6 @@
     "categoryKey": "prompt-engineering",
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
-    "paperId": "ccar-f-practice-1",
     "difficulty": 4,
     "prompt": "For high-value contracts (above $250,000), the extractor ends each run with a follow-up message in the same conversation: \"Review your extraction against the contract and correct any mistakes.\" Spot checks show it confirms its first answer 96% of the time, including cases where the renewal term was misread. Turning on extended thinking for the same step barely changed this. What should the team use instead?",
     "options": [

@@ -57,11 +57,6 @@
   "papersLabel": "Practice exams",
   "papers": [
     {
-      "key": "ccar-f-practice-1",
-      "label": "CCAR-F practice exam 1",
-      "series": "Original"
-    },
-    {
       "key": "purcell-ccar-f-v2",
       "label": "CCAR-F practice exam v2",
       "series": "Matthew Purcell"

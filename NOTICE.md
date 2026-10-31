@@ -3,8 +3,8 @@
 ## Original bank (bank v2)
 
 The 250 questions with `source: original` (ids `ccar-f-*` and the five
-`cca-q-*` items kept from the earlier bank), the six `ccar-f-*` scenarios
-and the paper `ccar-f-practice-1` are original work, written for this pack
+`cca-q-*` items kept from the earlier bank) and the six `ccar-f-*`
+scenarios are original work, written for this pack
 against the objectives and scenarios in Anthropic's public *Claude
 Certified Architect – Foundations Exam Guide* v1.0 (July 2026), with
 product facts checked against Anthropic's public documentation. They are
