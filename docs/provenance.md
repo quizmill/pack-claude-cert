@@ -92,9 +92,42 @@ between 0.40 and 0.49); the closest two bank stems score 0.35. Each
 question links one of 29 concept cards (one per task statement; 2.2
 and 5.3, both about error reporting, share one).
 
-**Not yet done.** No independent read of the bank for key
-defensibility and product facts, and no run of the admin judge gate;
-both are due before the pull request leaves draft.
+After the judge pass below: the key is the single longest in 20 of 200
+(10%), single shortest in 45 (22%); every other figure is unchanged.
+
+**Judge gate (2026-10-31).** The quizmill/admin `evals` gate ran over all
+310 questions with `claude-opus-5-5` (the gate's own model was not
+available on the account that night) and the thresholds of `gate.json`:
+every question, all three passes (solve, choices-only, review), 930
+verdicts.
+
+| | first run, 310 | after rework, 310 | after rework, original 250 |
+| --- | --: | --: | --: |
+| fatal | 0 | 0 | 0 |
+| major | 14 (5 original, 9 Purcell) | 9 (Purcell) | 0 |
+| key not confirmed | 1 (Purcell) | 3 (2 original, 1 Purcell) | 2 |
+| solve disagrees with key | 0 | 1 (original) | 1 |
+| minor | 24% (43 original, 30 Purcell) | 13% (9 original, 30 Purcell) | 4% |
+
+All 48 flagged original items were reworked against the judge's flaw. Five
+items (and the commands-and-skills card) described the skill frontmatter
+field `allowed-tools` as a restriction; the Claude Code skills reference
+says it pre-approves tools and "does not restrict which tools are
+available", and `disallowed-tools` removes tools while a skill is active.
+Those items now say so and cite the reference. The three original items
+still flagged (`ccar-f-s2-12`, `ccar-f-s4-02`, `ccar-f-s5-10`) carry no
+flaw: the judge cannot confirm `disallowed-tools` from its own knowledge
+and, on `ccar-f-s4-02`, picks `allowed-tools` as the restriction. The
+current docs settle both in the bank's favour. Purcell's items are left
+as published.
+
+Choices-only: the judge picks the key from the options alone in 100% of
+items (the Professional bank: 99%). An expert reader can tell good
+practice from bad practice without the stem, so this figure says little
+about cueing in this domain; the length and letter gates above are the
+cueing checks.
+
+**Not yet done.** A human read of the bank with `/review`.
 
 ## Reproduce
 
