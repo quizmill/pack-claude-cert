@@ -102,13 +102,20 @@ for q in single:
         shortest += 1
     others = [v for k, v in lengths.items() if k != ck]
     ratios.append(lengths[ck] / statistics.mean(others))
+top_two = 0
 for q in multi:
     lengths = {o["key"]: len(o["text"]) for o in q["options"]}
     correct = [lengths[k] for k in q["correctKeys"]]
     wrong = [v for k, v in lengths.items() if k not in q["correctKeys"]]
     ratios.append(statistics.mean(correct) / statistics.mean(wrong))
     if min(correct) > max(wrong):
+        top_two += 1
         warnings.append(f"{q['id']}: every correct option is longer than every distractor")
+# By chance the two keys are the two longest of five options one time in ten.
+if multi:
+    print(f"select-two keys are the two longest options: {top_two}/{len(multi)}")
+    if top_two / len(multi) > 0.15:
+        failures.append(f"select-two keys are the two longest options in {top_two / len(multi):.0%} (limit 15%)")
 if single:
     share = longest / len(single)
     short_share = shortest / len(single)
