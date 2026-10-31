@@ -1,7 +1,7 @@
 # Claude Cert Practice — quizmill learning pack
 
 **Unofficial** practice question bank for the Claude Certified
-Architect (Foundations) exam — 635 multiple-choice questions across the
+Architect (Foundations) exam — 695 multiple-choice questions across the
 five exam domains, with blueprint-weighted practice sessions, scenario
 case studies, and per-question explanations. Not affiliated with or
 endorsed by Anthropic.
@@ -13,11 +13,11 @@ mistakes-review loop.
 
 | Domain | Questions | Blueprint weight |
 |---|---|---|
-| Agentic Architecture & Orchestration | 143 | 27% |
-| Prompt Engineering & Structured Output | 139 | 20% |
-| Context Management & Reliability | 131 | 15% |
-| Claude Code Configuration & Workflows | 115 | 20% |
-| Tool Design & MCP Integration | 107 | 18% |
+| Agentic Architecture & Orchestration | 159 | 27% |
+| Prompt Engineering & Structured Output | 151 | 20% |
+| Context Management & Reliability | 140 | 15% |
+| Claude Code Configuration & Workflows | 127 | 20% |
+| Tool Design & MCP Integration | 118 | 18% |
 
 ## Run it
 
@@ -34,15 +34,16 @@ offline).
 
 ## Sources & attribution
 
-The bank is curated from MIT-licensed community question sets, plus a
+The bank is curated from MIT-licensed community question sets, a
 small number of hand-written questions grounded in Anthropic's public
-documentation:
+documentation, and one full-length practice exam shared by its author:
 
 | Source | Questions | License |
 |---|---|---|
 | [haytamAroui/Claude-Certified-Architect](https://github.com/haytamAroui/Claude-Certified-Architect) | 240 | MIT |
 | [Connectry-io/connectrylab-architect-cert-mcp](https://github.com/Connectry-io/connectrylab-architect-cert-mcp) | 390 | MIT |
 | Hand-authored from the [Anthropic docs](https://docs.anthropic.com/) and exam guide | 5 | this repo's |
+| [Matthew Purcell's CCAR-F Practice Question Set v2](https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/), as the paper "CCAR-F practice exam v2" | 60 | used with the author's permission (see [NOTICE.md](NOTICE.md)) |
 
 Every question carries a `sourceRef` URL pointing at its upstream
 origin, and the app links to it in the answer panel. Upstream license
