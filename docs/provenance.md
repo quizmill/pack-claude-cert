@@ -65,6 +65,8 @@ of:
 - the key is the single longest option in more than 25% of single-answer
   items, or the single shortest in more than 30%; the mean key/distractor
   length ratio leaves 0.9–1.1
+- the two select-two keys are the two longest options in more than 15% of
+  select-two items (chance is 10%)
 - key letters uneven across A–D; a select-two pair never used; select-two
   share outside 15–25%
 - absolute wording only in distractors; "all/none of the above"
@@ -78,6 +80,21 @@ of:
   markdown stripped) of 0.50 or more against any retired stem (read from
   git at `7ac5446`, never re-committed) or any of Purcell's v2 stems, or
   above 0.70 against another bank stem
+
+**Result at 250 (2026-10-31).** Correct letters A 50 / B 50 / C 50 / D 50;
+each of the ten select-two pairs five times. The key is the single
+longest option in 17 of 200 single-answer items (8%) and the single
+shortest in 44 (22%); mean key/distractor length ratio 1.01; select-two
+keys are never the two longest. Domains 68 / 45 / 50 / 50 / 37; 30
+questions per scenario plus 70 standalone. Every stem scores below 0.40
+against the retired bank and below 0.50 against Purcell's v2 (one item
+between 0.40 and 0.49); the closest two bank stems score 0.35. Each
+question links one of 29 concept cards (one per task statement; 2.2
+and 5.3, both about error reporting, share one).
+
+**Not yet done.** No independent read of the bank for key
+defensibility and product facts, and no run of the admin judge gate;
+both are due before the pull request leaves draft.
 
 ## Reproduce
 
