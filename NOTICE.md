@@ -1,64 +1,15 @@
 # Notices
 
-This pack contains questions curated and adapted from the following
-MIT-licensed works. Per-question provenance is recorded in each
-question's `sourceRef` field in `questions.json`.
+## Original bank (bank v2)
 
-## haytamAroui/Claude-Certified-Architect
-
-<https://github.com/haytamAroui/Claude-Certified-Architect>
-
-```
-MIT License
-
-Copyright (c) 2026
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-## Connectry-io/connectrylab-architect-cert-mcp
-
-<https://github.com/Connectry-io/connectrylab-architect-cert-mcp>
-
-```
-MIT License
-
-Copyright (c) 2026 Connectry LABS
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+The 250 questions with `source: original` (ids `ccar-f-*` and the five
+`cca-q-*` items kept from the earlier bank) and the six `ccar-f-*`
+scenarios are original work, written for this pack
+against the objectives and scenarios in Anthropic's public *Claude
+Certified Architect – Foundations Exam Guide* v1.0 (July 2026), with
+product facts checked against Anthropic's public documentation. They are
+not drawn from the live exam, whose content is under NDA. They are
+licensed with the rest of this repository (see [LICENSE](LICENSE)).
 
 ## Matthew Purcell — CCAR-F Practice Question Set, Version 2 (paper `purcell-ccar-f-v2`)
 
@@ -76,6 +27,21 @@ wrong option falls short come from his rationales, split per option.
 
 The author states the set is original material written against Anthropic's
 public exam guide, **not** actual exam content, which is under NDA.
+
+## History: the retired bank
+
+Until bank v2 the pack held a bank curated from two MIT-licensed
+community repositories. It was retired in full and replaced by the
+original bank above; none of its questions, scenarios or rationales remain.
+
+- [haytamAroui/Claude-Certified-Architect](https://github.com/haytamAroui/Claude-Certified-Architect),
+  MIT License, Copyright (c) 2026: 240 questions.
+- [Connectry-io/connectrylab-architect-cert-mcp](https://github.com/Connectry-io/connectrylab-architect-cert-mcp),
+  MIT License, Copyright (c) 2026 Connectry LABS: 390 questions. The
+  repository has since been deleted; its licence is preserved at
+  <https://web.archive.org/web/20260321161626/https://github.com/Connectry-io/connectrylab-architect-cert-mcp/blob/master/LICENSE>.
+
+Version 1 of Matthew Purcell's LinkedIn set was removed earlier, in #14.
 
 ## Trademarks
 
