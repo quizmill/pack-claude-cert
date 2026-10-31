@@ -3,7 +3,7 @@
 **Unofficial** practice question bank for the Claude Certified
 Architect – Foundations (CCAR-F) exam — 310 scenario-based questions
 across the five exam domains, single-answer and select-two, with
-blueprint-weighted practice sessions, two full-length practice exams,
+blueprint-weighted practice sessions, a full-length practice exam,
 and a rationale for every option. Not affiliated with or endorsed by
 Anthropic.
 
@@ -41,9 +41,7 @@ public [*Claude Certified Architect – Foundations Exam Guide*](https://everpat
 v1.0: its five domains at their blueprint weights, its task statements
 and its six scenarios, with product facts checked against Anthropic's
 public docs. About 180 questions are framed by the six scenarios and
-the rest are standalone. Sixty of them form the paper "CCAR-F practice
-exam 1": four scenarios × 15 questions, like the real sitting. Nothing
-is drawn from the live exam. Provenance is recorded in
+the rest are standalone. Nothing is drawn from the live exam. Provenance is recorded in
 [docs/provenance.md](docs/provenance.md).
 
 **Matthew Purcell's paper (60).** The paper "CCAR-F practice exam v2" is
@@ -51,12 +49,21 @@ is drawn from the live exam. Provenance is recorded in
 used with the author's permission and credited in
 [NOTICE.md](NOTICE.md).
 
+His questions are kept exactly as published. In the quizmill judge gate
+(2026-10-31, `claude-opus-5-5`) the original bank passed with no fatal
+or major findings; his 60 drew no fatal findings, 9 major and 30 minor.
+One key, `cca-purcell-v2-2-3`,
+relies on the skill field `allowed-tools` restricting Bash, while the
+[Claude Code skills docs](https://code.claude.com/docs/en/skills) say it
+pre-approves tools and does not restrict them. The details are in
+[docs/provenance.md](docs/provenance.md).
+
 The community-sourced bank this pack used to carry was retired with
 bank v2; [NOTICE.md](NOTICE.md) records where it came from.
 
 `python3 scripts/check-bank.py` checks the original bank for answer-key
-tells (length, letter spread, absolute wording), blueprint balance, the
-practice paper's shape and stem overlap with retired material.
+tells (length, letter spread, absolute wording), blueprint balance and
+stem overlap with retired material.
 
 ## Contributing
 
