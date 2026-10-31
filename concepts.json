@@ -1,0 +1,321 @@
+[
+  {
+    "id": "agentic-loop",
+    "title": "The agentic loop runs on stop_reason",
+    "body": "An agent loop sends the conversation to Claude, reads `stop_reason`, and acts on it. `\"tool_use\"` means Claude wants tools run: execute them, append each result as a `tool_result` block in the next user message, and call again. `\"end_turn\"` means Claude has finished, so the loop stops.\n\nThe model decides which tool to call next from what it has seen so far; that is what separates an agent from a fixed decision tree. Tool results must go back into the history, or the model reasons about the next step without the information it asked for.",
+    "commonMistakes": [
+      "Deciding the loop is done by parsing the reply text for phrases like \"I'm finished\".",
+      "Using an iteration cap as the main stopping rule instead of a safety net behind `end_turn`.",
+      "Treating any assistant text in the response as completion, even when a tool call is pending."
+    ],
+    "tags": ["1.1"]
+  },
+  {
+    "id": "coordinator-subagents",
+    "title": "Coordinators decompose, delegate and check coverage",
+    "body": "In a hub-and-spoke design the coordinator owns task decomposition, decides which subagents a query actually needs, routes every message between them, aggregates results and handles their errors. Subagents never talk to each other directly, which keeps the flow observable and the error handling consistent.\n\nGood decomposition partitions the work so subagents do not duplicate each other (distinct subtopics or source types) and is broad enough to cover the question. After synthesis the coordinator looks for gaps, sends targeted follow-up queries and re-runs synthesis until coverage is sufficient.",
+    "commonMistakes": [
+      "Running the full pipeline for every query, including ones that need a single subagent.",
+      "Splitting a broad topic so narrowly that whole areas are never researched.",
+      "Letting subagents call each other, so failures and data flow bypass the coordinator."
+    ],
+    "tags": ["1.2"]
+  },
+  {
+    "id": "subagent-context-passing",
+    "title": "Subagents start empty: pass context explicitly",
+    "body": "A subagent spawned through the Task tool does not inherit the coordinator's conversation or share memory with other invocations. Everything it needs (prior findings, documents, constraints) must be in the prompt the coordinator writes for it. The coordinator can only spawn subagents if `Task` is among its allowed tools, and each subagent type is defined by an AgentDefinition: description, system prompt and tool restrictions.\n\nPass findings in a structured form that keeps content apart from metadata such as source URL, document name and page, so attribution survives the hop. To run subagents in parallel, emit several Task calls in one coordinator response. Brief subagents with goals and quality criteria rather than step-by-step procedures.",
+    "commonMistakes": [
+      "Assuming a subagent can see what the coordinator saw earlier in the session.",
+      "Spawning parallel work one Task call per turn, which serialises it.",
+      "Forgetting to include `Task` in the coordinator's allowed tools."
+    ],
+    "tags": ["1.3"]
+  },
+  {
+    "id": "programmatic-enforcement",
+    "title": "Enforce must-happen steps in code, not in the prompt",
+    "body": "A prompt instruction such as \"verify the customer before refunding\" is followed most of the time, which is not good enough when a business rule must hold every time. A programmatic prerequisite (a hook or gate that blocks `process_refund` until `get_customer` has returned a verified ID) makes the order deterministic.\n\nThe same discipline applies to handoffs: when a case goes to a human who cannot see the transcript, send a structured summary with the customer ID, root cause, amounts and recommended action. Multi-part requests are split into separate items, investigated with shared context, and answered in one resolution.",
+    "commonMistakes": [
+      "Strengthening the wording of a prompt rule after it was skipped once, and calling it fixed.",
+      "Escalating with \"see conversation\" to a human who has no access to it.",
+      "Answering only the first of several issues in a customer's message."
+    ],
+    "tags": ["1.4"]
+  },
+  {
+    "id": "agent-sdk-hooks",
+    "title": "Hooks intercept tool calls and results deterministically",
+    "body": "Agent SDK hooks run your code at fixed points in the loop. A hook before a tool call can inspect the arguments and block or redirect the call, for example refusing a refund above a limit and routing to human escalation. A PostToolUse hook can rewrite a tool's result before the model sees it, for example normalising Unix timestamps, ISO 8601 strings and numeric status codes from different MCP servers into one format.\n\nUse hooks when a rule must be guaranteed; prompt instructions give probabilistic compliance.",
+    "commonMistakes": [
+      "Asking the model in the prompt to convert every date format it meets.",
+      "Relying on a system-prompt limit for refunds when the policy is non-negotiable.",
+      "Blocking a call without giving the agent an alternative path."
+    ],
+    "tags": ["1.5"]
+  },
+  {
+    "id": "task-decomposition",
+    "title": "Fixed pipelines for predictable work, adaptive plans for open-ended work",
+    "body": "When the steps are known in advance, a fixed sequence of prompts (prompt chaining) is simpler and easier to check: for a large code review, analyse each file on its own, then run a separate cross-file pass. When the work is open-ended, decompose adaptively: map the structure first, find the high-impact areas, make a prioritised plan and revise it as you learn.\n\nSplitting a big review into per-file passes avoids attention dilution, where one pass over many files misses issues and contradicts itself.",
+    "commonMistakes": [
+      "Reviewing a 30-file change in one pass and trusting the result.",
+      "Writing a rigid step list for an investigation whose next step depends on what is found.",
+      "Starting \"add tests to the legacy code\" without first mapping what matters most."
+    ],
+    "tags": ["1.6"]
+  },
+  {
+    "id": "session-management",
+    "title": "Resume, fork or start fresh",
+    "body": "`--resume <session-name>` continues a named session with its history, which suits work whose earlier context is still valid. `fork_session` branches from a shared baseline so two approaches can be explored independently. If files changed since the session last looked, tell it which ones so it re-reads only those.\n\nWhen most earlier tool results are stale, a new session seeded with a structured summary of what still holds is more reliable than resuming and reasoning over outdated results.",
+    "commonMistakes": [
+      "Resuming after a large refactor without saying what changed.",
+      "Trying two designs one after another in the same session, so the second inherits the first's assumptions.",
+      "Re-exploring the whole codebase when only a few files changed."
+    ],
+    "tags": ["1.7"]
+  },
+  {
+    "id": "tool-descriptions",
+    "title": "Tool descriptions drive tool selection",
+    "body": "Claude chooses tools mainly from their descriptions. A good description says what the tool does, what input it expects (with formats and an example), what it returns, its edge cases, and when to use it instead of a similar tool. Two tools with near-identical descriptions will be confused.\n\nFix overlap at the source: rename tools so their names say what they are for, and split a generic tool into purpose-specific ones with clear input and output contracts. Also check the system prompt: keyword-heavy instructions can pull the model towards the wrong tool despite good descriptions.",
+    "commonMistakes": [
+      "One-line descriptions for tools that do similar things.",
+      "Patching misrouting with system-prompt rules while leaving the descriptions vague.",
+      "One catch-all tool with a mode parameter instead of tools with distinct purposes."
+    ],
+    "tags": ["2.1"]
+  },
+  {
+    "id": "mcp-error-responses",
+    "title": "Tool errors must say what kind of failure it was",
+    "body": "An MCP tool reports failure with `isError` and a body the agent can act on. Distinguish transient errors (timeouts, unavailable services), validation errors (bad input), business-rule violations and permission errors, and say whether a retry can help. A structured payload such as an error category, an `isRetryable` flag and a readable message stops the agent retrying what cannot succeed, and gives it words to explain a policy refusal to a customer.\n\nAn empty result from a successful query is not an error: keep the two apart. Subagents should retry transient failures themselves and only pass up what they cannot resolve, with what they tried and any partial results.",
+    "commonMistakes": [
+      "Returning \"Operation failed\" for every failure.",
+      "Reporting a timeout as zero results, so the agent concludes nothing exists.",
+      "Letting the agent retry a policy violation as if it were a network blip."
+    ],
+    "tags": ["2.2", "5.3"]
+  },
+  {
+    "id": "tool-scoping-tool-choice",
+    "title": "Give each agent few tools, and use tool_choice deliberately",
+    "body": "Selection gets less reliable as an agent's tool list grows, and agents misuse tools outside their role. Give each agent the handful of tools its role needs, plus a narrow cross-role tool for a frequent need (a fact-check tool for the synthesis agent, for example) while complex cases go back through the coordinator. Prefer constrained tools to generic ones: a document loader that validates URLs instead of an open fetch.\n\n`tool_choice` controls whether a tool must be called: `auto` lets the model answer in text, `any` requires some tool call, and `{\"type\": \"tool\", \"name\": ...}` forces a specific one, useful to make one step (such as metadata extraction) run first.",
+    "commonMistakes": [
+      "Giving every agent every tool \"in case\".",
+      "Using `auto` when the application cannot handle a text-only reply.",
+      "Forcing one tool for the whole conversation when it was only needed first."
+    ],
+    "tags": ["2.3"]
+  },
+  {
+    "id": "mcp-configuration",
+    "title": "Scoping MCP servers and exposing resources",
+    "body": "In Claude Code, servers the whole team needs go in the project's `.mcp.json`, committed with the code; personal or experimental servers go in user scope (`~/.claude.json`). Credentials stay out of the repo through environment-variable expansion such as `${GITHUB_TOKEN}` in `.mcp.json`. Tools from every configured server are discovered at connection and offered together.\n\nMCP resources let a server publish catalogs (issue summaries, documentation trees, database schemas) so the agent can see what exists without exploratory tool calls. Use an established community server for standard systems like Jira; build custom servers for team-specific workflows, and describe their tools well enough that the agent prefers them over generic built-ins.",
+    "commonMistakes": [
+      "Committing a token in `.mcp.json`.",
+      "Putting a server everyone needs in one developer's user config.",
+      "Writing a custom server for a system that already has a maintained one."
+    ],
+    "tags": ["2.4"]
+  },
+  {
+    "id": "built-in-tools",
+    "title": "Grep for contents, Glob for paths, Edit for targeted changes",
+    "body": "Grep searches inside files: function names, error messages, imports. Glob matches file paths by pattern, such as `**/*.test.tsx`. Read and Write work on whole files; Edit changes a file by replacing a unique piece of text, and when the anchor text is not unique, Read the file and Write it back.\n\nExplore incrementally: Grep for entry points, then Read along the imports, rather than reading everything first. To trace usage through re-exporting wrapper modules, list the exported names, then search for each one.",
+    "commonMistakes": [
+      "Using Glob to find where a function is called.",
+      "Reading every file in a package before knowing which ones matter.",
+      "Retrying Edit with the same non-unique anchor."
+    ],
+    "tags": ["2.5"]
+  },
+  {
+    "id": "claude-md-hierarchy",
+    "title": "Where CLAUDE.md instructions live, and who gets them",
+    "body": "Claude Code loads memory from several levels: the user's `~/.claude/CLAUDE.md` (personal, not shared through version control), the project's `CLAUDE.md` or `.claude/CLAUDE.md` (shared with the team), and `CLAUDE.md` files in subdirectories. Keep files modular with `@import` to pull in the standards a package needs, or split topics into files under `.claude/rules/`.\n\nWhen behaviour differs between teammates, `/memory` shows which memory files are loaded; a common cause is a rule that lives only in one person's user-level file.",
+    "commonMistakes": [
+      "Putting team conventions in a personal `~/.claude/CLAUDE.md`.",
+      "Growing one giant CLAUDE.md instead of importing or splitting by topic.",
+      "Debugging inconsistent behaviour without checking which files are loaded."
+    ],
+    "tags": ["3.1"]
+  },
+  {
+    "id": "commands-and-skills",
+    "title": "Slash commands and skills: shared, personal and isolated",
+    "body": "Project commands in `.claude/commands/` and project skills in `.claude/skills/` are shared through version control; the same folders under `~/.claude/` are personal. A skill's `SKILL.md` frontmatter can set `context: fork` to run it in an isolated sub-agent so verbose output stays out of the main session, `allowed-tools` to restrict what it may do while it runs, and `argument-hint` to prompt for parameters.\n\nUse a skill for an on-demand, task-specific workflow; use CLAUDE.md for standards that should always be loaded. To change a team skill just for yourself, create a personal variant under a different name.",
+    "commonMistakes": [
+      "Putting a rarely used workflow in CLAUDE.md, where it costs context every session.",
+      "Running a noisy analysis skill in the main context.",
+      "Editing the shared skill to suit one developer."
+    ],
+    "tags": ["3.2"]
+  },
+  {
+    "id": "path-specific-rules",
+    "title": "Path-scoped rules load only where they apply",
+    "body": "A file in `.claude/rules/` can carry YAML frontmatter with a `paths` list of globs, for example `[\"terraform/**/*\"]` or `[\"**/*.test.tsx\"]`. The rule loads only when Claude works on matching files, which saves context and keeps irrelevant conventions out of the way.\n\nGlob rules beat subdirectory CLAUDE.md files when the files a convention covers are spread across the tree, as test files usually are.",
+    "commonMistakes": [
+      "Copying the same test conventions into a CLAUDE.md in every folder that has tests.",
+      "Loading Terraform rules into every session, including frontend work.",
+      "Scoping by directory when the convention follows file type."
+    ],
+    "tags": ["3.3"]
+  },
+  {
+    "id": "plan-mode",
+    "title": "Plan mode for big or ambiguous changes, direct execution for clear ones",
+    "body": "Plan mode lets Claude explore and propose before changing anything. It suits large or architectural work: a migration touching dozens of files, restructuring services, or choosing between approaches with different infrastructure needs. Direct execution suits well-understood, scoped changes: a single-file fix with a clear stack trace, one added validation.\n\nThe two combine: plan the migration, then execute the agreed plan directly. For noisy discovery, the Explore subagent reads widely in its own context and returns a summary, keeping the main conversation lean.",
+    "commonMistakes": [
+      "Starting a 40-file migration by editing the first file.",
+      "Using plan mode for a one-line fix, adding ceremony with no benefit.",
+      "Running long discovery in the main context until it fills."
+    ],
+    "tags": ["3.4"]
+  },
+  {
+    "id": "iterative-refinement",
+    "title": "Refine with examples, tests and questions",
+    "body": "When a prose description keeps being misread, two or three concrete input/output examples fix it faster than more prose. For behaviour with edge cases, write the tests first (expected behaviour, edge cases, performance) and iterate by sharing the failures. In an unfamiliar domain, ask Claude to interview you first so design questions such as cache invalidation or failure modes surface before code is written.\n\nWhen several problems interact, describe them together in one detailed message; when they are independent, fix them one at a time.",
+    "commonMistakes": [
+      "Rewording the same prose request a fourth time.",
+      "Fixing interacting bugs one by one, so each fix breaks another.",
+      "Describing an edge case in words instead of giving the failing input."
+    ],
+    "tags": ["3.5"]
+  },
+  {
+    "id": "claude-code-ci",
+    "title": "Claude Code in CI: non-interactive, structured, independent",
+    "body": "In a pipeline, run Claude Code with `-p` (`--print`) so it never waits for input. `--output-format json` with `--json-schema` returns findings a script can parse and post as inline comments. CLAUDE.md gives CI runs the project context: testing standards, fixtures, review criteria.\n\nReview with a separate instance from the one that wrote the code; it has none of the generator's reasoning to anchor on. On re-review after new commits, include the earlier findings and ask only for new or still-open issues. For test generation, include the existing tests so suggestions do not duplicate them.",
+    "commonMistakes": [
+      "Running interactive mode in CI and watching the job hang.",
+      "Scraping free text for findings instead of requesting JSON against a schema.",
+      "Re-posting every earlier comment on each push."
+    ],
+    "tags": ["3.6"]
+  },
+  {
+    "id": "explicit-criteria",
+    "title": "Explicit criteria cut false positives; \"be careful\" does not",
+    "body": "Precision improves when the prompt says exactly what counts as a finding and what does not: report bugs and security issues, skip style nits and local conventions; flag a comment only when it contradicts what the code does. Instructions such as \"be conservative\" or \"only report high-confidence issues\" leave the threshold to the model and barely move precision.\n\nFalse positives in one category make developers distrust the accurate ones. Switch a noisy category off while its criteria are improved, and define each severity level with a concrete code example.",
+    "commonMistakes": [
+      "Adding \"only report findings you are sure about\" and expecting fewer false alarms.",
+      "Keeping a noisy category on while developers learn to ignore the bot.",
+      "Severity labels without examples, so the same issue is rated differently each run."
+    ],
+    "tags": ["4.1"]
+  },
+  {
+    "id": "few-shot-examples",
+    "title": "Few-shot examples teach format and judgement",
+    "body": "When detailed instructions still give inconsistent output, a few well-chosen examples are the most effective fix. Two to four targeted examples can show the exact output format (location, issue, severity, fix), the handling of an ambiguous case with the reasoning for the choice, or the difference between an acceptable pattern and a real problem.\n\nExamples help the model generalise to cases you did not list. In extraction they reduce invented values and empty required fields when they cover the document variations seen in practice.",
+    "commonMistakes": [
+      "Examples that all show the easy case and none of the ambiguous ones.",
+      "Expecting examples to work only as a lookup list of covered cases.",
+      "Fixing format drift with longer instructions instead of one worked example."
+    ],
+    "tags": ["4.2"]
+  },
+  {
+    "id": "structured-output-tool-use",
+    "title": "Tool use with a JSON schema for structured output",
+    "body": "Defining an extraction tool whose input schema is the record you want, and reading the tool call's input, is the most reliable way to get schema-shaped output: syntax errors disappear. Semantic errors do not: line items can still fail to add up, or a value can land in the wrong field.\n\n`tool_choice: \"any\"` guarantees a tool call when several extraction schemas exist and the document type is unknown; forcing a named tool makes a particular extraction run first. Make fields optional or nullable when a document may not contain them, so the model is not pushed to invent a value. Add `\"unclear\"` to enums for ambiguous input and `\"other\"` plus a detail string for categories you did not foresee.",
+    "commonMistakes": [
+      "Marking every field required, then finding plausible but invented values.",
+      "Assuming schema-valid output is correct output.",
+      "Closed enums with no way to say \"none of these\"."
+    ],
+    "tags": ["4.3"]
+  },
+  {
+    "id": "validation-retry",
+    "title": "Retry with the error, and know when retrying cannot help",
+    "body": "When an extraction fails validation, send a follow-up with the original document, the failed output and the specific validation errors; the model can then correct format and structure mistakes. Retrying is pointless when the information is not in the document at all, for instance when it lives in a separate file nobody supplied.\n\nBuild checks into the output itself: extract a `calculated_total` next to the `stated_total`, or a `conflict_detected` flag, so discrepancies surface. For review findings, a `detected_pattern` field lets you analyse which patterns developers keep dismissing.",
+    "commonMistakes": [
+      "Retrying with the same prompt and no error details.",
+      "Retrying until the model fills in a field the source never had.",
+      "Trusting a stated total without recomputing it."
+    ],
+    "tags": ["4.4"]
+  },
+  {
+    "id": "message-batches",
+    "title": "Message Batches for work that can wait",
+    "body": "The Message Batches API costs about half as much as synchronous calls and finishes within 24 hours, with no latency guarantee. It suits overnight reports, weekly audits and nightly test generation, not checks that block a merge. A batch request cannot run tools mid-request and come back for more turns.\n\nEach request carries a `custom_id` to match results to inputs; on failure resubmit only the failed IDs, adjusted (for example by chunking a document that was too long). Plan submission cadence from the SLA, and tune the prompt on a sample before sending a large volume.",
+    "commonMistakes": [
+      "Moving a pre-merge check to batches to save money.",
+      "Resubmitting the whole batch because a few requests failed.",
+      "Designing a batch job that needs multi-turn tool use."
+    ],
+    "tags": ["4.5"]
+  },
+  {
+    "id": "independent-review",
+    "title": "An independent reviewer catches what self-review misses",
+    "body": "A model reviewing its own output in the same session keeps the reasoning that produced it and is unlikely to question it. A second instance without that context catches subtle problems more reliably than asking the generator to double-check, even with extended thinking.\n\nFor large changes, combine per-file passes for local issues with an integration pass for data flow across files. A verification pass that has the model attach a confidence to each finding lets you route findings for human attention.",
+    "commonMistakes": [
+      "Asking the same session to \"review your code carefully\".",
+      "One review pass over a very large diff.",
+      "Treating every finding as equally certain."
+    ],
+    "tags": ["4.6"]
+  },
+  {
+    "id": "long-context-facts",
+    "title": "Keep the facts out of the summary",
+    "body": "Summarising a long conversation tends to blur exact amounts, dates, percentages and what the customer was promised. Keep those in a structured case-facts block that is sent with every request, outside the summarised history, and for multi-issue sessions keep a separate record per issue.\n\nTrim tool results to the fields that matter before they pile up. Models handle the start and end of long inputs best and may miss the middle, so put a key-findings summary first and organise detail under clear headers. Ask upstream agents for compact structured output (key facts, citations, relevance) with dates and sources when the next agent has a limited context budget.",
+    "commonMistakes": [
+      "Letting a running summary replace the order numbers and amounts.",
+      "Passing 40-field tool results through when five fields are used.",
+      "Burying the most important finding in the middle of a long input."
+    ],
+    "tags": ["5.1"]
+  },
+  {
+    "id": "escalation",
+    "title": "When to hand over to a human",
+    "body": "Escalate when the customer asks for a human, when policy has an exception or says nothing about the request, or when the agent cannot make progress. Honour an explicit request for a human straight away. If the customer is frustrated but the issue is simple and within the agent's remit, acknowledge it and offer to resolve; escalate if they ask again.\n\nSentiment and the model's self-reported confidence are poor guides to how hard a case is. When a lookup returns several possible customers, ask for another identifier rather than guessing. Put explicit escalation criteria, with a few examples, in the system prompt.",
+    "commonMistakes": [
+      "Investigating first when the customer has already asked for a person.",
+      "Escalating on angry tone alone.",
+      "Picking the most recent of several matching accounts."
+    ],
+    "tags": ["5.2"]
+  },
+  {
+    "id": "codebase-exploration-context",
+    "title": "Long explorations need memory outside the context",
+    "body": "In a long exploration session answers drift: the model starts citing \"typical patterns\" instead of the classes it found earlier. Counter it by writing key findings to a scratchpad file and consulting it, delegating focused questions (\"find all test files\", \"trace the refund flow\") to subagents, summarising each phase before starting the next, and using `/compact` when discovery output fills the window.\n\nFor crash recovery, have each agent export its state to a known location and let the coordinator load a manifest on resume.",
+    "commonMistakes": [
+      "Doing all discovery in the main context and hoping it holds.",
+      "Restarting a crashed multi-agent run from scratch.",
+      "Starting a new phase without carrying forward a summary of the last."
+    ],
+    "tags": ["5.4"]
+  },
+  {
+    "id": "human-review-calibration",
+    "title": "Measure accuracy where it matters before cutting review",
+    "body": "An overall accuracy figure such as 97% can hide a document type or field that fails often. Before reducing human review, break accuracy down by document type and field. Keep a stratified random sample of high-confidence extractions under review, to measure the real error rate and catch new kinds of error.\n\nHave the model give field-level confidence, calibrate the thresholds against a labelled validation set, and send low-confidence fields and ambiguous or contradictory documents to reviewers first.",
+    "commonMistakes": [
+      "Automating fully because the aggregate number looks good.",
+      "Reviewing only low-confidence items, so errors in the confident ones go unseen.",
+      "Using raw confidence scores without calibrating them."
+    ],
+    "tags": ["5.5"]
+  },
+  {
+    "id": "provenance-synthesis",
+    "title": "Carry sources and dates through synthesis",
+    "body": "Each summarisation step can drop the link between a claim and its source. Have subagents return structured claim-to-source mappings (URL, document, excerpt) and require the synthesis step to keep and merge them. When credible sources disagree, report both with attribution rather than choosing one, and let the coordinator decide how to reconcile. Include publication or collection dates so that figures from different years are not read as a contradiction.\n\nIn the report, separate well-established findings from contested ones, note where coverage is thin because a source was unavailable, and present each kind of content in its natural form: tables for financial data, prose for news, lists for technical findings.",
+    "commonMistakes": [
+      "Picking the more recent statistic and dropping the other silently.",
+      "Summaries that keep the claims but lose the citations.",
+      "Formatting every section of a report the same way."
+    ],
+    "tags": ["5.6", "5.3"]
+  }
+]

@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "claude-cert",
   "title": "Claude Cert Practice",
-  "description": "Unofficial Claude Certified Architect (Foundations) practice — community-curated multiple-choice bank with per-question attribution.",
+  "description": "Unofficial Claude Certified Architect – Foundations (CCAR-F) practice — original scenario-based multiple-choice and select-two questions across the five exam domains, with rationales.",
   "homeSubtitle": "Architect Foundations — keep building.",
   "themeColor": "#1e3a5f",
   "categories": [
@@ -50,16 +50,41 @@
   "levelsLabel": "Question set",
   "levels": [
     {
-      "key": "core",
-      "label": "Core bank"
+      "key": "exam",
+      "label": "Exam scenarios"
     }
   ],
   "papersLabel": "Practice exams",
   "papers": [
     {
+      "key": "ccar-f-practice-1",
+      "label": "CCAR-F practice exam 1",
+      "series": "Original"
+    },
+    {
       "key": "purcell-ccar-f-v2",
       "label": "CCAR-F practice exam v2",
       "series": "Matthew Purcell"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Original",
+      "name": "Hand-authored (250)",
+      "blurb": "Written for this pack against the objectives and scenarios in Anthropic's public CCAR-F exam guide v1.0 and Anthropic's public docs. Not drawn from the live exam.",
+      "url": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf"
+    },
+    {
+      "label": "Exam guide",
+      "name": "Claude Certified Architect – Foundations Exam Guide v1.0",
+      "blurb": "Anthropic's public guide to the CCAR-F exam: the five domains and their weights, the task statements and the six scenarios this bank is written against.",
+      "url": "https://anthropic.skilljar.com/claude-certified-architect-foundations-access-request"
+    },
+    {
+      "label": "Matthew Purcell",
+      "name": "CCAR-F Practice Question Set v2 (60)",
+      "blurb": "The paper \"CCAR-F practice exam v2\": Matthew Purcell's free practice set, written against the public exam guide and used with his permission.",
+      "url": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/"
     }
   ],
   "upgrade": {

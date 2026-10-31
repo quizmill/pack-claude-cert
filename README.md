@@ -1,23 +1,25 @@
 # Claude Cert Practice — quizmill learning pack
 
 **Unofficial** practice question bank for the Claude Certified
-Architect (Foundations) exam — 695 multiple-choice questions across the
-five exam domains, with blueprint-weighted practice sessions, scenario
-case studies, and per-question explanations. Not affiliated with or
-endorsed by Anthropic.
+Architect – Foundations (CCAR-F) exam — 310 scenario-based questions
+across the five exam domains, single-answer and select-two, with
+blueprint-weighted practice sessions, two full-length practice exams,
+and a rationale for every option. Not affiliated with or endorsed by
+Anthropic.
 
 This is a learning pack for [quizmill](https://github.com/quizmill/quizmill),
 the open-source practice-app engine: the pack is pure JSON, the engine
 turns it into an installable, offline-first practice app with a
 mistakes-review loop.
 
-| Domain | Questions | Blueprint weight |
-|---|---|---|
-| Agentic Architecture & Orchestration | 159 | 27% |
-| Prompt Engineering & Structured Output | 151 | 20% |
-| Context Management & Reliability | 140 | 15% |
-| Claude Code Configuration & Workflows | 127 | 20% |
-| Tool Design & MCP Integration | 118 | 18% |
+| Domain | Original | Purcell v2 | Total | Blueprint weight |
+|---|---|---|---|---|
+| Agentic Architecture & Orchestration | 68 | 16 | 84 | 27% |
+| Tool Design & MCP Integration | 45 | 11 | 56 | 18% |
+| Claude Code Configuration & Workflows | 50 | 12 | 62 | 20% |
+| Prompt Engineering & Structured Output | 50 | 12 | 62 | 20% |
+| Context Management & Reliability | 37 | 9 | 46 | 15% |
+| **Total** | **250** | **60** | **310** | |
 
 ## Run it
 
@@ -34,23 +36,27 @@ offline).
 
 ## Sources & attribution
 
-The bank is curated from MIT-licensed community question sets, a
-small number of hand-written questions grounded in Anthropic's public
-documentation, and one full-length practice exam shared by its author:
+**Original bank (250).** Written for this pack against Anthropic's
+public [*Claude Certified Architect – Foundations Exam Guide*](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf)
+v1.0: its five domains at their blueprint weights, its task statements
+and its six scenarios, with product facts checked against Anthropic's
+public docs. About 180 questions are framed by the six scenarios and
+the rest are standalone. Sixty of them form the paper "CCAR-F practice
+exam 1": four scenarios × 15 questions, like the real sitting. Nothing
+is drawn from the live exam. Provenance is recorded in
+[docs/provenance.md](docs/provenance.md).
 
-| Source | Questions | License |
-|---|---|---|
-| [haytamAroui/Claude-Certified-Architect](https://github.com/haytamAroui/Claude-Certified-Architect) | 240 | MIT |
-| [Connectry-io/connectrylab-architect-cert-mcp](https://github.com/Connectry-io/connectrylab-architect-cert-mcp) | 390 | MIT |
-| Hand-authored from the [Anthropic docs](https://docs.anthropic.com/) and exam guide | 5 | this repo's |
-| [Matthew Purcell's CCAR-F Practice Question Set v2](https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/), as the paper "CCAR-F practice exam v2" | 60 | used with the author's permission (see [NOTICE.md](NOTICE.md)) |
+**Matthew Purcell's paper (60).** The paper "CCAR-F practice exam v2" is
+[Matthew Purcell's CCAR-F Practice Question Set v2](https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/),
+used with the author's permission and credited in
+[NOTICE.md](NOTICE.md).
 
-Every question carries a `sourceRef` URL pointing at its upstream
-origin, and the app links to it in the answer panel. Upstream license
-texts are preserved in [NOTICE.md](NOTICE.md).
+The community-sourced bank this pack used to carry was retired with
+bank v2; [NOTICE.md](NOTICE.md) records where it came from.
 
-Questions sourced from repos without an open-source license were
-excluded from this pack.
+`python3 scripts/check-bank.py` checks the original bank for answer-key
+tells (length, letter spread, absolute wording), blueprint balance, the
+practice paper's shape and stem overlap with retired material.
 
 ## Contributing
 
