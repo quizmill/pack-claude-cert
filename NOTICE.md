@@ -60,6 +60,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## Matthew Purcell — CCAR-F Practice Question Set, Version 2 (paper `purcell-ccar-f-v2`)
+
+The 60 questions with ids `cca-purcell-v2-*` (paper `purcell-ccar-f-v2`) and the
+six `cca-purcell-*` scenarios are adapted from Matthew Purcell's free
+*Claude Certified Architect – Foundations Practice Question Set, Version 2*,
+shared publicly on LinkedIn:
+
+- <https://www.linkedin.com/in/purcellmatthew>
+- <https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/>
+
+They are kept together as one paper, in the author's order (scenario 1–6,
+questions 1–10 each). Answer keys and rationales are his. Notes on why each
+wrong option falls short come from his rationales, split per option.
+
+The author states the set is original material written against Anthropic's
+public exam guide, **not** actual exam content, which is under NDA.
+
 ## Trademarks
 
 "Claude" and "Claude Certified Architect" are trademarks of Anthropic,

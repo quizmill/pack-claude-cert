@@ -54,6 +54,14 @@
       "label": "Core bank"
     }
   ],
+  "papersLabel": "Practice exams",
+  "papers": [
+    {
+      "key": "purcell-ccar-f-v2",
+      "label": "CCAR-F practice exam v2",
+      "series": "Matthew Purcell"
+    }
+  ],
   "upgrade": {
     "title": "Next up: Claude Architect – Professional",
     "url": "https://claude-cert-pro.quizmill.dev",
