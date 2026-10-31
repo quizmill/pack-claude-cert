@@ -318,12 +318,12 @@
       },
       {
         "key": "D",
-        "text": "Ask the agent to quote the raw timestamp to the customer and let them confirm whether the delivery date looks right.",
-        "explanation": "Pushing an unreadable epoch value onto the customer hurts the experience and does nothing to fix the agent's own window calculations."
+        "text": "Add a PreToolUse hook on both tools that rewrites their timestamp fields to ISO 8601 before the agent gets to see them.",
+        "explanation": "A PreToolUse hook runs before the tool executes and sees only the call's input, so it cannot touch the timestamps in the result."
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. A PostToolUse hook can transform tool results deterministically before the model processes them, normalising heterogeneous formats such as Unix timestamps and ISO 8601 from different MCP tools, without changing the servers. Why not the others: B relies on the model converting correctly every time; C adds an optional step and leaves inconsistent data in context; D shifts the problem to the customer.",
+    "explanation": "Correct: A. A PostToolUse hook runs after the tool returns and can transform its result deterministically before the model processes it, normalising heterogeneous formats such as Unix timestamps and ISO 8601 from different MCP tools without changing the servers. Why not the others: B relies on the model converting correctly every time; C adds an optional step and leaves inconsistent data in context; D uses a PreToolUse hook, which fires before the call and cannot see or change the result.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -396,7 +396,7 @@
       },
       {
         "key": "C",
-        "text": "Split the message into separate issues, investigate each with the shared customer context, and send one reply resolving all three."
+        "text": "Split it into issues, work each with the shared customer context, and answer all three in one reply, escalating any it cannot fix."
       },
       {
         "key": "D",
@@ -405,7 +405,7 @@
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. Multi-concern requests should be decomposed into distinct items, investigated (in parallel where possible) with the shared customer context, and synthesised into one resolution. Why not the others: A makes the customer do the decomposition; B turns one contact into several; D escalates on complexity alone, which is not a valid escalation trigger.",
+    "explanation": "Correct: C. Multi-concern requests should be decomposed into distinct items, investigated (in parallel where possible) with the shared customer context, and answered in one reply: the agent resolves what its tools allow, such as the duplicate refund, and escalates the rest, such as the email change it has no tool for, in the same turn. Why not the others: A makes the customer do the decomposition; B turns one contact into several; D escalates on complexity alone, which is not a valid escalation trigger.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -445,15 +445,15 @@
       },
       {
         "key": "E",
-        "text": "Tell the human agent to call `get_customer` and `lookup_order` again at the start of every ticket to rebuild the context.",
-        "explanation": "Repeating the lookups is the slow manual rework the team is complaining about, and the results still say nothing about what the agent tried."
+        "text": "Attach the full raw transcript of the AI conversation, tool calls included, to every ticket so the human can read all of it.",
+        "explanation": "A long raw transcript moves the digging onto the human; it adds volume without stating the root cause, amounts or recommended action."
       }
     ],
     "correctKeys": [
       "A",
       "D"
     ],
-    "explanation": "Correct: A and D. Humans receiving an escalation do not have the transcript, so the handoff must be a structured, self-contained summary: identifiers, root cause, amounts and recommended action (A), plus what was already investigated and attempted (D). Why not the others: B drops the investigation history; C hands over less work done, not more context; E keeps the manual rework the team complained about.",
+    "explanation": "Correct: A and D. Humans receiving an escalation do not have the transcript, so the handoff must be a structured, self-contained summary: identifiers, root cause, amounts and recommended action (A), plus what was already investigated and attempted (D). Why not the others: B drops the investigation history; C hands over less work done, not more context; E hands over raw volume, so the human still has to read through it to find the root cause and next step.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -561,21 +561,21 @@
       },
       {
         "key": "B",
-        "text": "When resuming a prior session, tell the agent what changed since, such as \"refund R-88 posted on 3 Nov\", so it rechecks just those items."
+        "text": "When resuming a prior session, tell the agent what changed, such as \"refund R-88 posted on 3 Nov\", so it rechecks those items."
       },
       {
         "key": "C",
-        "text": "Resume the full prior session every time so the agent keeps each earlier tool result verbatim and never has to repeat a lookup it already made.",
+        "text": "When a customer returns, resume the full prior session so the agent can reuse its earlier tool results instead of repeating lookups.",
         "explanation": "Old tool results may now be stale; resuming them unflagged leads the agent to act on outdated order or refund status."
       },
       {
         "key": "D",
-        "text": "Fork a new session from the prior one for every returning customer, so each visit branches from the last visit's state.",
+        "text": "Fork a new session from the prior one for each returning customer, so the new visit branches from the last visit's state.",
         "explanation": "Forking is for exploring divergent approaches from a shared baseline, not for continuing a single case over time; it still carries stale results."
       },
       {
         "key": "E",
-        "text": "Start a blank session with no prior context and ask the customer to explain their case again from the very beginning.",
+        "text": "Start a blank session with no prior context and ask the customer to explain their case again, so the agent works from fresh facts.",
         "explanation": "Discarding everything forces the customer to repeat themselves and throws away facts that are still valid."
       }
     ],
@@ -854,8 +854,8 @@
       },
       {
         "key": "B",
-        "text": "Add `allowed-tools` limited to Bash so the skill can only run shell commands and produces less output overall.",
-        "explanation": "Restricting tools does not shrink the audit output; it still lands in the main session's context."
+        "text": "Add `allowed-tools: Bash` so the audit commands run without permission prompts and the skill finishes sooner.",
+        "explanation": "Pre-approving Bash removes prompts but does not shrink the audit output; it still lands in the main session's context."
       },
       {
         "key": "C",
@@ -869,7 +869,7 @@
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. `context: fork` runs the skill in an isolated sub-agent context, so its verbose output stays out of the main session and only the recommendations come back. Why not the others: B limits tools but not output volume; C adds permanent context and leaves the output problem; D throws away the developer's feature context along with the noise.",
+    "explanation": "Correct: A. `context: fork` runs the skill in an isolated sub-agent context, so its verbose output stays out of the main session and only the recommendations come back. Why not the others: B saves prompts, not context; C adds permanent context and leaves the output problem; D throws away the developer's feature context along with the noise.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -1113,16 +1113,16 @@
       },
       {
         "key": "C",
-        "text": "Add `argument-hint: <module-path>` so the skill knows which module to read and does not wander elsewhere.",
-        "explanation": "An argument hint only prompts for parameters; it places no limit on which tools the skill can use."
+        "text": "Add `allowed-tools: Read Grep Glob` to the frontmatter so that only those three tools can run while it is active.",
+        "explanation": "`allowed-tools` only pre-approves the listed tools for that turn; Edit and Write stay callable under the normal permission rules."
       },
       {
         "key": "D",
-        "text": "Add `allowed-tools` to the frontmatter listing only Read, Grep and Glob, so edit tools are not available."
+        "text": "Add `disallowed-tools: Edit Write Bash` to the frontmatter so no tool that can change files is available to it."
       }
     ],
     "correctKey": "D",
-    "explanation": "Correct: D. The `allowed-tools` frontmatter restricts which tools are available while the skill runs, so leaving out Edit and Write makes code changes impossible while keeping reading and searching. Why not the others: A is guidance the model can still ignore; B isolates context but not the file system; C prompts for input and restricts nothing.",
+    "explanation": "Correct: D. The Claude Code skills frontmatter reference (code.claude.com/docs/en/skills) lists `disallowed-tools` as the tools 'removed from Claude's available pool while this skill is active', so Edit, Write and Bash (which could rewrite files from the shell) cannot be called, while Read, Grep and Glob stay available for reading and searching. Why not the others: A is guidance the model can still ignore; B isolates context but not the file system; C confuses `allowed-tools` with a restriction: the same reference says it pre-approves the listed tools and 'does not restrict which tools are available'.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -1206,12 +1206,12 @@
       },
       {
         "key": "D",
-        "text": "Ask Claude to rewrite the feature from scratch with a note that the previous version contained several bugs.",
-        "explanation": "A rewrite discards working code and still gives Claude none of the specifics it needs to avoid the same bugs."
+        "text": "Describe all three problems together in one detailed message so Claude designs a single combined fix.",
+        "explanation": "Validation is independent of the other two; folding it in mixes an unrelated change into the coordinated fix and makes each harder to check."
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Interacting issues are best described together in one detailed message so the fixes are designed as a whole, while an independent issue like the validation check can be handled on its own. Why not the others: A splits issues that affect each other; C assumes an unrelated fix will cure them; D throws away work without giving concrete guidance.",
+    "explanation": "Correct: B. Interacting issues are best described together in one detailed message so the fixes are designed as a whole, while an independent issue like the validation check can be handled on its own. Why not the others: A splits issues that affect each other; C assumes an unrelated fix will cure them; D bundles an independent issue into the interacting pair, muddying both the fix and its review.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -1233,7 +1233,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Split the topic sections into separate files under `.claude/rules/` instead of one monolith."
+        "text": "Split topic sections into `.claude/rules/` files, scoping Terraform and API rules to their paths."
       },
       {
         "key": "B",
@@ -1259,7 +1259,7 @@
       "A",
       "C"
     ],
-    "explanation": "Correct: A and C. Topic files in `.claude/rules/` replace a monolith and reduce merge conflicts, and a rarely used procedure belongs in an on-demand skill, since CLAUDE.md is for always-loaded universal standards. Why not the others: B removes the shared, versioned configuration; D drops team requirements; E leaves the bloat and conflicts in place.",
+    "explanation": "Correct: A and C. Topic files in `.claude/rules/` replace a monolith, so edits touch separate files and merge conflicts drop; rule files with `paths` frontmatter load only when Claude works on matching files, which shrinks the always-loaded context and helps adherence to the rules that remain. A rarely used procedure belongs in an on-demand skill, since CLAUDE.md is for always-loaded universal standards. Why not the others: B removes the shared, versioned configuration; D drops team requirements; E leaves the bloat and conflicts in place.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -1913,7 +1913,7 @@
     "level": "exam",
     "paperId": "ccar-f-practice-1",
     "difficulty": 3,
-    "prompt": "The purchase-contract extractor uses a tool schema in which `delivery_date` is a required string and `payment_terms` is an enum of `net_15`, `net_30`, `net_60` and `due_on_receipt`. An audit of 300 outputs finds two problems: contracts with no delivery date come back with plausible-looking invented dates, and a contract stating \"2% 10, net 45\" was recorded as `net_30`. Which two schema changes address these problems at their cause? (Select TWO.)",
+    "prompt": "The purchase-contract extractor uses a tool schema in which `delivery_date` is a required string and `payment_terms` is an enum of `net_15`, `net_30`, `net_60` and `due_on_receipt`. An audit of 300 outputs finds two problems: contracts with no delivery date come back with plausible-looking invented dates, and a contract stating \"2% 10, net 45\" was recorded as `net_30`. Which two changes address these problems at their cause? (Select TWO.)",
     "options": [
       {
         "key": "A",
@@ -2227,17 +2227,17 @@
       },
       {
         "key": "C",
-        "text": "Tool use only enforces the schema when `tool_choice` forces the tool by name; with `auto` or `any` it falls back to free text.",
-        "explanation": "Whichever `tool_choice` mode results in a tool call, the input follows the schema; the issue here is semantic, not the mode."
+        "text": "Schema enforcement depends on `tool_choice` forcing the tool by name; with `auto` or `any` the call falls back to free text.",
+        "explanation": "`tool_choice` decides whether and which tool is called, not whether the values are right; the issue here is semantic, not the mode."
       },
       {
         "key": "D",
-        "text": "These are parsing errors that the loader introduces after extraction, because the model output itself always matches the source.",
-        "explanation": "Values in the wrong fields and sums that disagree are classic semantic extraction errors, not loader parsing bugs."
+        "text": "Tool use returns values copied from the document, so the misplaced and mismatched figures point to a bug in the ledger loader.",
+        "explanation": "The model reads and places the values itself; values in the wrong fields and sums that disagree are classic semantic extraction errors."
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. Structured output via tool use with a JSON schema eliminates malformed JSON, but it cannot guarantee semantic correctness such as line items summing to the total or values in the right fields; those need validation logic. Why not the others: B adds per-field bounds that cannot catch misplacement or sums; C misdescribes how `tool_choice` affects schema conformance; D wrongly assumes model output is always faithful.",
+    "explanation": "Correct: A. Structured output via tool use with a JSON schema eliminates malformed JSON, but it cannot guarantee semantic correctness such as line items summing to the total or values in the right fields; those need validation logic. Why not the others: B adds per-field bounds that cannot catch misplacement or sums; C misdescribes what `tool_choice` controls; D wrongly assumes the model copies values faithfully, so it blames the loader for extraction errors.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -2526,12 +2526,12 @@
       },
       {
         "key": "D",
-        "text": "Increase the thinking budget substantially for the review step so the model has room to reread every clause.",
-        "explanation": "The scenario already shows extended thinking barely helps; the problem is reviewing in the generator's own context."
+        "text": "Have the extractor add a confidence score to each field and send any field below 0.8 to a human reviewer.",
+        "explanation": "Self-reported confidence comes from the same reasoning that misread the term, so confident errors like the renewal term slip through."
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. A model is less likely to question its own reasoning within the same session; an independent instance that sees only the source and the output, not the generator's reasoning, catches more errors than self-review or extra thinking. Why not the others: A and B keep the review inside the generating context; D repeats an approach the team has already seen fail.",
+    "explanation": "Correct: C. A model is less likely to question its own reasoning within the same session; an independent instance that sees only the source and the output, not the generator's reasoning, catches more errors than self-review or extra thinking. Why not the others: A and B keep the review inside the generating context; D relies on self-reported confidence, which is poorly calibrated and comes from the same reasoning that produced the error.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -2755,7 +2755,7 @@
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
     "difficulty": 3,
-    "prompt": "A product manager proposes adding a sentiment classifier and escalating any conversation scored \"very negative\". In a test week, 18% of contacts score very negative. Most are customers venting about a duplicate charge or a late parcel, issues the agent resolves in a few turns. A customer who writes \"Ugh, charged twice AGAIN, this is ridiculous\" for one order: what should the agent do?",
+    "prompt": "A product manager proposes adding a sentiment classifier and escalating any conversation scored \"very negative\". In a test week, 18% of contacts score very negative. Most are customers venting about a duplicate charge or a late parcel, issues the agent resolves in a few turns. How should the agent handle a customer who writes \"Ugh, charged twice AGAIN, this is ridiculous\" about one order?",
     "options": [
       {
         "key": "A",
@@ -2768,17 +2768,17 @@
       },
       {
         "key": "C",
-        "text": "Ask the customer to rate their frustration from 1 to 10 and escalate the conversation if they give a score of 7 or higher.",
-        "explanation": "This adds friction and still uses sentiment as the trigger instead of policy gaps, explicit human requests or lack of progress."
+        "text": "Escalate, because \"AGAIN\" shows an earlier fix has failed, which is the lack of meaningful progress that warrants a human.",
+        "explanation": "Lack of progress means the agent's own attempts in this conversation are stalling; it has not tried yet, and a repeat duplicate charge is still routine."
       },
       {
         "key": "D",
-        "text": "Reply that the agent cannot help until the customer uses polite language, then continue once the tone of the chat has improved.",
-        "explanation": "Refusing to help a frustrated customer with a routine issue fails both resolution and service quality goals."
+        "text": "Offer a human straight away, and look into the charge only if the customer chooses to stay with the agent instead.",
+        "explanation": "Inviting a handoff before trying turns a routine case into an escalation; the agent should offer to resolve it and escalate if the customer then asks for a human."
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Valid escalation triggers are an explicit request for a human, a policy exception or gap, and lack of meaningful progress; customer sentiment is a poor proxy for case complexity. A routine duplicate charge should be acknowledged and resolved. Why not the others: A and C both escalate on sentiment; D refuses service over tone.",
+    "explanation": "Correct: B. Valid escalation triggers are an explicit request for a human, a policy exception or gap, and lack of meaningful progress; customer sentiment is a poor proxy for case complexity. A routine duplicate charge should be acknowledged and resolved with the tools, and the agent escalates only if one of those triggers then appears, for example if the customer insists on a human. Why not the others: A escalates on tone alone; C misreads lack of progress, which refers to the agent's attempts in this conversation stalling, not to a problem having happened before; D offers a handoff before attempting a case the agent can resolve, giving up first-contact resolution for no reason.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -2919,8 +2919,8 @@
     "options": [
       {
         "key": "A",
-        "text": "Cut review straight away, since a 96% overall accuracy rate already exceeds the 80% first-contact resolution target.",
-        "explanation": "Resolution rate and correctness are different measures, and an aggregate figure can hide weak segments; it is not evidence that review can be cut safely."
+        "text": "Agree a rollback rule first: if overall accuracy in the 1% sample falls below 94%, go back to reviewing 10% of contacts.",
+        "explanation": "It still watches only the aggregate, so a weak contact type stays hidden, and a 1% sample takes a long time to show any drop."
       },
       {
         "key": "B",
@@ -2945,7 +2945,7 @@
       "B",
       "D"
     ],
-    "explanation": "Correct: B and D. An aggregate accuracy figure can hide poor performance on particular case types, so validate by segment before reducing review (B). Continued stratified random sampling, including high-confidence cases, measures real error rates and surfaces novel failure patterns (D). Why not the others: A trusts an aggregate and conflates two metrics; C relies on uncalibrated self-reported confidence; E uses sentiment as a proxy for correctness.",
+    "explanation": "Correct: B and D. An aggregate accuracy figure can hide poor performance on particular case types, so validate by segment before reducing review (B). Continued stratified random sampling, including high-confidence cases, measures real error rates and surfaces novel failure patterns (D). Why not the others: A keeps monitoring only the aggregate, which can mask a failing segment, and a 1% sample is slow to reveal a drop; C relies on uncalibrated self-reported confidence; E uses sentiment as a proxy for correctness.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -3090,7 +3090,7 @@
       },
       {
         "key": "B",
-        "text": "Replace the vague rule with enumerated triggers: always escalate for refunds over $200, legal threats, fraud-flagged accounts, or an explicit request for a human"
+        "text": "Replace the vague rule with enumerated triggers: always escalate billing disputes over $200, legal threats, fraud flags or an explicit request for a human"
       },
       {
         "key": "C",
@@ -3104,7 +3104,7 @@
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Concrete, enumerable conditions are the reliable way to drive escalation: each trigger can be checked from the conversation, so behaviour is predictable and reviewable, and billing disputes over the threshold now escalate. Why not the others: A relies on self-reported confidence, which does not track real complexity; C repeats the same vague question in a second call at extra cost; D changes the model but not the underspecified rule.",
+    "explanation": "Correct: B. Concrete, enumerable conditions are the reliable way to drive escalation: each trigger can be checked from the conversation, so behaviour is predictable and reviewable. The billing-dispute trigger targets the gap the data shows, and its $200 threshold can be tuned against production data until billing disputes escalate at roughly the 20% the product team expects. Why not the others: A relies on self-reported confidence, which does not track real complexity; C repeats the same vague question in a second call at extra cost; D changes the model but not the underspecified rule.",
     "source": "original",
     "sourceRef": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct",
     "reviewStatus": "draft",
@@ -3120,7 +3120,7 @@
     "scenarioId": "ccar-f-customer-support",
     "level": "exam",
     "difficulty": 2,
-    "prompt": "`process_refund` expects `{order_id: string, amount: number, reason_code: \"DEFECT\"|\"NOT_AS_DESCRIBED\"|\"OTHER\"}`. In production, about 8% of calls fail schema validation in your tool executor: Claude sometimes sends `amount: \"$50\"` (string with currency symbol), `reason_code: \"defect\"` (wrong case), or omits `reason_code` entirely. Which fix most directly eliminates this class of error?",
+    "prompt": "The input schema for `process_refund` types `order_id` as a string, `amount` as a number and `reason_code` as an enum of `\"DEFECT\"`, `\"NOT_AS_DESCRIBED\"` and `\"OTHER\"`; it lists all three in `required` and sets `additionalProperties` to false. In production, about 8% of calls fail schema validation in your tool executor: Claude sometimes sends `amount: \"$50\"` (string with currency symbol), `reason_code: \"defect\"` (wrong case), or omits `reason_code` entirely. Which fix most directly eliminates this class of error?",
     "options": [
       {
         "key": "A",
@@ -3217,12 +3217,12 @@
       },
       {
         "key": "D",
-        "text": "Ask Claude for tests for all 90 files in one response, then delete whichever tests fail on the first run.",
-        "explanation": "One huge response dilutes attention, and deleting failing tests can hide the real bugs those tests found."
+        "text": "Split the 90 files evenly across parallel subagents so each writes tests for its share, then merge the results.",
+        "explanation": "Parallelism without a map spreads effort evenly over low- and high-impact files, and no subagent understands how the package fits together."
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Open-ended tasks like adding tests to a legacy codebase call for dynamic decomposition: map the structure, identify high-impact areas, and work from a prioritised plan that adapts as understanding grows. Why not the others: A substitutes a crude heuristic for mapping; C applies a fixed pipeline to an open-ended task; D dilutes attention and discards useful signal.",
+    "explanation": "Correct: B. Open-ended tasks like adding tests to a legacy codebase call for dynamic decomposition: map the structure, identify high-impact areas, and work from a prioritised plan that adapts as understanding grows. Why not the others: A substitutes a crude heuristic for mapping; C applies a fixed pipeline to an open-ended task; D parallelises before anyone has mapped the package, so effort is not prioritised and each subagent works blind to the rest.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -3258,18 +3258,18 @@
       {
         "key": "D",
         "text": "Use Edit with the bare anchor `legacyAuth()` in files where that text appears several times.",
-        "explanation": "Edit needs a unique text match; an anchor that appears several times in the file makes the edit fail."
+        "explanation": "Edit rejects an old string that matches more than once unless `replace_all` is set, so this edit fails."
       },
       {
         "key": "E",
-        "text": "Where Edit cannot find a unique anchor, Read the whole file and Write back the corrected version."
+        "text": "Use Edit with `replace_all` in files where the call line repeats, so every copy changes."
       }
     ],
     "correctKeys": [
       "B",
       "E"
     ],
-    "explanation": "Correct: B and E. Grep searches file contents for call sites, and when Edit cannot match a unique anchor, reading the file and writing back the full corrected version is the fallback. Why not the others: A searches paths rather than contents; C reads far more than needed instead of working from search results; D uses a non-unique anchor that Edit rejects.",
+    "explanation": "Correct: B and E. Grep searches file contents for call sites, and because every call should change, Edit with `replace_all` updates each repeated `const s = legacyAuth();` line in one step. Where only some matches should change, a longer anchor with surrounding context makes each edit unique; reading the file and writing back the full corrected version is the last resort. Why not the others: A searches paths rather than contents; C reads far more than needed instead of working from search results; D uses a non-unique anchor without `replace_all`, which Edit rejects.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -3391,12 +3391,12 @@
       },
       {
         "key": "D",
-        "text": "Phrase the limits loosely, such as 'keep it fast and modern', so they survive summarisation intact.",
-        "explanation": "Loose wording gives up exactly the precision that matters; the problem is lost numbers, not phrasing."
+        "text": "Have the developer restate the limits in a new message after each compaction so they are fresh in context.",
+        "explanation": "It depends on someone remembering every time, and the restated limits sit in the history that the next compaction summarises again."
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. Progressive summarisation tends to lose exact numbers, dates and versions, so agreed facts should live in a persistent block or file kept outside the summarised history. Why not the others: A only delays the problem and adds degradation; B asks Claude to recall what the summary dropped; D removes the precision the limits exist to provide.",
+    "explanation": "Correct: C. Progressive summarisation tends to lose exact numbers, dates and versions, so agreed facts should live in a persistent block or file kept outside the summarised history. Why not the others: A only delays the problem and adds degradation; B asks Claude to recall what the summary dropped; D relies on manual repetition and puts the limits back into history that will be summarised again.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -3538,7 +3538,7 @@
       {
         "key": "A",
         "text": "`allowed-tools`, listing the tools the skill uses so Claude knows which inputs to ask the user for.",
-        "explanation": "`allowed-tools` restricts which tools the skill may use; it does not tell users what arguments to pass."
+        "explanation": "`allowed-tools` pre-approves tools for the turn the skill runs in; it does not tell users what arguments to pass."
       },
       {
         "key": "B",
@@ -3591,12 +3591,12 @@
       },
       {
         "key": "D",
-        "text": "Skip AI review for concurrency code and rely on the teammate, as Claude cannot detect race conditions.",
-        "explanation": "The failure came from self-review in the authoring context, not from an inability to spot races."
+        "text": "Add a CLAUDE.md rule telling the authoring session to check concurrency closely during its self-review.",
+        "explanation": "The rule still has the author review its own work in the same context, where it tends to confirm its earlier reasoning."
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. An independent instance without the generator's context is more likely to challenge the design and catch issues than the session that wrote the code. Why not the others: B repeats self-review in the same context; C trusts the author's own confidence, which was wrong; D blames capability when the problem was review setup.",
+    "explanation": "Correct: A. An independent instance without the generator's context is more likely to challenge the design and catch issues than the session that wrote the code. Why not the others: B repeats self-review in the same context; C trusts the author's own confidence, which was wrong; D adds an instruction but leaves the review inside the authoring context, where the same blind spots remain.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -3657,13 +3657,13 @@
     "options": [
       {
         "key": "A",
-        "text": "An iteration cap of 30 on the run, so it could be restarted at the right count after any crash.",
-        "explanation": "A cap limits iterations; it records nothing about which packages finished, so the restart point is still unknown."
+        "text": "The coordinator keeps a running tally of finished packages in its context and re-reads it on restart.",
+        "explanation": "The tally lives only in the coordinator's conversation, which is exactly what the reboot lost; nothing was exported."
       },
       {
         "key": "B",
-        "text": "Subagents that report only at the very end, so partial progress never leaves a mixed state behind.",
-        "explanation": "Reporting only at the end means nothing is recorded when a crash hits midway, which is exactly what went wrong."
+        "text": "Infer progress on restart from which packages already contain a pyproject.toml file on disk.",
+        "explanation": "A file's presence does not show the conversion finished cleanly; half-done or unverified work looks the same."
       },
       {
         "key": "C",
@@ -3676,7 +3676,7 @@
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. For crash recovery, each agent exports its state to a known location and the coordinator loads a manifest on resume, so only unfinished packages are redone. Why not the others: A is a counter, not saved state; B defers all records until the end, so a crash loses everything; D keeps a single point of loss and adds context degradation.",
+    "explanation": "Correct: C. For crash recovery, each agent exports its state, including whether its conversion was verified, to a known location, and the coordinator loads that manifest on resume, so only unfinished packages are redone. Why not the others: A keeps progress in the very context the crash destroyed; B guesses from file presence, which cannot tell a clean conversion from a partial one; D keeps a single point of loss and adds context degradation.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -3875,21 +3875,21 @@
       },
       {
         "key": "B",
-        "text": "The report should open with an executive summary in plain language written for a non-specialist reader",
-        "explanation": "Writing style and structure are judgement calls for the model, best handled in the report subagent's prompt."
+        "text": "The report must open with a plain-language executive summary written for a non-specialist reader",
+        "explanation": "Tone and structure are judgement calls for the model, best set out in the report subagent's prompt."
       },
       {
         "key": "C",
-        "text": "The synthesis subagent should weigh peer-reviewed sources above blog posts when they disagree",
+        "text": "The synthesis subagent must give peer-reviewed sources more weight than blog posts when they conflict",
         "explanation": "Weighing evidence is a judgement task for the model; a hook cannot decide credibility deterministically."
       },
       {
         "key": "D",
-        "text": "No fetch may go to domains on the legal blocklist, and such attempts must be refused and logged"
+        "text": "Fetches to domains on the legal blocklist must be refused, and each refused attempt must be logged"
       },
       {
         "key": "E",
-        "text": "The web search subagent should try a few rephrasings before concluding nothing relevant exists",
+        "text": "The web search subagent must try several rephrasings before concluding nothing relevant exists",
         "explanation": "Query reformulation is search strategy the model should reason about; it belongs in the goals given to the subagent."
       }
     ],
@@ -3897,7 +3897,7 @@
       "A",
       "D"
     ],
-    "explanation": "Correct: A and D. A PostToolUse hook can deterministically normalise mixed date formats before the model sees tool results, and a pre-call hook can block and log fetches to prohibited domains; both need guarantees, not probabilities. Why not the others: B, C and E are judgement and style matters that belong in prompts, where the model's reasoning is the point.",
+    "explanation": "Correct: A and D. Both are mechanical rules that need to hold on every call: a PostToolUse hook on the MCP tools can rewrite their results so every date reaches the model in one format, and a PreToolUse hook can check each fetch's domain against the blocklist, deny the call and log it before it runs. Why not the others: B (summary style), C (weighing evidence) and E (search strategy) all depend on the model's judgement about content, which a hook cannot supply; they belong in the subagents' prompts.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -4122,7 +4122,7 @@
       },
       {
         "key": "B",
-        "text": "Adaptive decomposition for both, since letting the coordinator replan freely gives the best result on any task",
+        "text": "Adaptive decomposition for both, so the coordinator can adjust either kind of task as findings arrive",
         "explanation": "For a predictable, repeated structure, a fixed pipeline is cheaper and more consistent; replanning adds variance for no gain."
       },
       {
@@ -4137,7 +4137,7 @@
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. Fixed sequential pipelines (prompt chaining) suit predictable multi-aspect work like a standing brief, while open-ended investigations need dynamic decomposition that adapts as findings emerge. Why not the others: B gives up the consistency of a pipeline where structure is known; C forces a rigid plan on open-ended work; D swaps the two.",
+    "explanation": "Correct: A. Fixed sequential pipelines (prompt chaining) suit predictable multi-aspect work like a standing brief, while open-ended investigations need dynamic decomposition that adapts as findings emerge. Why not the others: B adds replanning cost and variance to the briefs, whose structure is already known; C forces a rigid plan on open-ended work; D swaps the two.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -4443,33 +4443,33 @@
     "options": [
       {
         "key": "A",
-        "text": "context: fork, so the audit runs in an isolated sub-agent context and only its result comes back to the main session"
+        "text": "context: fork, so the audit runs in a separate subagent context and only its result returns to the main session"
       },
       {
         "key": "B",
-        "text": "argument-hint: read-only, so Claude is reminded throughout the run that it must not modify any files",
-        "explanation": "argument-hint prompts the user for parameters when the skill is invoked; it does not restrict what tools the skill can use."
+        "text": "allowed-tools: Read Grep Glob, so those three read-only tools are the only ones the skill can call while it runs",
+        "explanation": "allowed-tools only pre-approves the listed tools so they run without a permission prompt; every other tool stays callable."
       },
       {
         "key": "C",
-        "text": "Moving the skill text into the project CLAUDE.md so it is loaded into every session from the very start",
-        "explanation": "CLAUDE.md is always loaded and meant for universal standards. It neither isolates verbose output nor restricts tools, and it costs context in every session."
+        "text": "model: haiku, so a smaller model produces shorter listings that take up less room in the main conversation",
+        "explanation": "model changes which model runs the skill; the listings still land in the main conversation, and their length depends on the codebase."
       },
       {
         "key": "D",
-        "text": "allowed-tools listing just Read, Grep and Glob, so the skill cannot edit files or run shell commands while active"
+        "text": "disallowed-tools: Write Edit Bash, so those tools are taken out of the available pool while the skill is active"
       },
       {
         "key": "E",
-        "text": "Placing the skill under ~/.claude/skills/ so that its verbose output stays in a personal context rather than the shared one",
-        "explanation": "The skill's location decides who has it (personal vs shared), not whether its output is isolated from the main conversation."
+        "text": "disable-model-invocation: true, so the audit runs only when typed as /legacy-audit and its listings stay out of view",
+        "explanation": "This only stops Claude loading the skill automatically; when someone does run it, the listings still flood the main conversation."
       }
     ],
     "correctKeys": [
       "A",
       "D"
     ],
-    "explanation": "Correct: A and D. context: fork runs the skill in an isolated sub-agent context so verbose output does not pollute the main session, and allowed-tools restricts the tools available while the skill runs. Why not the others: B misuses argument-hint, which only prompts for parameters; C makes the workflow always-loaded without isolation or restriction; E changes who can use the skill, not where its output goes.",
+    "explanation": "Correct: A and D. context: fork runs the skill in a separate subagent, so the long Grep and Read listings stay in that context and only the result comes back. disallowed-tools, per the skills frontmatter reference (code.claude.com/docs/en/skills), removes the listed tools 'from Claude's available pool while this skill is active', and taking away Write, Edit and Bash leaves no tool that can change files. Why not the others: B misreads allowed-tools, which the same reference says pre-approves tools and 'does not restrict which tools are available'; C changes the model, not where the output goes; E controls who can trigger the skill, not where its output lands.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -4540,16 +4540,16 @@
       },
       {
         "key": "C",
-        "text": "Keep key findings in a scratchpad file as they emerge, push verbose searches to subagents, and reread it."
+        "text": "Keep key findings in a scratchpad file, send verbose searches to subagents, and reread the file before answering."
       },
       {
         "key": "D",
-        "text": "Add a system-prompt line saying it must always name specific classes and must not describe typical patterns.",
+        "text": "Add a system-prompt line asking it to name the specific classes it found rather than describe typical patterns.",
         "explanation": "An instruction cannot restore facts the model is losing track of in an overloaded context. Persisted findings and isolated exploration can."
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. Long exploration sessions degrade into generic \"typical pattern\" answers. A scratchpad file persists key findings outside the conversation, and subagents keep verbose discovery output out of the main context. Why not the others: A changes output length, not recall; B rebuilds the same problem; D asks for behaviour the degraded context cannot support.",
+    "explanation": "Correct: C. Long exploration sessions degrade into generic \"typical pattern\" answers. A scratchpad file persists key findings outside the conversation so they can be reread before answering, and subagents keep verbose discovery output out of the main context. Why not the others: A changes output length, not recall; B rebuilds the same problem; D asks for behaviour the degraded context cannot support.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -4946,8 +4946,8 @@
       },
       {
         "key": "C",
-        "text": "Direct execution for the migration in batches of files, and plan mode for the KeyError since its cause is unclear.",
-        "explanation": "This inverts the guidance: the multi-file migration with design choices needs planning, and the stack trace already pins down the bug."
+        "text": "Direct execution for the migration, batch by batch, and plan mode for the KeyError, as every service loads that config.",
+        "explanation": "Wide use of a file does not turn a pinpointed one-file fix into planning work, while the 60-file migration has open design choices."
       },
       {
         "key": "D",
@@ -4956,7 +4956,7 @@
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Plan mode fits large, multi-file work with architectural choices, such as a library migration across services; direct execution fits clear, scoped changes like a single-file bug with a stack trace. Why not the others: A over-plans a trivial fix; C inverts the two; D skips planning on the migration.",
+    "explanation": "Correct: B. Plan mode fits large, multi-file work with architectural choices, such as a library migration across services; direct execution fits clear, scoped changes like a single-file bug with a stack trace. Why not the others: A over-plans a scoped fix; C inverts the two, mistaking how widely a file is used for how complex the change is; D skips planning on the migration.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -5117,20 +5117,20 @@
       },
       {
         "key": "D",
-        "text": "Add the server to each engineer's ~/.claude.json, the scope meant for shared team configuration.",
-        "explanation": "~/.claude.json is user scope for personal or experimental servers; shared team servers belong in the project's .mcp.json."
+        "text": "Have each engineer add the server by hand to their own ~/.claude.json, keeping MCP config out of the repo.",
+        "explanation": "Hand-made per-machine copies drift and give new joiners nothing; a committed .mcp.json shares one definition while env vars keep tokens personal."
       },
       {
         "key": "E",
-        "text": "Build a custom MCP server for the tracker so the team controls it, despite the community server.",
-        "explanation": "Prefer an existing community server for a standard integration; custom servers are for team-specific workflows."
+        "text": "Build a custom MCP server for the tracker so the team controls its behaviour and release schedule.",
+        "explanation": "A maintained community server already covers a standard tracker integration; a custom one adds upkeep with no team-specific need to justify it."
       }
     ],
     "correctKeys": [
       "A",
       "C"
     ],
-    "explanation": "Correct: A and C. Project-scoped .mcp.json is committed and shared, and environment variable expansion such as ${TRACKER_TOKEN} keeps secrets out of the repository. Why not the others: B commits a secret; D uses the personal user scope for team config; E rebuilds what a maintained community server already provides.",
+    "explanation": "Correct: A and C. Project-scoped .mcp.json is committed and shared, and environment variable expansion such as ${TRACKER_TOKEN} keeps each engineer's secret out of the repository. Why not the others: B commits a secret; D scatters unshared, unversioned copies of team config across machines; E rebuilds what a maintained community server already provides.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -5551,25 +5551,25 @@
     "options": [
       {
         "key": "A",
-        "text": "Grep with the pattern **/*.test.tsx to list the test files by their paths",
+        "text": "Grep with the pattern packages/**/*.test.tsx to list the test files by their paths",
         "explanation": "Grep searches file contents, not paths; a path glob belongs in Glob."
       },
       {
         "key": "B",
-        "text": "Glob with the pattern useLegacyAuth to find files importing the hook",
+        "text": "Glob with the pattern useLegacyAuth to find the files that import the hook",
         "explanation": "Glob matches file paths, so it cannot see which files import a symbol; that is a content search."
       },
       {
         "key": "C",
-        "text": "Glob with packages/**/*.test.tsx to list the test files by their paths"
+        "text": "Glob with the pattern packages/**/*.test.tsx to list the test files by their paths"
       },
       {
         "key": "D",
-        "text": "Grep for useLegacyAuth to find files whose contents import the hook"
+        "text": "Grep with the pattern useLegacyAuth to find the files that import the hook"
       },
       {
         "key": "E",
-        "text": "Read each file under packages/, then filter imports and tests from it",
+        "text": "Read every file under packages/, then filter out the imports and tests from them",
         "explanation": "Reading everything up front wastes context; Glob and Grep answer both questions directly."
       }
     ],
@@ -5598,8 +5598,8 @@
     "options": [
       {
         "key": "A",
-        "text": "Report that billing_client is barely used, since Grep already scanned each file's contents for the name.",
-        "explanation": "Grep only found direct references; code that imports the re-exported names never mentions billing_client."
+        "text": "Grep again with a broader regex for billing_client that covers import aliases, and report those hits.",
+        "explanation": "However broad, a regex on billing_client cannot match code that imports charge or BillingSession from the wrapper."
       },
       {
         "key": "B",
@@ -5617,7 +5617,7 @@
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. To trace usage through wrapper modules, find all the names the wrapper exports and search for each one. Why not the others: A trusts a search that cannot see re-exported names; B matches file paths rather than usages; D reads the whole codebase instead of building understanding incrementally.",
+    "explanation": "Correct: C. To trace usage through wrapper modules, find all the names the wrapper exports and search for each one. Why not the others: A still searches for the module's own name, which code using the re-exported names never mentions; B matches file paths rather than usages; D reads the whole codebase instead of building understanding incrementally.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6006,7 +6006,7 @@
       {
         "key": "A",
         "text": "argument-hint asking for a package name, so each run audits a single dependency.",
-        "explanation": "argument-hint only prompts for a parameter; output can still flood the session and nothing stops install commands from running."
+        "explanation": "argument-hint only shows a hint for expected arguments; output can still flood the session and nothing stops install commands from running."
       },
       {
         "key": "B",
@@ -6014,7 +6014,7 @@
       },
       {
         "key": "C",
-        "text": "allowed-tools limited to read-only tools, so the skill cannot run install commands."
+        "text": "disallowed-tools listing Bash, so the skill has no way to run install commands."
       },
       {
         "key": "D",
@@ -6031,7 +6031,7 @@
       "B",
       "C"
     ],
-    "explanation": "Correct: B and C. context: fork runs the skill in an isolated sub-agent context so verbose output does not pollute the main session, and allowed-tools restricts which tools the skill may use while it runs. Why not the others: A only collects a parameter; D changes scope, not behaviour; E turns an on-demand workflow into always-loaded context.",
+    "explanation": "Correct: B and C. context: fork runs the skill in an isolated sub-agent context so verbose output does not pollute the main session, and disallowed-tools, per the skills frontmatter reference (code.claude.com/docs/en/skills), removes the listed tools 'from Claude's available pool while this skill is active', so the skill cannot shell out to npm install. allowed-tools would not do this: the same reference says it pre-approves tools and 'does not restrict which tools are available'. Why not the others: A only hints at an argument; D changes scope, not behaviour; E turns an on-demand workflow into always-loaded context.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6092,8 +6092,8 @@
     "options": [
       {
         "key": "A",
-        "text": "Paste both standards documents in full into root CLAUDE.md under clearly labelled headings.",
-        "explanation": "Labelled headings still load everywhere, so web reviews keep seeing PCI rules; this is the current problem with more text."
+        "text": "Move both standards into .claude/rules/ files without a paths field, taking them out of root CLAUDE.md.",
+        "explanation": "Rule files without a paths field load at the start of every session, so web reviews still see the PCI rules."
       },
       {
         "key": "B",
@@ -6107,11 +6107,11 @@
       },
       {
         "key": "D",
-        "text": "Give each package its own CLAUDE.md that uses @import to pull in only its own standards file."
+        "text": "Give each package its own CLAUDE.md that pulls in only its own standards file with an @path import."
       }
     ],
     "correctKey": "D",
-    "explanation": "Correct: D. Directory-level CLAUDE.md files apply to work inside their package, and @import lets each one pull in only the standards file it needs. Why not the others: A and B still load both standards for every PR; C moves team rules into an unshared user-level file and does not scope them.",
+    "explanation": "Correct: D. A CLAUDE.md inside a package directory is loaded when Claude works on files in that package, and an @path import lets each one pull in only the standards file it needs. Why not the others: A and B still load both standards for every PR, A because unscoped rule files load in every session; C moves team rules into an unshared user-level file and does not scope them.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6501,8 +6501,8 @@
       },
       {
         "key": "C",
-        "text": "Resubmit the 23 failed requests unchanged in a new batch, hoping the next run has more room.",
-        "explanation": "The inputs are too large for the context window; sending them again unchanged will fail the same way."
+        "text": "Resubmit the 23 failed custom_ids unchanged in a new batch, each with a higher max_tokens value.",
+        "explanation": "max_tokens limits the output; it does nothing to shrink an input that already exceeds the context window."
       },
       {
         "key": "D",
@@ -6511,7 +6511,7 @@
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. custom_id correlates requests and results, so the pipeline can resubmit only the failed items, fixed for the cause (chunking oversized inputs). Why not the others: B wastes cost on successes and the error is not transient; C repeats a deterministic failure; D relies on result order, which is not guaranteed.",
+    "explanation": "Correct: A. custom_id correlates requests and results, so the pipeline can resubmit only the failed items, fixed for the cause (chunking oversized inputs). Why not the others: B wastes cost on successes and the error is not transient; C changes the output limit while the oversized input stays the same; D relies on result order, which is not guaranteed.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6528,21 +6528,21 @@
     "scenarioId": "ccar-f-ci-review",
     "level": "exam",
     "difficulty": 3,
-    "prompt": "A new contributor runs the team's review command locally before pushing, and it never mentions the error-handling conventions. The tech lead's local run on the same branch flags three violations of them. Both use the same Claude Code version and model. Which two steps best diagnose and fix the gap? (Select TWO.)",
+    "prompt": "A new contributor runs the team's review command locally before pushing, and it never mentions the error-handling conventions. The tech lead's local run on the same branch flags three violations of them. The lead keeps some personal rules in ~/.claude/CLAUDE.md alongside the shared project file, and both use the same Claude Code version and model. Which two steps best diagnose and fix the gap? (Select TWO.)",
     "options": [
       {
         "key": "A",
-        "text": "Reinstall Claude Code on the contributor's machine in case the local installation is damaged.",
-        "explanation": "Both run the same version; nothing points to a broken install, and a reinstall would not add missing instructions."
+        "text": "Run /init in the contributor's checkout to regenerate CLAUDE.md so it picks up the conventions.",
+        "explanation": "/init drafts a CLAUDE.md from the codebase; it cannot recover rules that exist only in the lead's personal file."
       },
       {
         "key": "B",
-        "text": "Run /memory in both sessions to compare which memory files each one has actually loaded."
+        "text": "Run /memory in both sessions and compare the list of memory files that each one has loaded."
       },
       {
         "key": "C",
-        "text": "Switch the contributor to a larger model so it notices the error-handling conventions.",
-        "explanation": "Both use the same model; the difference is in loaded instructions, which a different model would not supply."
+        "text": "Pass the conventions to the CI job with --append-system-prompt so pipeline reviews apply them.",
+        "explanation": "This covers CI only; the contributor's local runs still miss the rules, and they now live outside the shared CLAUDE.md."
       },
       {
         "key": "D",
@@ -6551,14 +6551,14 @@
       },
       {
         "key": "E",
-        "text": "Move the rules from the lead's user-level file into the project CLAUDE.md under version control."
+        "text": "Move any conventions /memory finds only in the lead's user file into the committed project CLAUDE.md."
       }
     ],
     "correctKeys": [
       "B",
       "E"
     ],
-    "explanation": "Correct: B and E. /memory shows which memory files a session loaded, which exposes instructions living in the lead's user-level file; moving them into the project CLAUDE.md shares them with everyone. Why not the others: A and C change things that are identical already; D spreads personal copies instead of fixing the shared configuration.",
+    "explanation": "Correct: B and E. /memory shows which memory files each session loaded, which reveals whether the conventions come from the lead's user-level file; moving them into the committed project CLAUDE.md shares them with every contributor and CI. Why not the others: A generates a file from the code and cannot know the lead's private rules; C patches CI alone and leaves local runs without them; D spreads personal copies instead of fixing the shared configuration.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6633,8 +6633,8 @@
       },
       {
         "key": "D",
-        "text": "Leave the file as it is, since every review the pipeline runs needs its full contents.",
-        "explanation": "The release procedure is used once per release, so loading 1,100 lines on every review wastes context and dilutes attention."
+        "text": "Move the release procedure into docs/release.md and pull it in with an @path import from CLAUDE.md.",
+        "explanation": "Imported files are expanded into context at launch, so the 1,100 lines would still load on every review."
       },
       {
         "key": "E",
@@ -6645,7 +6645,7 @@
       "A",
       "E"
     ],
-    "explanation": "Correct: A and E. CLAUDE.md is for always-loaded universal standards, while skills hold on-demand, task-specific workflows such as the release-note procedure. Why not the others: B hides standards that every review needs; C scatters a workflow by directory; D keeps loading a rarely used procedure on every run.",
+    "explanation": "Correct: A and E. CLAUDE.md is for always-loaded universal standards, while skills hold on-demand, task-specific workflows such as the release-note procedure. Why not the others: B hides standards that every review needs; C scatters a workflow by directory; D tidies the file but the import still loads the procedure on every run.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6670,7 +6670,7 @@
       },
       {
         "key": "B",
-        "text": "Add a verification pass that gives each finding a confidence level and routes low ones to a human."
+        "text": "Rate confidence on each review verdict, approvals included, and send low-confidence ones to a human."
       },
       {
         "key": "C",
@@ -6684,7 +6684,7 @@
       },
       {
         "key": "E",
-        "text": "Repeat the same self-review three times in that session and keep findings raised at least twice.",
+        "text": "Repeat the same self-review three times in that session, keeping the findings raised at least twice.",
         "explanation": "Repeated passes share the same context and blind spots, so they tend to agree with each other rather than surface new defects."
       }
     ],
@@ -6692,7 +6692,7 @@
       "A",
       "B"
     ],
-    "explanation": "Correct: A and B. A model is less likely to question its own reasoning in the same session, so an independent instance without the generator's context reviews better; a verification pass with per-finding confidence routes uncertain cases to human review. Why not the others: C, D and E all keep the review inside the generating session with its blind spots.",
+    "explanation": "Correct: A and B. A model is less likely to question its own reasoning in the same session, so an independent instance without the generator's context reviews better. Rating confidence on every verdict, including approvals, means an approval the reviewer is unsure of goes to a human instead of merging unchecked, which targets the defective patches that were approved without findings. Why not the others: C, D and E all keep the review inside the generating session with its blind spots.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -6916,7 +6916,7 @@
     "scenarioId": "ccar-f-data-extraction",
     "level": "exam",
     "difficulty": 2,
-    "prompt": "A newly written prompt for lease agreements has been tested on a dozen hand-picked leases and looks good. The team now wants to run it over 120,000 archived leases in one go using the Message Batches API to populate a new lease register. What should happen before the full submission?",
+    "prompt": "A newly written prompt for lease agreements has been tested on a dozen hand-picked leases and looks good. The team now wants to run it over all 120,000 archived leases through the Message Batches API as soon as possible to populate a new lease register. What should happen before the full submission?",
     "options": [
       {
         "key": "A",
@@ -6929,8 +6929,8 @@
       },
       {
         "key": "C",
-        "text": "Split the archive into 12 batches of 10,000 and submit them together so any failures are spread across batches.",
-        "explanation": "Splitting does not test the prompt; the same flaws would appear in every batch."
+        "text": "Split the archive into 12 batches of 10,000 and submit them all at once so the run finishes within a day.",
+        "explanation": "Splitting changes how the work is packaged, not whether the prompt is right; the same flaws would appear in every batch."
       },
       {
         "key": "D",
@@ -6939,7 +6939,7 @@
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. Refining the prompt on a representative sample before batching large volumes catches problems cheaply; a dozen hand-picked leases is not representative. Why not the others: B wastes a full run that a sample would have prevented; C partitions the work without validating the prompt; D pays full price and still skips prompt validation.",
+    "explanation": "Correct: A. Refining the prompt on a representative sample before batching large volumes catches problems cheaply; a dozen hand-picked leases is not representative. Why not the others: B wastes a full run that a sample would have prevented; C packages the work for submission without validating the prompt; D pays full price and still skips prompt validation.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8025,15 +8025,15 @@
       },
       {
         "key": "E",
-        "text": "A one-line note reading 'customer issue unresolved, please review', so the dispatcher's queue stays short",
-        "explanation": "A bare note forces the dispatcher to start over because it omits identifiers, cause and recommended action."
+        "text": "The customer's mood and a summary of the complaint in their own words, so the dispatcher can gauge tone",
+        "explanation": "Tone and complaint wording give the dispatcher no identifiers, diagnosis or action, so they still have to start the case over."
       }
     ],
     "correctKeys": [
       "C",
       "D"
     ],
-    "explanation": "Correct: C and D. Humans receiving an escalation lack the transcript, so the handoff should carry identifiers, root cause, amounts and the recommended action in a structured form. Why not the others: A hands over raw text instead of conclusions; B relies on an unreliable confidence signal; E omits the facts needed to act.",
+    "explanation": "Correct: C and D. Humans receiving an escalation lack the transcript, so the handoff should carry identifiers, root cause, amounts and the recommended action in a structured form. Why not the others: A hands over raw text instead of conclusions; B relies on an unreliable confidence signal; E conveys how the customer feels but none of the facts needed to act.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8099,12 +8099,12 @@
       },
       {
         "key": "C",
-        "text": "Map the numeric status codes to named statuses in the same hook, so each result uses one vocabulary"
+        "text": "Use a PostToolUse hook to map the numeric status codes to named statuses such as 'serviceable'"
       },
       {
         "key": "D",
-        "text": "Use a pre-call hook to block calls to the epoch-timestamp server until its vendor changes the format",
-        "explanation": "Blocking the server removes needed maintenance data; pre-call hooks gate calls, while the problem is in the results."
+        "text": "Validate each response in the orchestration code and, if its format differs, ask the model to retry the call",
+        "explanation": "Each server returns the same format on every retry, so rejecting and retrying never normalises anything; the results need converting."
       },
       {
         "key": "E",
@@ -8116,7 +8116,7 @@
       "B",
       "C"
     ],
-    "explanation": "Correct: B and C. PostToolUse hooks transform tool results before the model sees them, so heterogeneous timestamps and status codes can be normalised in code. Why not the others: A and E leave conversion to the model, which is probabilistic; D blocks a needed data source instead of normalising its output.",
+    "explanation": "Correct: B and C. PostToolUse hooks transform tool results before the model sees them, so heterogeneous timestamps and status codes can be normalised in code into one format and one vocabulary. Why not the others: A and E leave conversion to the model, which is probabilistic; D detects the mismatch but retries a call whose format will not change, instead of converting the result.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8178,8 +8178,8 @@
       },
       {
         "key": "B",
-        "text": "A pre-call hook that blocks the lab-results tool for any patient who has a name recorded on file",
-        "explanation": "That blocks nearly every call and removes the data the agent needs; the issue is what the result contains."
+        "text": "A subagent that calls the lab-results tool and passes only the six relevant fields back to the main agent",
+        "explanation": "The subagent is itself a model that reads the full result, names included, so the privacy rule is still broken."
       },
       {
         "key": "C",
@@ -8192,7 +8192,7 @@
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. A PostToolUse hook transforms tool results before the model sees them, so it can deterministically remove fields the model must not see and trim output to what matters. Why not the others: A leaves names in context; B blocks needed calls; D acts after the model has seen the data.",
+    "explanation": "Correct: C. A PostToolUse hook transforms tool results in code before any model sees them, so it can deterministically remove fields the model must not see and trim output to what matters. Why not the others: A leaves names in context; B keeps the main agent's context clean but the subagent model still reads the names; D acts after the model has seen the data.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8325,26 +8325,26 @@
     "options": [
       {
         "key": "A",
-        "text": "Generate unit tests for each file in alphabetical order until the coverage figure finally reaches the 80% target",
-        "explanation": "Alphabetical order ignores risk and impact, spending effort on trivial files while critical paths stay untested."
+        "text": "Start with end-to-end tests that drive the whole routing service, so every module gets some coverage at once",
+        "explanation": "Broad end-to-end tests on undocumented code are slow and brittle, and they hide which modules actually carry the risk."
       },
       {
         "key": "B",
-        "text": "Draw up a fixed list of test files to write at the start and follow it to the end without changing course",
-        "explanation": "A fixed upfront list cannot absorb what the work reveals about this unfamiliar codebase."
+        "text": "Have the team write and approve a test plan covering every module before Claude writes any tests",
+        "explanation": "Nobody knows the untouched modules, so a plan fixed before any exploration is guesswork that cannot absorb what the work reveals."
       },
       {
         "key": "C",
-        "text": "Begin with tests for the module edited most recently, since recent changes carry the most risk",
+        "text": "Begin with tests for the most recently edited module, since recent changes usually carry the most risk",
         "explanation": "Recency is one weak signal; without mapping the structure, the agent cannot tell which areas matter most."
       },
       {
         "key": "D",
-        "text": "Map the structure, find high-impact untested areas, and draft a prioritised plan that adapts as findings emerge"
+        "text": "Map the structure, pick out high-impact untested areas, and draft a prioritised plan revised as work proceeds"
       }
     ],
     "correctKey": "D",
-    "explanation": "Correct: D. Open-ended tasks on legacy code start by mapping structure, identifying high-impact areas and building a prioritised plan that adapts as the work reveals more. Why not the others: A ignores impact; B fixes the plan before anything is known; C picks a target on a single weak heuristic.",
+    "explanation": "Correct: D. Open-ended tasks on unfamiliar legacy code start by mapping the structure and identifying high-impact areas, then building a prioritised plan that is revised as the work reveals more. Why not the others: A spreads shallow, brittle coverage without finding where the risk is; B fixes a plan before anyone has explored the modules it covers; C picks a target on a single weak heuristic.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8373,7 +8373,7 @@
       {
         "key": "C",
         "text": "Run claude -p with the session name, so it continues the named session non-interactively in the same state",
-        "explanation": "-p runs a single non-interactive prompt; it is for scripts and CI, not for continuing a named interactive session."
+        "explanation": "-p runs one prompt non-interactively and does not reopen a named session by itself; even paired with --resume in scripts, it does not suit ongoing interactive work."
       },
       {
         "key": "D",
@@ -8382,7 +8382,7 @@
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. --resume continues a named session when most of its context is still valid, and telling it which files changed allows targeted re-analysis. Why not the others: B pastes stale raw output; C uses the non-interactive flag for the wrong purpose; D assumes memory across sessions that does not exist.",
+    "explanation": "Correct: A. --resume continues a named session when most of its context is still valid, and telling it which files changed allows targeted re-analysis. Why not the others: B pastes stale raw output; C uses print mode, which answers a single prompt non-interactively and does not reopen the session for continued interactive work on its own; D assumes memory across sessions that does not exist.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8532,7 +8532,7 @@
       },
       {
         "key": "C",
-        "text": "Assign each subagent a distinct subtopic, such as carbon capture, grid storage and alternative proteins"
+        "text": "Assign each subagent a distinct subtopic, such as funding rounds, policy incentives and grid storage"
       },
       {
         "key": "D",
@@ -8548,7 +8548,7 @@
       "C",
       "D"
     ],
-    "explanation": "Correct: C and D. The coordinator should partition research scope across subagents, by distinct subtopics or source types, so they do not duplicate each other. Why not the others: A cuts coverage; B routes coordination around the coordinator; E sacrifices breadth.",
+    "explanation": "Correct: C and D. The coordinator should partition research scope across subagents, by distinct subtopics or source types, so they do not duplicate each other. Dividing the scope also gives under-covered areas an owner: policy incentives become one subagent's subtopic in C, and regulatory filings, where policy appears, become one subagent's sources in D. Why not the others: A cuts coverage; B routes coordination around the coordinator; E sacrifices breadth.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8647,8 +8647,8 @@
       },
       {
         "key": "B",
-        "text": "The name of the engineer who maintains the tool and the date on which it was last deployed",
-        "explanation": "Maintenance metadata says nothing about what the tool does or when to choose it."
+        "text": "A list of synonyms such as consignment, parcel, load and freight, so it matches more shipment queries",
+        "explanation": "More keywords widen what the tool matches without saying how it differs from track_container, which can worsen the confusion."
       },
       {
         "key": "C",
@@ -8669,7 +8669,7 @@
       "A",
       "E"
     ],
-    "explanation": "Correct: A and E. Good descriptions state input formats, example queries and boundaries, including when to use the tool rather than a similar one. Why not the others: B and D add irrelevant metadata or internals; C adds persuasive wording with no selection value.",
+    "explanation": "Correct: A and E. Good descriptions state input formats, example queries and boundaries, including when to use the tool rather than a similar one. Why not the others: B adds keywords that broaden matching but never draw the line against track_container; C adds persuasive wording with no selection value; D adds implementation internals.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8688,17 +8688,17 @@
     "options": [
       {
         "key": "A",
-        "text": "Add many more examples to the assess_flood_risk description until it clearly outweighs the summarize_policy tool",
+        "text": "Add many more examples to the assess_flood_risk description so it outweighs summarize_policy",
         "explanation": "The descriptions are already good; the misrouting comes from a system-prompt rule that overrides them."
       },
       {
         "key": "B",
-        "text": "Rewrite the system-prompt line so it stops keying on the word 'policy', which overrides the tool descriptions"
+        "text": "Reword the system-prompt rule about policies so it no longer triggers on the keyword 'policy' alone"
       },
       {
         "key": "C",
-        "text": "Remove summarize_policy from the toolset, so that the flood-risk tool is the one left to choose",
-        "explanation": "Underwriters legitimately need policy summaries; deleting a correct tool trades one failure for another."
+        "text": "Rename summarize_policy to get_coverage_overview so its name no longer echoes the word 'policy'",
+        "explanation": "The prompt rule still says to start with a summary for anything about a policy, so the model reaches for that tool whatever its name."
       },
       {
         "key": "D",
@@ -8707,7 +8707,7 @@
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Keyword-sensitive instructions in the system prompt can override good tool descriptions, so the prompt wording should be reviewed and fixed. Why not the others: A treats descriptions that are not the problem; C removes a needed tool; D replaces one keyword rule with another.",
+    "explanation": "Correct: B. Keyword-sensitive instructions in the system prompt can override good tool descriptions, so the prompt wording that causes the misrouting should be fixed. Why not the others: A treats descriptions that are not the problem; C changes a tool name while the instruction driving the behaviour stays in place; D replaces one keyword rule with another.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -8885,7 +8885,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Write a custom Jira MCP server, so that the team owns the integration end to end",
+        "text": "Write a custom Jira MCP server from scratch, so that the team owns the integration end to end",
         "explanation": "Building and maintaining a custom server duplicates an existing community one; custom servers are for team-specific workflows."
       },
       {
@@ -8899,8 +8899,8 @@
       },
       {
         "key": "D",
-        "text": "Commit the Jira API token directly in .mcp.json, so new teammates can connect without extra setup",
-        "explanation": "Secrets should not be committed; .mcp.json supports environment-variable expansion so each developer supplies the token."
+        "text": "Build the custom ledger server and point .mcp.json at the absolute path on the author's laptop",
+        "explanation": "That path exists on one machine only, so the shared entry fails for everyone else; it needs a path or command that resolves on every machine."
       },
       {
         "key": "E",
@@ -8911,7 +8911,7 @@
       "C",
       "E"
     ],
-    "explanation": "Correct: C and E. Prefer an existing community server for a standard integration like Jira, share team servers through project-scoped .mcp.json, and build custom servers for team-specific workflows with secrets supplied by environment-variable expansion. Why not the others: A rebuilds what exists; B uses personal scope for a team server; D commits a secret.",
+    "explanation": "Correct: C and E. Prefer an existing community server for a standard integration like Jira, share team servers through project-scoped .mcp.json, and build custom servers for team-specific workflows with secrets supplied by environment-variable expansion. Why not the others: A rebuilds what exists; B uses personal scope for a team server; D commits a machine-specific path that breaks the shared configuration for teammates.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9027,12 +9027,12 @@
       },
       {
         "key": "D",
-        "text": "Edit the first match it finds, assuming the six blocks probably share the same timeout setting",
-        "explanation": "Edit cannot pick a match when the anchor is ambiguous, and guessing which block to change risks editing the wrong one."
+        "text": "Stop and ask the user which of the six service blocks is the billing one before trying again",
+        "explanation": "The task already names the billing service and reading the file shows its block, so asking hands back work the agent can do itself."
       }
     ],
     "correctKey": "C",
-    "explanation": "Correct: C. Edit makes targeted changes by unique text match; when the anchor is not unique, reading the file and writing the updated content is the fallback. Why not the others: A repeats a deterministic failure; B changes every service; D guesses at an ambiguous match.",
+    "explanation": "Correct: C. Edit makes targeted changes by unique text match; when the anchor is not unique, reading the file locates the billing block and writing the updated content changes only that timeout. Why not the others: A repeats a deterministic failure; B changes every service; D interrupts the user for information the stem and the file already provide.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9085,7 +9085,7 @@
     "id": "ccar-f-d3-01",
     "categoryKey": "claude-code-workflows",
     "difficulty": 3,
-    "prompt": "At a freight-brokerage firm, a new engineer's Claude Code sessions ignore the rule \"quote all carrier rates in USD cents\", while every other teammate sees it honoured in the same repository checkout. Before editing any file, what is the most direct first diagnostic step?",
+    "prompt": "At a freight-brokerage firm, a new engineer's Claude Code sessions ignore the rule \"quote all carrier rates in USD cents\", while every other teammate sees it honoured in the same repository checkout. What is the most direct first diagnostic step?",
     "options": [
       {
         "key": "A",
@@ -9093,8 +9093,8 @@
       },
       {
         "key": "B",
-        "text": "Copy the rule into the new engineer's own ~/.claude/CLAUDE.md so it loads for their sessions wherever it was defined.",
-        "explanation": "This patches one person and hides the likely cause: the rule probably sits in a teammate's user-level file, so the next hire hits the same gap."
+        "text": "Run /init in the new engineer's session so Claude regenerates the project CLAUDE.md and the rule is picked up again.",
+        "explanation": "/init drafts a project CLAUDE.md from the codebase; it cannot recover a rule that probably lives in a teammate's user-level file, and it skips the diagnosis."
       },
       {
         "key": "C",
@@ -9103,12 +9103,12 @@
       },
       {
         "key": "D",
-        "text": "Move the rule into a skill under .claude/skills/ so Claude invokes it on demand whenever carrier rates come up in a prompt.",
-        "explanation": "Skills are on-demand workflows; a universal standard belongs in always-loaded CLAUDE.md. It also skips diagnosing why the rule is missing."
+        "text": "Run /status in the new engineer's session and check that the Claude Code version and model match a teammate's setup.",
+        "explanation": "Version and model do not decide which CLAUDE.md files load, so matching them says nothing about where the missing rule is defined."
       }
     ],
     "correctKey": "A",
-    "explanation": "Correct: A. /memory shows which memory files a session has loaded, so comparing sessions reveals whether the rule lives in a teammate's user-level ~/.claude/CLAUDE.md, which is not shared via version control. Why not the others: B copies the rule for one person and leaves the root cause; C guesses at a stale checkout without evidence; D moves a universal standard into an on-demand skill and still skips the diagnosis.",
+    "explanation": "Correct: A. /memory shows which memory files a session has loaded, so comparing sessions reveals whether the rule lives in a teammate's user-level ~/.claude/CLAUDE.md, which is not shared via version control. Why not the others: B regenerates project memory without finding where the rule actually lives; C guesses at a stale checkout without evidence; D checks settings that have no bearing on which memory files load.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9479,7 +9479,7 @@
     "id": "ccar-f-d4-03",
     "categoryKey": "prompt-engineering",
     "difficulty": 4,
-    "prompt": "An agritech company's agent sorts farmer messages into \"agronomy advice\", \"equipment fault\" or \"billing\". Messages such as \"the sprayer app charged me twice and now won't start\" get different labels on different days. The prompt already has six few-shot examples, all clear single-topic messages. What should the team change?",
+    "prompt": "An agritech company's agent sorts farmer messages into \"agronomy advice\", \"equipment fault\" or \"billing\". Messages such as \"the sprayer app charged me twice and now won't start\" get inconsistent and often wrong labels from one day to the next. The prompt already has six few-shot examples, all clear single-topic messages. What should the team change?",
     "options": [
       {
         "key": "A",
@@ -9502,7 +9502,7 @@
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. Targeted few-shot examples of ambiguous cases, with the reasoning for choosing one label over plausible alternatives, teach judgement that generalises to similar messages. Why not the others: A adds only easy cases; C removes the examples entirely; D makes answers repeatable without making them right.",
+    "explanation": "Correct: B. Targeted few-shot examples of ambiguous cases, with the reasoning for choosing one label over plausible alternatives, teach judgement that generalises to similar messages, which fixes both the inconsistency and the wrong labels. Why not the others: A adds only easy cases; C removes the examples entirely; D makes answers repeatable without making them right, so a wrong label would simply be repeated.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9673,8 +9673,8 @@
     "options": [
       {
         "key": "A",
-        "text": "Switch from tool-use extraction to raw JSON in the text reply, which auditors find easier to read.",
-        "explanation": "Dropping tool use reintroduces syntax errors and does nothing to detect totals that do not add up."
+        "text": "Add a minimum: 0 constraint on stated_total and on every line-item amount so negatives are rejected.",
+        "explanation": "This blocks negative amounts, but positive line items that do not sum to the stated total still pass validation."
       },
       {
         "key": "B",
@@ -9692,7 +9692,7 @@
       }
     ],
     "correctKey": "D",
-    "explanation": "Correct: D. Schemas remove syntax errors but not semantic ones, so self-check fields such as calculated_total alongside stated_total, plus a conflict_detected boolean, make arithmetic mismatches visible to downstream checks. Why not the others: A drops the reliable tool-use path; B and C validate format and presence, not whether the numbers agree.",
+    "explanation": "Correct: D. Schemas remove syntax errors but not semantic ones, so self-check fields such as calculated_total alongside stated_total, plus a conflict_detected boolean, make arithmetic mismatches visible to downstream checks. Why not the others: A, B and C constrain the range, format and presence of values, not whether the numbers agree.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9813,7 +9813,7 @@
       "B",
       "D"
     ],
-    "explanation": "Correct: B and D. Weekly audits and overnight summaries are latency-tolerant, so they gain the roughly 50% saving without suffering from the up-to-24-hour window. Why not the others: A blocks a pre-merge workflow; C needs multi-turn tool calling, which a batch request does not support; E is interactive and needs immediate responses.",
+    "explanation": "Correct: B and D. Weekly audits and overnight summaries are latency-tolerant, so they gain the roughly 50% saving without being hurt by the processing window: most batches finish well within 24 hours, and a weekly report or an overnight job with a morning deadline can absorb that delay, unlike a merge gate or live chat. Why not the others: A blocks a pre-merge workflow; C needs multi-turn tool calling, which a batch request does not support; E is interactive and needs immediate responses.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9934,7 +9934,7 @@
       }
     ],
     "correctKey": "B",
-    "explanation": "Correct: B. A verification pass that attaches self-reported confidence to each finding lets the pipeline route the uncertain ones to scarce human reviewers first. Why not the others: A uses an unrelated proxy; C reintroduces attention dilution that the split passes avoid; D spends review effort at random and accepts doubtful findings unchecked.",
+    "explanation": "Correct: B. A verification pass that attaches self-reported confidence to each finding lets the pipeline route the uncertain ones to scarce human reviewers first. Before routing on it, the confidence threshold should be calibrated against a labelled sample of findings, so the team knows the scores actually track accuracy. Why not the others: A uses an unrelated proxy; C reintroduces attention dilution that the split passes avoid; D spends review effort at random and accepts doubtful findings unchecked.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",
@@ -9996,8 +9996,8 @@
       },
       {
         "key": "B",
-        "text": "Restart the whole run from the beginning after any crash, since partial results cannot be trusted.",
-        "explanation": "This is the costly behaviour they already suffered; persisted state lets a run resume instead."
+        "text": "Have the coordinator replace its history with a progressive summary every hour to keep its context short.",
+        "explanation": "Repeated summarising compresses specific faults into generalities, the drift already seen, and does nothing to survive a crash."
       },
       {
         "key": "C",
@@ -10017,7 +10017,7 @@
       "D",
       "E"
     ],
-    "explanation": "Correct: D and E. Exported agent state plus a manifest lets the coordinator resume after a crash, and scratchpad files keep specific findings available as long sessions degrade. Why not the others: A changes output length, not recall; B repeats the full restart; C adds verbose context instead of persisting key facts.",
+    "explanation": "Correct: D and E. Exported agent state plus a manifest lets the coordinator resume after a crash, and scratchpad files keep specific findings available as long sessions degrade. Why not the others: A changes output length, not recall; B condenses away the specific fault details and leaves nothing to resume from; C adds verbose context instead of persisting key facts.",
     "source": "original",
     "sourceRef": "https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf",
     "reviewStatus": "draft",

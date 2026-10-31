@@ -145,7 +145,7 @@
   {
     "id": "commands-and-skills",
     "title": "Slash commands and skills: shared, personal and isolated",
-    "body": "Project commands in `.claude/commands/` and project skills in `.claude/skills/` are shared through version control; the same folders under `~/.claude/` are personal. A skill's `SKILL.md` frontmatter can set `context: fork` to run it in an isolated sub-agent so verbose output stays out of the main session, `allowed-tools` to restrict what it may do while it runs, and `argument-hint` to prompt for parameters.\n\nUse a skill for an on-demand, task-specific workflow; use CLAUDE.md for standards that should always be loaded. To change a team skill just for yourself, create a personal variant under a different name.",
+    "body": "Project commands in `.claude/commands/` and project skills in `.claude/skills/` are shared through version control; the same folders under `~/.claude/` are personal. A skill's `SKILL.md` frontmatter can set `context: fork` to run it in an isolated sub-agent so verbose output stays out of the main session, `disallowed-tools` to take tools away while it runs (`allowed-tools` only pre-approves tools, it restricts nothing), and `argument-hint` to prompt for parameters.\n\nUse a skill for an on-demand, task-specific workflow; use CLAUDE.md for standards that should always be loaded. To change a team skill just for yourself, create a personal variant under a different name.",
     "commonMistakes": [
       "Putting a rarely used workflow in CLAUDE.md, where it costs context every session.",
       "Running a noisy analysis skill in the main context.",
