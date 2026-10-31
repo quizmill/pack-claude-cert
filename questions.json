@@ -25702,12 +25702,7 @@
     "explanation": "Correct: B. The agentic loop keys off `stop_reason`: “`tool_use`” means the model has requested tools and expects their results back; “`end_turn`” means it has finished reasoning and produced its answer. That signal is the designed termination mechanism.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-2",
@@ -25741,12 +25736,7 @@
     "explanation": "Correct: D. Tool execution is the harness's job: the loop appends the tool result to the conversation and re-invokes the model. That growing history is the only channel through which the model sees what tools returned.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-3",
@@ -25780,12 +25770,7 @@
     "explanation": "Correct: A. Business rules with financial consequences need deterministic guarantees. A tool-call interception hook enforces the threshold in code — the violating call can never execute — while prompt-based approaches remain probabilistic.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-4",
@@ -25819,12 +25804,7 @@
     "explanation": "Correct: C. Multi-concern decomposition is the designed pattern: split the request into distinct items, investigate each against shared context, and respond once with a complete resolution — protecting first-contact resolution.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-5",
@@ -25858,12 +25838,7 @@
     "explanation": "Correct: B. Structured handoff protocols exist precisely because the receiving human lacks the transcript: the summary transfers the case state — identity, findings, figures, and a recommendation — so the customer never has to start over.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-6",
@@ -25897,12 +25872,7 @@
     "explanation": "Correct: D. Uniform error strings deny the agent the information recovery decisions require. Structured metadata — category, retryability, description — lets it retry transient failures, explain business refusals, and stop wasting attempts on non-retryable errors.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-7",
@@ -25936,12 +25906,7 @@
     "explanation": "Correct: A. Policy violations are business errors: non-retryable by definition, and best paired with an explanation the agent can relay. The retriable: false flag prevents wasted attempts; the friendly description powers the customer conversation.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-8",
@@ -25982,12 +25947,7 @@
     "explanation": "Correct: B and D. Descriptions are the primary selection mechanism. Input formats plus example queries show each tool's territory; explicit boundary language resolves precisely the overlap causing the misrouting.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-9",
@@ -26021,12 +25981,7 @@
     "explanation": "Correct: C. Explicit customer demands for a human are a first-class escalation trigger, honored immediately. Overriding a stated preference to demonstrate capability damages trust regardless of how resolvable the issue looks.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-1-10",
@@ -26067,12 +26022,7 @@
     "explanation": "Correct: A and D. The paired fix: protect precise transactional facts from lossy summarization by persisting them in a dedicated block, and stop the bloat at its source by trimming verbose tool outputs to relevant fields before they accumulate.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-1",
@@ -26106,12 +26056,7 @@
     "explanation": "Correct: C. Command scoping mirrors intent: `~/.claude/commands/` holds personal commands visible only to you, while `.claude/commands/` in the repo is shared with everyone via version control. A personal workflow tool belongs in the former.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-2",
@@ -26145,12 +26090,7 @@
     "explanation": "Correct: B. context: fork exists for exactly this: verbose or exploratory skills run in their own isolated context, and the main session receives the distilled result rather than the full exploration transcript.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-3",
@@ -26184,12 +26124,7 @@
     "explanation": "Correct: D. allowed-tools is the enforcement mechanism: frontmatter-declared tool restrictions bound what the skill can invoke during execution — a configuration guarantee rather than an instruction the model might not follow.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-4",
@@ -26223,12 +26158,7 @@
     "explanation": "Correct: A. User-level configuration applies only to that user — it never travels via version control. Team standards belong at project level, and `/memory` is the diagnostic that shows exactly which memory files a session loaded.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-5",
@@ -26262,12 +26192,7 @@
     "explanation": "Correct: C. The `.claude/rules/` directory is the modular alternative to a monolithic CLAUDE.md: focused topic files, with YAML path scoping where rules should load only for matching files — less irrelevant context, easier maintenance.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-6",
@@ -26301,12 +26226,7 @@
     "explanation": "Correct: B. Named session resumption is the mechanism for continuing specific prior work: `--resume` <session-name> restores that conversation's context so the investigation picks up where it stopped.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-7",
@@ -26340,12 +26260,7 @@
     "explanation": "Correct: D. `fork_session` exists for divergent exploration: both branches inherit the completed analysis, then evolve independently — clean comparison without re-paying the analysis cost or cross-contaminating approaches.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-8",
@@ -26379,12 +26294,7 @@
     "explanation": "Correct: A. The resumption tradeoff: resume when prior context is mostly valid; start fresh with an injected summary when tool results have gone stale. Heavily changed files put this squarely in the second case — keep the conclusions, discard the outdated evidence.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-9",
@@ -26418,12 +26328,7 @@
     "explanation": "Correct: C. `/compact` is the in-session relief valve for exactly this situation: it compacts accumulated context — typically bloated with verbose discovery output — so an extended session can continue without degradation.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-2-10",
@@ -26464,12 +26369,7 @@
     "explanation": "Correct: B and E. Both practices manage what occupies the context: a scratchpad persists precise findings outside the degrading conversation, and subagent delegation keeps verbose exploration out of the main window entirely, returning only distilled summaries.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-1",
@@ -26503,12 +26403,7 @@
     "explanation": "Correct: D. Subagent spawning happens through the Task tool. A coordinator whose `allowedTools` omits “Task” has no mechanism to delegate, no matter how clearly its prompt describes the intention — capability configuration trumps instruction.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-2",
@@ -26542,12 +26437,7 @@
     "explanation": "Correct: B. Subagent context isolation is the rule: each subagent sees only what its prompt contains. “The research findings” refers to material the synthesis agent has never seen — the coordinator must pass the findings explicitly.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-3",
@@ -26581,12 +26471,7 @@
     "explanation": "Correct: A. Parallel spawning is achieved by emitting multiple Task tool calls in one coordinator response rather than across separate turns — independent workstreams then execute concurrently.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-4",
@@ -26620,12 +26505,7 @@
     "explanation": "Correct: C. Goal-and-criteria prompts preserve subagent adaptability: the coordinator defines success, the subagent chooses the path — which is why the agent (not a fixed script) is there at all.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-5",
@@ -26659,12 +26539,7 @@
     "explanation": "Correct: B. Iterative refinement closes the quality loop: evaluate coverage, dispatch targeted follow-up research where gaps exist, re-synthesize — repeating until the report meets criteria rather than hoping the first pass suffices.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-6",
@@ -26698,12 +26573,7 @@
     "explanation": "Correct: D. Tool distribution is an architectural control: agents choose more reliably among 4–5 role-relevant tools than among 18, and tools outside an agent's specialization are misused precisely because they are available.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-7",
@@ -26737,12 +26607,7 @@
     "explanation": "Correct: A. MCP resources exist for exactly this: exposing catalogs of available content so agents start informed. Discovery becomes a lookup instead of a spelunking expedition of exploratory calls.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-8",
@@ -26776,12 +26641,7 @@
     "explanation": "Correct: C. Provenance survives only if it is structural: claim-source mappings travel as data through every hop, so synthesis merges attributed claims instead of anonymous assertions. Attribution is preserved, never reconstructed.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-9",
@@ -26822,12 +26682,7 @@
     "explanation": "Correct: A and D. Conflicts are information: preserve both values with attribution and surface the disagreement for deliberate reconciliation — and carry dates in structured output, since “conflicting” figures often just measure different moments.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-3-10",
@@ -26868,12 +26723,7 @@
     "explanation": "Correct: B and E. Resilient error propagation is layered and honest: handle locally what is locally fixable, escalate the rest with context the coordinator can act on, and never conflate “the search broke” with “the search found nothing.”",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-1",
@@ -26914,12 +26764,7 @@
     "explanation": "Correct: A and C. The division of labor is clean: Glob matches file paths against patterns (names, extensions, directories); Grep searches file contents for patterns (identifiers, error strings, imports). Each task maps to exactly one of them.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-2",
@@ -26953,12 +26798,7 @@
     "explanation": "Correct: D. Edit depends on unique text matching; when a file's repetitive structure defeats that, Read + Write performs the modification reliably on the whole file. It is the documented fallback for exactly this failure.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-3",
@@ -26992,12 +26832,7 @@
     "explanation": "Correct: B. Incremental exploration is the pattern: search first to find where the relevant code lives, then read narrowly along the traced paths. Context is spent on the files that matter rather than on everything alphabetically prior to them.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-4",
@@ -27031,12 +26866,7 @@
     "explanation": "Correct: A. Scoping follows audience: project `.mcp.json` distributes team tooling via version control, with `${VAR}` expansion keeping credentials out of the repo; `~/.claude.json` holds personal and experimental servers that stay yours.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-5",
@@ -27070,12 +26900,7 @@
     "explanation": "Correct: C. The assignment rule: direct execution for simple, well-scoped changes; plan mode where scale, architectural implications, or competing approaches make design-before-commitment valuable — like a 45-file migration.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-6",
@@ -27109,12 +26934,7 @@
     "explanation": "Correct: D. argument-hint is the frontmatter mechanism for exactly this: skills that need parameters can prompt for them on bare invocation instead of running underspecified.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-7",
@@ -27148,12 +26968,7 @@
     "explanation": "Correct: B. The dividing line: CLAUDE.md for universal, always-relevant standards; skills for on-demand, task-specific workflows. Each mechanism carries the load it was designed for.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-8",
@@ -27187,12 +27002,7 @@
     "explanation": "Correct: A. Open-ended tasks call for adaptive decomposition: understand the terrain, prioritize by impact, and let the plan evolve with what each step reveals — the opposite of a fixed pipeline chosen before anything is known.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-9",
@@ -27226,12 +27036,7 @@
     "explanation": "Correct: C. The selection rule: fixed sequential pipelines for predictable multi-aspect work, adaptive decomposition where the path emerges from intermediate findings. Each workflow gets the structure its uncertainty profile demands.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-4-10",
@@ -27272,12 +27077,7 @@
     "explanation": "Correct: B and D. Two load-bearing facts: subagents are configured individually (description, system prompt, tool restrictions), and they are isolated — no inherited history, no memory across invocations, so context passing is always explicit.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-1",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-1",
@@ -27311,12 +27111,7 @@
     "explanation": "Correct: B. The CI trio: -p (`--print`) for non-interactive execution, `--output-format` json for machine-readable output, and `--json-schema` to enforce the findings structure your pipeline consumes — no prose parsing, no input hangs.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-2",
@@ -27350,12 +27145,7 @@
     "explanation": "Correct: D. CI invocations get their project context from CLAUDE.md. Standards, value criteria, and fixture documentation there directly raise generation quality — the model can only follow conventions it has been shown.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-3",
@@ -27389,12 +27179,7 @@
     "explanation": "Correct: A. Duplicate suppression is a context design problem: give the reviewer its own prior findings and the explicit instruction to report deltas — new issues plus unresolved carryovers — and the noise stops while coverage remains complete.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-4",
@@ -27428,12 +27213,7 @@
     "explanation": "Correct: C. Session context isolation matters for review integrity: the generating session carries the rationale that produced the code, biasing it toward its own choices. An independent instance evaluates the code on its own terms.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-3",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-5",
@@ -27467,12 +27247,7 @@
     "explanation": "Correct: D. Vague conservatism doesn't transfer — specific criteria do. Defining reportable versus skippable categories with concrete boundaries gives the model an operable decision rule, which is what actually moves precision.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-6",
@@ -27506,12 +27281,7 @@
     "explanation": "Correct: B. High false-positive categories are contagious: they teach developers to dismiss everything. Disabling the offender protects the credibility of accurate categories while its prompts are fixed offline — trust is the system's real asset.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-7",
@@ -27545,12 +27315,7 @@
     "explanation": "Correct: A. Consistency comes from operational definitions: severity levels anchored by concrete examples give the classifier something to match, turning a vibe into a rubric. That is what makes severity gates dependable.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-8",
@@ -27584,12 +27349,7 @@
     "explanation": "Correct: C. When prose fails to convey a judgment boundary, examples carry it: contrasted acceptable-versus-genuine cases with reasoning teach a distinction the model can generalize — the documented strength of few-shot prompting for false-positive reduction.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-9",
@@ -27630,12 +27390,7 @@
     "explanation": "Correct: A and D. The batch decision rule in both directions: overnight and weekly jobs are the ideal profile for the discount; anything a developer waits on cannot tolerate a 24-hour, no-SLA window and stays synchronous.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-5-10",
@@ -27676,12 +27431,7 @@
     "explanation": "Correct: B and E. Effective few-shot work is targeted and demonstrative: a handful of examples aimed at genuine ambiguity, with reasoning shown, plus format demonstrations that lock output structure — quality of targeting over quantity.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-1",
@@ -27715,12 +27465,7 @@
     "explanation": "Correct: C. Tool use with JSON schemas is the reliability mechanism for structured output: the model's extraction arrives as schema-conformant tool input, not as prose that happens to contain JSON — syntax errors are eliminated by construction.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-2",
@@ -27754,12 +27499,7 @@
     "explanation": "Correct: A. The three modes map to intent: “any” compels a tool call while preserving the model's choice among schemas — exactly right for unknown document types that must always yield structured output.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-3",
@@ -27793,12 +27533,7 @@
     "explanation": "Correct: D. Required fields on possibly-absent information force fabrication — the schema leaves no honest answer. Nullable/optional fields give the model a legitimate way to say “not present,” which is the designed prevention for this failure.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-4",
@@ -27832,12 +27567,7 @@
     "explanation": "Correct: B. The boundary of the guarantee: tool use ensures structure, not truth. Semantic errors — sums that don't reconcile, transposed fields — need a semantic validation layer, with self-check fields like `calculated_total` making discrepancies machine-visible.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-5",
@@ -27871,12 +27601,7 @@
     "explanation": "Correct: C. Retry-with-error-feedback works because the model sees what it produced, what was wrong, and the source to correct against. And the boundary matters: format and structural errors are retryable; information absent from the document is not.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-6",
@@ -27910,12 +27635,7 @@
     "explanation": "Correct: A. `custom_id` exists for exactly this: correlate failures to their source documents, fix what caused each failure (chunk the oversized ones), and resubmit only the fixed subset — paying again for 200 documents, not 10,000.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-4",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-7",
@@ -27949,12 +27669,7 @@
     "explanation": "Correct: D. Purpose-specific tools turn a hidden mode decision into a visible selection decision — the thing tool descriptions are good at guiding. Each tool's contract is explicit, and misrouting drops accordingly.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-8",
@@ -27988,12 +27703,7 @@
     "explanation": "Correct: B. `isError` is MCP's channel for communicating tool failure: it makes the error a machine-recognizable condition the agent can reason about, rather than text masquerading as a successful result.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-2",
-      "multiple-choice"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-9",
@@ -28034,12 +27744,7 @@
     "explanation": "Correct: A and C. Two safeguards make automation defensible: segmentation proves the average isn't hiding a failing document type or field, and stratified sampling of the “safe” population keeps measuring after the humans step back — catching drift and novel errors.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   },
   {
     "id": "cca-purcell-v2-6-10",
@@ -28080,11 +27785,6 @@
     "explanation": "Correct: B and D. Calibration then routing: field-level confidence scores become meaningful once thresholds are tuned on labeled data, and review capacity flows to the calibrated-low-confidence and ambiguous-source cases where errors actually cluster.",
     "source": "curated",
     "sourceRef": "https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/",
-    "reviewStatus": "draft",
-    "tags": [
-      "purcell-ccar-f-v2",
-      "domain-5",
-      "multiple-response"
-    ]
+    "reviewStatus": "draft"
   }
 ]

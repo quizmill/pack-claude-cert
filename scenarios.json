@@ -183,7 +183,7 @@
   },
   {
     "id": "cca-purcell-customer-support",
-    "title": "Customer Support Resolution Agent (Purcell set)",
+    "title": "Customer Support Resolution Agent",
     "stem": "You are building a customer support resolution agent with the Claude Agent SDK. It handles high-ambiguity requests (returns, billing disputes, account issues) via custom MCP tools — `get_customer`, `lookup_order`, `process_refund`, `escalate_to_human` — targeting 80%+ first-contact resolution while knowing when to escalate.",
     "tags": [
       "cca-f",
@@ -194,7 +194,7 @@
   },
   {
     "id": "cca-purcell-code-generation",
-    "title": "Code Generation with Claude Code (Purcell set)",
+    "title": "Code Generation with Claude Code",
     "stem": "Your team uses Claude Code for code generation, refactoring, debugging, and documentation, integrated into daily development with custom slash commands and CLAUDE.md configuration — and you must judge when plan mode beats direct execution.",
     "tags": [
       "cca-f",
@@ -204,7 +204,7 @@
   },
   {
     "id": "cca-purcell-multi-agent-research",
-    "title": "Multi-Agent Research System (Purcell set)",
+    "title": "Multi-Agent Research System",
     "stem": "A coordinator agent built on the Claude Agent SDK delegates to specialized subagents — web search, document analysis, synthesis, and report generation — to research topics and produce comprehensive, cited reports.",
     "tags": [
       "cca-f",
@@ -215,7 +215,7 @@
   },
   {
     "id": "cca-purcell-developer-productivity",
-    "title": "Developer Productivity with Claude (Purcell set)",
+    "title": "Developer Productivity with Claude",
     "stem": "You are building developer productivity tooling on the Claude Agent SDK: helping engineers explore unfamiliar codebases, understand legacy systems, generate boilerplate, and automate repetitive tasks — using the built-in tools (Read, Write, Edit, Bash, Grep, Glob) plus MCP servers.",
     "tags": [
       "cca-f",
@@ -226,7 +226,7 @@
   },
   {
     "id": "cca-purcell-ci",
-    "title": "Claude Code for Continuous Integration (Purcell set)",
+    "title": "Claude Code for Continuous Integration",
     "stem": "You are integrating Claude Code into a CI/CD pipeline for automated code review, test generation, and pull-request feedback — designing prompts that produce actionable findings while minimizing false positives.",
     "tags": [
       "cca-f",
@@ -237,7 +237,7 @@
   },
   {
     "id": "cca-purcell-structured-extraction",
-    "title": "Structured Data Extraction (Purcell set)",
+    "title": "Structured Data Extraction",
     "stem": "You are building a structured data extraction system: pulling information from unstructured documents, validating output against JSON schemas, handling edge cases gracefully, and integrating with downstream systems.",
     "tags": [
       "cca-f",

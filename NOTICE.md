@@ -62,7 +62,7 @@ SOFTWARE.
 
 ## Matthew Purcell — CCAR-F Practice Question Set, Version 2 (paper `purcell-ccar-f-v2`)
 
-The 60 questions with ids `cca-purcell-v2-*` (tag `purcell-ccar-f-v2`) and the
+The 60 questions with ids `cca-purcell-v2-*` (paper `purcell-ccar-f-v2`) and the
 six `cca-purcell-*` scenarios are adapted from Matthew Purcell's free
 *Claude Certified Architect – Foundations Practice Question Set, Version 2*,
 shared publicly on LinkedIn:
