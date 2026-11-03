@@ -12308,7 +12308,7 @@
       {
         "key": "E",
         "text": "Prioritize the longest and most complex documents for review, since extraction difficulty rises steeply with length",
-        "explanation": "Leans on a length proxy that correlates only loosely with error risk. How did you go? If this helped your CCAR-F preparation, share it with someone else who’s preparing. For more, follow linkedin.com/in/purcellmatthew."
+        "explanation": "Leans on a length proxy that correlates only loosely with error risk."
       }
     ],
     "correctKeys": [
