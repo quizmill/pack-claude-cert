@@ -10,7 +10,7 @@ permits.
 |---|---|---|---|
 | Anthropic, *Claude Certified Architect – Foundations Exam Guide* v1.0, July 2026 (public PDF linked from the Anthropic Partner Academy certification page) | 245 (`ccar-f-*`) | The guide is the public reference for the exam. The questions are **original**: written against its task statements and its six scenarios, with new production situations, options and rationales. The guide's sample questions are not reproduced. Product behaviour (stop reasons, `tool_choice`, MCP scoping and errors, Claude Code memory, rules, skills and CLI flags, the Message Batches API) follows Anthropic's public docs. | Clear: original work, `source: original`. |
 | Anthropic's public docs (platform.claude.com, code.claude.com) | 5 (`cca-q-*`) | Hand-written for this pack before bank v2 and kept, reworked to the v2 rules: new scenario ids, a rationale for every option, `sourceRef` reduced to the public doc page. | Clear: original work, `source: original`. |
-| Matthew Purcell, *CCAR-F Practice Question Set v2* (LinkedIn) | 60 (`cca-purcell-v2-*`), paper `purcell-ccar-f-v2` | Used with the author's permission (#17). Not part of bank v2 and not changed by it. | Clear: credited in NOTICE.md. |
+| Matthew Purcell, *CCAR-F Practice Question Set v2* (LinkedIn) | 60 (`cca-purcell-v2-*`), paper `purcell-ccar-f-v2` | Credited to the author (#17). Not part of bank v2 and not changed by it. | Clear: credited in NOTICE.md. |
 
 **Spec.** The guide fixes the shape: five domains weighted 27 / 18 / 20 /
 20 / 15, six scenarios, four of which are dealt per sitting at about

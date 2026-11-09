@@ -46,8 +46,7 @@ the rest are standalone. Nothing is drawn from the live exam. Provenance is reco
 
 **Matthew Purcell's paper (60).** The paper "CCAR-F practice exam v2" is
 [Matthew Purcell's CCAR-F Practice Question Set v2](https://www.linkedin.com/posts/purcellmatthew_ccar-f-practice-exam-questions-v2-ugcPost-7491707994921938944-FhH5/),
-used with the author's permission and credited in
-[NOTICE.md](NOTICE.md).
+credited in [NOTICE.md](NOTICE.md).
 
 His questions are kept exactly as published. In the quizmill judge gate
 (2026-10-31, `claude-opus-5-5`) the original bank passed with no fatal
